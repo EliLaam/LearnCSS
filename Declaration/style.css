@@ -1,0 +1,36 @@
+#text {
+  /* Màu chữ */
+  color: rgb(246, 202, 28);
+  /* Cỡ chữ */
+  font-size: medium;
+  /* Kiểu chữ */
+  font-style: unset;
+  /* Font chữ */
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  /* Chuyển chữ hoa <-> thường */
+  text-transform: uppercase;
+  /* Căn chữ */
+  text-align: center;
+}
+#opacity {
+  /* Làm mờ theo mức độ, chiếm không gian */
+  opacity: 0.4;
+  /* Ẩn khỏi giao diện,không chiếm không gian */
+  /* display: none; */
+  /* Ẩn khỏi giao diện, chiếm không gian */
+  /* visibility: hidden; */
+}
+ul {
+  /* Thời gian Hiệu ứng thay đổi */
+  transition: 1.5s;
+}
+input:checked ~ ul {
+  /* Ẩn đối tượng theo thuộc tính input */
+  opacity: 0%;
+  /* display: none; */
+  /* visibility: hidden; */
+}
+
+body {
+  background-image: url(/img/20250807164636.png);
+}
