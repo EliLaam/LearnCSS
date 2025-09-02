@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="/ico/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/ico/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/ico/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/ico/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/ico/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/ico/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/ico/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/ico/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/ico/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/ico/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/ico/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/ico/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/ico/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/ico/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Thuộc tính của CSS</title>
+  </head>
+  <body>
+    <h1>CSS là gì?</h1>
+    <p>
+      CSS là viết tắt của Cascading Style Sheets, nó là một ngôn ngữ được sử
+      dụng để tìm và định dạng lại các phần tử được tạo ra bởi các ngôn ngữ đánh
+      dấu (HTML). Nói ngắn gọn hơn là ngôn ngữ tạo phong cách cho trang web. Bạn
+      có thể hiểu đơn giản rằng, nếu HTML đóng vai trò định dạng các phần tử
+      trên website như việc tạo ra các đoạn văn bản, các tiêu đề, bảng,…thì CSS
+      sẽ giúp chúng ta có thể thêm style vào các phần tử HTML đó như đổi bố cục,
+      màu sắc trang, đổi màu chữ, font chữ, thay đổi cấu trúc…
+    </p>
+    <h2>Cấu trúc?</h2>
+    <p>
+      Cấu trúc của một đoạn CSS Một đoạn CSS bao gồm các phần như thế này:
+      <br /><code
+        >vùng chọn { thuộc tính : giá trị; thuộc tính: giá trị; ..... }</code
+      >
+      <br />Nghĩa là nó sẽ được khai báo bằng vùng chọn, sau đó các thuộc tính
+      và giá trị sẽ nằm bên trong cặp dấu ngoặc nhọn {}. Mỗi thuộc tính sẽ luôn
+      có một giá trị riêng, giá trị có thể là dạng số, hoặc các tên giá trị
+      trong danh sách có sẵn của CSS. Phần giá trị và thuộc tính phải được cách
+      nhau bằng dấu hai chấm, và mỗi một dòng khai báo thuộc tính sẽ luôn có dấu
+      chấm phẩy ở cuối. Một vùng chọn có thể sử dụng không giới hạn thuộc tính.
+    </p>
+    <h2>Định nghĩa các phần này như sau</h2>
+    <ul>
+      <li>
+        <strong>Bộ chọn (Selector)</strong>: là mẫu để chọn phần tử HTML mà bạn
+        muốn định nghĩa phong cách. Các selector được áp dụng cho các trường hợp
+        sau:
+        <ul>
+          <li>
+            Tất cả phần tử theo một dạng cụ thể nào đó, ví dụ phần tử tiêu đề
+            h1.
+          </li>
+          <li>Thuộc tính id và class của các phần tử.</li>
+          <li>
+            Các phần tử dựa vào mối liên quan với các phần tử khác trong cây
+            phân cấp tài liệu.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Khai báo (Declaration)</strong>: Khối khai báo chứa một hoặc
+        nhiều khai báo, phân tách với nhau bằng các dấu chấm phẩy. Mỗi khai báo
+        gồm tên và giá trị đặc tính CSS, phân tách bằng dấu phẩy. Khai báo CSS
+        luôn kết thúc bằng dấu chấm phẩy, khối khai báo nằm trong các dấu ngoặc
+        móc. Trong ví dụ dưới đây, các phần tử <code>&lt;p&gt;</code> sẽ được
+        căn giữa, chữ màu đỏ. <br />
+        <code>p { color: red; text-aligh: center; } </code>
+      </li>
+      <li>
+        <strong>Thuộc tính (Properties)</strong>: Những cách mà bạn có thể tạo
+        kiểu cho một phần tử HTML. (Với trường hợp này thì color được xem là một
+        trong những thuộc tính của phần tử p). Chính vì vậy, với CSS thì bạn chỉ
+        cần lựa chọn thuộc tính mà chính bạn muốn tác động nhất trong bộ quy tắc
+        của mình.
+      </li>
+      <li>
+        <strong>Giá trị thuộc tính:</strong> Ở bên phải của thuộc tính sau dấu
+        hai chấm(:), chúng ta sẽ sở hữu giá trị thuộc tính mà việc lựa chọn
+        trong số đó sẽ xuất hiện nhiều lần để có thể cho một thuộc tính cụ thể
+        nào đó.
+      </li>
+    </ul>
+  </body>
+</html>

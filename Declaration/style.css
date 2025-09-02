@@ -1,36 +1,110 @@
-#text {
-  /* Màu chữ */
-  color: rgb(246, 202, 28);
-  /* Cỡ chữ */
-  font-size: medium;
-  /* Kiểu chữ */
-  font-style: unset;
-  /* Font chữ */
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  /* Chuyển chữ hoa <-> thường */
-  text-transform: uppercase;
-  /* Căn chữ */
+/* 
+CSS SELECTORS: 
+    We can divide CSS selectors into five categories:
+    Simple selectors (select elements based on name, id, class)
+    Combinator selectors (select elements based on a specific relationship between them)
+    Pseudo-class selectors (select elements based on a certain state)
+    Pseudo-elements selectors (select and style a part of an element)
+    Attribute selectors (select elements based on an attribute or attribute value)
+*/
+
+/* THE ELEMENTS SELECTOR
+The element selector selects HTML elements based on the element name. */
+h1 {
+  color: #ff0000;
   text-align: center;
-}
-#opacity {
-  /* Làm mờ theo mức độ, chiếm không gian */
-  opacity: 0.4;
-  /* Ẩn khỏi giao diện,không chiếm không gian */
-  /* display: none; */
-  /* Ẩn khỏi giao diện, chiếm không gian */
-  /* visibility: hidden; */
-}
-ul {
-  /* Thời gian Hiệu ứng thay đổi */
-  transition: 1.5s;
-}
-input:checked ~ ul {
-  /* Ẩn đối tượng theo thuộc tính input */
-  opacity: 0%;
-  /* display: none; */
-  /* visibility: hidden; */
+  font-size: medium;
 }
 
-body {
-  background-image: url(/img/20250807164636.png);
+/* THE ID SELECTOR 
+The id selector uses the id attribute of an HTML element to select a specific element.
+The id of an element is unique within a page, so the id selector is used to select one unique element!
+To select an element with a specific id, write a hash (#) character, followed by the id of the element.  */
+#demo1 {
+  color: #ffa500;
+  text-align: center;
+  font-size: medium;
+}
+/* ----Note: An id name cannot start with a number!---- */
+
+/* THE CLASS SELECTOR 
+The class selector selects HTML elements with a specific class attribute.
+To select elements with a specific class, write a period (.) character, followed by the class name.   */
+.demo1 {
+  color: #ffff00;
+  text-align: center;
+  font-size: medium;
+}
+/* You can also specify that only specific HTML elements should be affected by a class. In this example only <p> elements with class="center" will be ...   */
+h2.demo1 {
+  color: #008000;
+  text-align: center;
+  font-size: medium;
+}
+/* HTML elements can also refer to more than one class. In this example the <p> element will be styled according to class="demo1" and to class="hehe":    */
+.demo2.hehe {
+  text-align: center;
+  color: #0000ff;
+}
+/* ----Note: A class name cannot start with a number!---- */
+
+/* THE UNIVERSAL SELECTOR 
+The universal selector (*) selects all HTML elements on the page.  */
+* {
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+}
+
+/* THE GROUPING SELECTOR 
+The grouping selector selects all the HTML elements with the same style definitions. It will be better to group the selectors, to minimize the code. To group selectors, separate each selector with a comma (,).    */
+h4,
+h5,
+h6 {
+  color: #4b0082;
+  text-align: center;
+  font-size: medium;
+}
+
+/* Review All CSS Simple Selectors 
+#id                        #firstname       Selects the element with id="firstname"; 
+.class                     .intro           Selects all elements with class="intro"; 
+*	                       *             	Selects all elements 
+element                    p  	            Selects all <p> elements 
+element,element,..	       div, p           Selects all <div> elements and all <p> elements 
+class,class,...            .a1.a2           Selects all element with a2 that is a descendant of an element with a1
+element.class              p.hello          Selects only <p> elements with class="hello"; */
+
+/*  CSS COMBINATORS  */
+/* Descendant Combinator (space)
+The descendant combinator matches all elements that are descendants (children, grandchildren, etc.) of a specified element. 
+The following example selects all <p> elements inside <div> elements: */
+div.descendant p {
+  color: #ee82ee;
+}
+
+/* Child Combinator (>)
+The child combinator selects all elements that are direct children of a specified element.
+The following example selects all <p> elements that are direct children of <div>:  */
+div > p {
+  color: #5c80f5;
+}
+
+/* Next Sibling Combinator (+) 
+The next sibling combinator is used to select an element that is directly after a specific element.
+Sibling elements must have the same parent element.
+The following example selects the first <p> element that immediately follows a <h3>, and share the same parent:
+*/
+h3 + p {
+  color: #8739e6;
+}
+h3 {
+  color: #008000;
+}
+
+/* Subsequent-sibling Combinator (~)
+The subsequent-sibling combinator selects all elements that are next siblings of a specified element.
+The following example selects all <p> elements that are next siblings of <div>, and share the same parent:  */
+div.subsequent ~ p {
+  color: rgb(255, 120, 120);
+  font-style: italic;
 }
