@@ -8,8 +8,9 @@ CSS SELECTORS:
     Attribute selectors (select elements based on an attribute or attribute value)
 */
 
+/* SIMPLE SELECTORS */
 /* THE ELEMENTS SELECTOR
-The element selector selects HTML elements based on the element name. */
+  The element selector selects HTML elements based on the element name. */
 h1 {
   color: #ff0000;
   text-align: center;
@@ -17,9 +18,9 @@ h1 {
 }
 
 /* THE ID SELECTOR 
-The id selector uses the id attribute of an HTML element to select a specific element.
-The id of an element is unique within a page, so the id selector is used to select one unique element!
-To select an element with a specific id, write a hash (#) character, followed by the id of the element.  */
+  The id selector uses the id attribute of an HTML element to select a specific element.
+  The id of an element is unique within a page, so the id selector is used to select one unique element!
+  To select an element with a specific id, write a hash (#) character, followed by the id of the element.  */
 #demo1 {
   color: #ffa500;
   text-align: center;
@@ -28,8 +29,8 @@ To select an element with a specific id, write a hash (#) character, followed by
 /* ----Note: An id name cannot start with a number!---- */
 
 /* THE CLASS SELECTOR 
-The class selector selects HTML elements with a specific class attribute.
-To select elements with a specific class, write a period (.) character, followed by the class name.   */
+  The class selector selects HTML elements with a specific class attribute.
+  To select elements with a specific class, write a period (.) character, followed by the class name.   */
 .demo1 {
   color: #ffff00;
   text-align: center;
@@ -49,14 +50,14 @@ h2.demo1 {
 /* ----Note: A class name cannot start with a number!---- */
 
 /* THE UNIVERSAL SELECTOR 
-The universal selector (*) selects all HTML elements on the page.  */
+  The universal selector (*) selects all HTML elements on the page.  */
 * {
   font-family: "Times New Roman", Times, serif;
   text-align: center;
 }
 
 /* THE GROUPING SELECTOR 
-The grouping selector selects all the HTML elements with the same style definitions. It will be better to group the selectors, to minimize the code. To group selectors, separate each selector with a comma (,).    */
+  The grouping selector selects all the HTML elements with the same style definitions. It will be better to group the selectors, to minimize the code. To group selectors, separate each selector with a comma (,).    */
 h4,
 h5,
 h6 {
@@ -66,33 +67,33 @@ h6 {
 }
 
 /* Review All CSS Simple Selectors 
-#id                        #firstname       Selects the element with id="firstname"; 
+#id                        #demo            Selects the element with id="demo"; 
 .class                     .intro           Selects all elements with class="intro"; 
-*	                       *             	Selects all elements 
+*	                         *                Selects all elements 
 element                    p  	            Selects all <p> elements 
 element,element,..	       div, p           Selects all <div> elements and all <p> elements 
 class,class,...            .a1.a2           Selects all element with a2 that is a descendant of an element with a1
 element.class              p.hello          Selects only <p> elements with class="hello"; */
 
-/*  CSS COMBINATORS  */
+/* COMBINATORS SELECTORS */
 /* Descendant Combinator (space)
-The descendant combinator matches all elements that are descendants (children, grandchildren, etc.) of a specified element. 
-The following example selects all <p> elements inside <div> elements: */
+  The descendant combinator matches all elements that are descendants (children, grandchildren, etc.) of a specified element. 
+  The following example selects all <p> elements inside <div> elements: */
 div.descendant p {
   color: #ee82ee;
 }
 
 /* Child Combinator (>)
-The child combinator selects all elements that are direct children of a specified element.
-The following example selects all <p> elements that are direct children of <div>:  */
+  The child combinator selects all elements that are direct children of a specified element.
+  The following example selects all <p> elements that are direct children of <div>:  */
 div > p {
   color: #5c80f5;
 }
 
 /* Next Sibling Combinator (+) 
-The next sibling combinator is used to select an element that is directly after a specific element.
-Sibling elements must have the same parent element.
-The following example selects the first <p> element that immediately follows a <h3>, and share the same parent:
+  The next sibling combinator is used to select an element that is directly after a specific element.
+  Sibling elements must have the same parent element.
+  The following example selects the first <p> element that immediately follows a <h3>, and share the same parent:
 */
 h3 + p {
   color: #8739e6;
@@ -102,9 +103,74 @@ h3 {
 }
 
 /* Subsequent-sibling Combinator (~)
-The subsequent-sibling combinator selects all elements that are next siblings of a specified element.
-The following example selects all <p> elements that are next siblings of <div>, and share the same parent:  */
+  The subsequent-sibling combinator selects all elements that are next siblings of a specified element.
+  The following example selects all <p> elements that are next siblings of <div>, and share the same parent:  */
 div.subsequent ~ p {
   color: rgb(255, 120, 120);
   font-style: italic;
 }
+
+/* Review All Combinator Selector 
+[attribute ~= value] là chọn từ chỉ có mỗi value đó vd abc.
+[attribute *= value] có value là chọn vd abc, abc1.
+[attribute |= value] chọn từ có value đứng đầu và "chỉ 1 từ" hoặc có dấu gạch nối từ vd  abc-123 
+[attribute ^= value]  chọn từ có value đứng đầu là đc vd có chữ abc đứng đầu là đc hết
+[attribute $=  a] chọn từ có kết thúc là chữ a là đc */
+
+/* ATTRIBUTE SELECTORS */
+/* [attribute]
+	Selects all elements with (a href) attribute  */
+[href] {
+  color: cadetblue;
+}
+/*  specific  */
+a[href] {
+  font-family: sans-serif;
+}
+p[href] {
+  font-family: monospace;
+}
+
+/* [attribute=value] 
+	Selects all elements with (target="_blank") */
+[target="_blank"] {
+  color: burlywood;
+}
+
+/* [attribute~=value] 
+  Selects all elements with (a title) attribute containing the word ("mi-ko") */
+[title~="mi-ko"] {
+  color: #ee82ee;
+}
+
+/* [attribute*=value]
+  Selects all elements with a href attribute value containing the substring "w3schools" */
+[title*="rai-den"] {
+  color: #8d01b3;
+}
+
+/* [attribute|=value] 
+  Selects all elements with a title attribute value equal to "yae" or starting with "yae-" */
+[title|="yae"] {
+  color: #ee0bcc;
+}
+
+/* [attribute^=value]
+	Selects all elements with a href attribute value that begins with "ei" */
+[title^="ei"] {
+  color: #35076e;
+}
+
+/* [attribute$=value] 
+	Selects all elements with a href attribute value ends with ".ei"*/
+[href$=".ei"] {
+  color: #442dd9;
+  font-weight: 700;
+}
+
+/* Review All Attribute Selector 
+[attribute ~= value] là chọn từ chỉ có mỗi value đó vd abc.
+[attribute *= value] có value là chọn vd abc, abc1.
+[attribute |= value] chọn từ có value đứng đầu và "chỉ 1 từ" hoặc có dấu gạch nối từ vd  abc-123 
+[attribute ^= value]  chọn từ có value đứng đầu là đc vd có chữ abc đứng đầu là đc hết
+[attribute $=  a] chọn từ có kết thúc là chữ a là đc */

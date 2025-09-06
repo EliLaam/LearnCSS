@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html>
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,55 +7,79 @@
     <title>Tôi học CSS</title>
   </head>
   <body>
-    <div>
+    <div class="simple-selector">
       <h1>Anh ấy hai mươi gì đấy</h1>
       <h1 id="demo1">Mạnh mẽ đôi bàn tay</h1>
       <h1 class="demo1">Đôi mắt luôn hy vọng, khát khao mơ mộng</h1>
       <h2 class="demo1">Hoài bão dâng trong lòng</h2>
     </div>
-    <div>
+    <div class="simple-selector">
       <h2 class="demo2 hehe">Dù nhiều gian nan vẫn thấy anh cười</h2>
       <h4>Ѕức mạnh cho bao người</h4>
       <h5>Cùng anh em sát cánh không rời</h5>
       <h6>Đi tự do muôn nơi</h6>
     </div>
-    <div class="descendant">
-      <p>
-        Tôi thấy như đang bừng sáng triệu trái tim Việt Nam
-        <section>
-          <p>đây là thẻ con của block</p>
-          <p>đây là thẻ con thứ 2</p>
-        </section>
-      </p>
-      <p>Cần lắm những con người giúp nhau xây đời</p>
-      <p>Nâng đỡ nhau không rời</p>
-    </div>
-    <div class="child">
-      <p>Biển trời bao la bát ngát đây mà</p>
-      <p>
-        Chúng ta vẫn một nhà
-        <section>
-          <p>đây là thẻ con của block, cháu của div</p>
-        </section>
-      </p>
-      <p>
-        Kề vai nhau dẫu có xa lạ
-        <section>
-          <p>đây là thẻ con</p>
-        </section>
-      </p>
-      <p>Ta cùng nhau vươn xa</p>
-    </div>
-    <!-- Thẻ p ngoài div sẽ không bị ảnh hưởng -->
-      <p>Việt Nam ta hướng về khát vọng chiến thắng</p>
-      <p>Ước mơ giữ trong ánh mắt</p>
-    <!-- Thẻ p đứng sau h3 sẽ bị tác động -->
-      <h3>Dâng đầy tình yêu mãi trong tim này</h3>
-      <p>Việt Nam ta hướng về khát vọng chiến thắng</p>
-    <!--  -->
-      <div class="subsequent">Tiến lên dẫu mưa, dẫu nắng</div>
-      <p>Đi về cùng nhau nắm tay vai kề</p>
-      <p>Tôi yêu Việt Nam&lt;3 </p>
+    <div class="combinator-selector">
+      <div class="descendant">
+        <p>
+          Tôi thấy như đang bừng sáng triệu trái tim Việt Nam
+          <section>
+            <p>đây là thẻ con của block</p>
+            <p>đây là thẻ con thứ 2</p>
+          </section>
+        </p>
+        <p>Cần lắm những con người giúp nhau xây đời</p>
+        <p>Nâng đỡ nhau không rời</p>
       </div>
+      <div class="child">
+        <p>Biển trời bao la bát ngát đây mà</p>
+        <p>
+          Chúng ta vẫn một nhà
+          <section>
+            <p>đây là thẻ con của block, cháu của div</p>
+          </section>
+        </p>
+        <p>
+          Kề vai nhau dẫu có xa lạ
+          <section>
+            <p>đây là thẻ con</p>
+          </section>
+        </p>
+        <p>Ta cùng nhau vươn xa</p>
+      </div>
+      <!-- Thẻ p ngoài div sẽ không bị ảnh hưởng -->
+        <p>Việt Nam ta hướng về khát vọng chiến thắng</p>
+        <p>Ước mơ giữ trong ánh mắt</p>
+      <div class="next-sibling">
+        <!-- Thẻ p đứng sau h3 sẽ bị tác động -->
+          <h3>Dâng đầy tình yêu mãi trong tim này</h3>
+          <p>Việt Nam ta hướng về khát vọng chiến thắng</p>
+      </div>
+        <div class="subsequent">Tiến lên dẫu mưa, dẫu nắng</div>
+        <p>Đi về cùng nhau nắm tay vai kề</p>
+        <p>Hẹ hẹ hẹ </p>
+        </div>
+    </div>
+    <div class="attribute-selector">
+      <!-- chọn all pt có thuộc tính href -->
+      <a href="">rai-den-mi-ko</a> <br>
+      <a href>a[attribute]</a>
+      <p href>p[attribute]</p>
+      <!-- chọn all pt có thuộc tính target và giá trị _blank -->
+      <a href="" target="_blank">[attribute=value]</a> <br>
+      <!-- chọn all pt có title chứa từ mi-ko --> 
+      <a href="" target="_self" title="mi-ko">[attribute~=value]</a>
+      <p title="mi--ko">không có từ hoặc sai từ mi-ko trong title</p>
+      <!-- có chuỗi rai-den trong title là chọn -->
+      <a href="" title="rai-den-mi-ko">[attribute*=value]</a>
+      <!-- có từ yae hoặc yae-...  -->
+      <p title="yae">[attribute|=value]</p>
+      <p title="yae-ei">[attribute|=value]</p>
+      <p title="yaeloveraiden">sai quy tắc</p>
+      <!-- bắt đầu bằng từ ei là được -->
+      <b title="eilovemiko">[attribute^=value]</b>
+      <!-- kết thúc bằng từ ei là được -->
+      <p href="mikolove.ei">[attribute$=value]</p>
+    </div>
   </body>
 </html>
