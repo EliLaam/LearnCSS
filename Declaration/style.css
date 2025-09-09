@@ -111,17 +111,19 @@ div.subsequent ~ p {
 }
 
 /* Review All Combinator Selector 
-[attribute ~= value] là chọn từ chỉ có mỗi value đó vd abc.
-[attribute *= value] có value là chọn vd abc, abc1.
-[attribute |= value] chọn từ có value đứng đầu và "chỉ 1 từ" hoặc có dấu gạch nối từ vd  abc-123 
-[attribute ^= value]  chọn từ có value đứng đầu là đc vd có chữ abc đứng đầu là đc hết
-[attribute $=  a] chọn từ có kết thúc là chữ a là đc */
+Child combinator	              div > p	            Selects every <p> element that are direct children of a <div> element
+Descendant combinator	          div p	              Selects all <p> elements inside <div> elements
+Namespace separator	            ns | h2	            Selects all <h2> elements in namespace ns
+Next-sibling combinator	        div + p	            Selects the first <p> element that is placed immediately after <div> ele
+Selector list	                  div, p	            Selects all <div> elements and all <p> elements
+Subsequent-sibling combinator	  p ~ ul	            Selects all <ul> elements that are preceded by a <p> element
+ */
 
 /* ATTRIBUTE SELECTORS */
 /* [attribute]
-	Selects all elements with (a href) attribute  */
-[href] {
-  color: cadetblue;
+	Selects all elements with (a lang) attribute  */
+[lang] {
+  color: rgb(88, 147, 149);
 }
 /*  specific  */
 a[href] {
@@ -174,3 +176,115 @@ p[href] {
 [attribute |= value] chọn từ có value đứng đầu và "chỉ 1 từ" hoặc có dấu gạch nối từ vd  abc-123 
 [attribute ^= value]  chọn từ có value đứng đầu là đc vd có chữ abc đứng đầu là đc hết
 [attribute $=  a] chọn từ có kết thúc là chữ a là đc */
+
+/* PSEUDO-CLASSES 
+Some common use for pseudo-classes:
+  Style an element when a user moves the mouse over it
+  Style visited and unvisited links differently
+  Style an element when it gets focus
+  Style valid/invalid/required/optional form elements
+  Style an element that is the first child of its parent
+# Pseudo-classes are always denoted by a single colon (:) followed by the pseudo-class name      */
+/* :hover 
+  Selects element on mouse over */
+.hover:hover {
+  color: #8739e6;
+}
+
+/* :active 
+  Selects the active link */
+.active:active {
+  color: #ff0000;
+}
+
+/* :link
+  Selects any unvisited link */
+.click:link {
+  color: #ffa500;
+}
+
+/* :visited 
+  Selects all visited links  */
+.click:visited {
+  color: rgb(127, 110, 237);
+}
+
+/* :empty
+  Selects any element that has no children (including text nodes) */
+/* no content */
+.empty:empty {
+  height: 200px;
+  width: 200px;
+  background-color: darkmagenta;
+}
+/* can be used for elements with content */
+.empty {
+  height: 200px;
+  width: 200px;
+  background-color: rgb(51, 71, 15);
+}
+
+/* :target 
+	Selects the current active target element */
+#target1:target {
+  color: #4b0082;
+  background-color: #a4a1f1;
+}
+#target2:target {
+  color: #f51915;
+  background-color: #a4a1f1;
+}
+#target3:target {
+  color: #ff1dce;
+  background-color: #a4a1f1;
+}
+
+/* :first-child  :last-child 
+  Selects the element that is the first/last child of its parent (among a group of sibling elements)   */
+p:first-child {
+  color: chartreuse;
+}
+p:last-child {
+  color: #3549fc;
+  font-style: oblique;
+}
+
+/* :nth-child(n) :nth-last-child(n)
+	Selects any <li> element that is the second child of its parent.(counting from the end for nth last child) */
+li:nth-child(2) {
+  color: brown;
+}
+li:nth-last-child(3) {
+  color: rgb(250, 143, 143);
+}
+
+/* :only-child 
+	Selects any <p> element that is the only child of its parent*/
+p:only-child {
+  font-size: large;
+  font-style: normal;
+  color: chocolate;
+}
+
+/* :first-of-type :last-of-type 
+  Selects the first element of its type among a group of sibling elements 
+  Selects any <p> element that is the last <p> element of its parent*/
+p:first-of-type {
+  color: rgb(220, 23, 204);
+}
+p:last-of-type {
+  color: #ff2ee0;
+}
+/* :nth-of-type(n) :nth-last-of-type :only-of-type
+  Selects any <li> element that is the ... <li> element of its parent 
+  Selects any <h2> element that is the second <h2> element of its parent, counting from the end
+  Selects any <h3> element that is the only <h3> element of its parent*/
+li:nth-of-type(2) {
+  font-style: italic;
+}
+h2:nth-last-of-type(2) {
+  color: #a4a1f1;
+}
+h3:only-of-type {
+  color: #ffa500;
+}

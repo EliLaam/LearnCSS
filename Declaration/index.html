@@ -20,6 +20,7 @@
       <h6>Đi tự do muôn nơi</h6>
     </div>
     <div class="combinator-selector">
+    <!-- emmet: div.combinator-selector>div*4>p*2  -->
       <div class="descendant">
         <p>
           Tôi thấy như đang bừng sáng triệu trái tim Việt Nam
@@ -61,10 +62,10 @@
         </div>
     </div>
     <div class="attribute-selector">
-      <!-- chọn all pt có thuộc tính href -->
-      <a href="">rai-den-mi-ko</a> <br>
-      <a href>a[attribute]</a>
-      <p href>p[attribute]</p>
+      <!-- chọn all pt có thuộc tính lang -->
+      <a lang="">rai-den-mi-ko</a> <br>
+      <a lang="">a[attribute]</a>
+      <p lang="">p[attribute]</p>
       <!-- chọn all pt có thuộc tính target và giá trị _blank -->
       <a href="" target="_blank">[attribute=value]</a> <br>
       <!-- chọn all pt có title chứa từ mi-ko --> 
@@ -80,6 +81,64 @@
       <b title="eilovemiko">[attribute^=value]</b>
       <!-- kết thúc bằng từ ei là được -->
       <p href="mikolove.ei">[attribute$=value]</p>
+    </div>
+    <div class="Pseudo-classes">
+      <!-- Lưu ý: phải có đường dẫn mới có tác dụng -->
+      <a href="hello" class="hover">change color on mouse hover</a> <br>
+      <a href="gei" class="active">change color when clicking on the link</a> <br>
+      <a href="https://youtube.com" class="click">format before and after clicking</a> <br>
+      <!-- định dạng khoảng trống, như điều kiện if -->
+      <!-- nếu thêm content vào sẽ định dạng khác -->
+      <div class="empty"></div> <hr>
+      <div class="target">
+        <!-- Tác động đến đích, không phải đường dẫn -->
+        <h2 id="target1">Raiden</h2>
+        <h2 id="target2">love</h2>
+        <h2 id="target3">Miko</h2> <hr>
+        <a href="#target1" >Husband is</a>
+        <a href="#target2" >Status</a>
+        <a href="#target3" >Wife is</a>
+      </div>
+      <div class="child-classes">
+      <!-- h (thẻ con) là thẻ đứng đầu trong thẻ div -->
+        <h1>tiêu đề</h1>
+        <li>du an 0</li>
+        <p>dự án 1</p>
+        <p>dự án 2</p>
+        <li>du an 3</li>
+        <ul>
+        <!-- p (thẻ con) là thẻ đứng đầu trong thẻ ul -->
+          <p>thẻ đứng đầu</p>
+          <li>item 1</li>
+          <li>item 2</li>
+          <li>item 3</li>
+          <li>item 4</li>
+          <li>item 5</li>
+          <p>Tổng kết</p>
+        <!-- p (thẻ con) là thẻ đứng cuối trong thẻ ul -->
+        </ul>
+        <li>du an 4</li>
+        <div>
+          <p>day la the con duy nhat</p>
+        </div>
+        <p>Tổng quát toàn bộ</p>
+      <!-- p (thẻ con) là thẻ đứng cuối trong thẻ div -->
+      </div>
+    </div>
+    <div class="of-type">
+    <!-- Loại này chỉ tính phần tử mà nó chọn, không quan tâm các phần tử khác -->
+      <h2>Thẻ con của div 1</h2>
+      <p>Thẻ p con (đầu lòng) của div 2</p>
+      <p>Thẻ p (cuối cùng) con của div 3</p>
+      <h2>Thẻ con của div 4
+        <ul>
+          <li>Thẻ con của ul 1</li>
+          <li>Thẻ con của ul 2</li>
+          <li>Thẻ con của ul 2</li>
+        </ul>
+      </h2>
+      <h3>Thẻ h3 duy nhất</h3>
+      <h2>Thẻ h2 (cuối cùng) con của div 5</h2>
     </div>
   </body>
 </html>
