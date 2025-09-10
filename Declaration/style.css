@@ -8,44 +8,51 @@ CSS SELECTORS:
     Attribute selectors (select elements based on an attribute or attribute value)
 */
 
-/* SIMPLE SELECTORS */
+/* ——————————————————————————————————————— 
+  SIMPLE SELECTORS 
+——————————————————————————————————————————————————— */
 /* THE ELEMENTS SELECTOR
   The element selector selects HTML elements based on the element name. */
-h1 {
-  color: #ff0000;
+
+/* delete comment(/*) to try ↓ */
+/*
+p {
   text-align: center;
-  font-size: medium;
+}  
+*/
+/*
+  LƯU Ý QUAN TRỌNG:
+  Trong dự án THỰC TẾ, các style trên sẽ bị xung đột với nhau.
+  Chúng ta cần làm cho chúng CỤ THỂ hơn bằng cách sử dụng bộ chọn con cháu (combinator).
+  Đây là cách làm đúng chuẩn để tránh xung đột với các phần tử p ở khu vực khác.
+*/
+.element-selector p {
+  color: #fb0000;
 }
 
 /* THE ID SELECTOR 
   The id selector uses the id attribute of an HTML element to select a specific element.
   The id of an element is unique within a page, so the id selector is used to select one unique element!
   To select an element with a specific id, write a hash (#) character, followed by the id of the element.  */
-#demo1 {
-  color: #ffa500;
-  text-align: center;
-  font-size: medium;
+#example {
+  color: #ff7308;
 }
 /* ----Note: An id name cannot start with a number!---- */
 
 /* THE CLASS SELECTOR 
   The class selector selects HTML elements with a specific class attribute.
   To select elements with a specific class, write a period (.) character, followed by the class name.   */
-.demo1 {
-  color: #ffff00;
-  text-align: center;
-  font-size: medium;
+.example {
+  color: #ffe600;
 }
-/* You can also specify that only specific HTML elements should be affected by a class. In this example only <p> elements with class="center" will be ...   */
-h2.demo1 {
-  color: #008000;
+/* You can also specify that only specific HTML elements should be affected by a class. In this example only <p> elements with class="example" will be ...   */
+p.example {
   text-align: center;
-  font-size: medium;
 }
-/* HTML elements can also refer to more than one class. In this example the <p> element will be styled according to class="demo1" and to class="hehe":    */
-.demo2.hehe {
-  text-align: center;
-  color: #0000ff;
+/* HTML elements can also refer to more than one class. In this example the <p> element will be styled according to class="two" and to class="class":    */
+.two.class {
+  font-style: italic;
+  color: #ffe600;
 }
 /* ----Note: A class name cannot start with a number!---- */
 
@@ -53,17 +60,15 @@ h2.demo1 {
   The universal selector (*) selects all HTML elements on the page.  */
 * {
   font-family: "Times New Roman", Times, serif;
-  text-align: center;
 }
 
 /* THE GROUPING SELECTOR 
   The grouping selector selects all the HTML elements with the same style definitions. It will be better to group the selectors, to minimize the code. To group selectors, separate each selector with a comma (,).    */
 h4,
 h5,
-h6 {
-  color: #4b0082;
-  text-align: center;
-  font-size: medium;
+p.grouping,
+#grouping {
+  color: #7bff00;
 }
 
 /* Review All CSS Simple Selectors 
@@ -75,39 +80,37 @@ element,element,..	       div, p           Selects all <div> elements and all <p
 class,class,...            .a1.a2           Selects all element with a2 that is a descendant of an element with a1
 element.class              p.hello          Selects only <p> elements with class="hello"; */
 
-/* COMBINATORS SELECTORS */
-/* Descendant Combinator (space)
+/* ——————————————————————————————————————— 
+  COMBINATOR SELECTORS 
+——————————————————————————————————————————————————— */
+/* 1. Descendant Combinator (space)
   The descendant combinator matches all elements that are descendants (children, grandchildren, etc.) of a specified element. 
   The following example selects all <p> elements inside <div> elements: */
-div.descendant p {
-  color: #ee82ee;
+div.descendant-combinator p {
+  color: #00ff44;
 }
 
-/* Child Combinator (>)
+/* 2. Child Combinator (>)
   The child combinator selects all elements that are direct children of a specified element.
   The following example selects all <p> elements that are direct children of <div>:  */
-div > p {
-  color: #5c80f5;
+div.child-combinator > p {
+  color: #00ffbf;
 }
 
-/* Next Sibling Combinator (+) 
+/* 3. Next Sibling Combinator (+) 
   The next sibling combinator is used to select an element that is directly after a specific element.
   Sibling elements must have the same parent element.
   The following example selects the first <p> element that immediately follows a <h3>, and share the same parent:
 */
-h3 + p {
-  color: #8739e6;
-}
-h3 {
-  color: #008000;
+.next-sibling-combinator h3 + p {
+  color: #00bbff;
 }
 
-/* Subsequent-sibling Combinator (~)
+/* 4. Subsequent-sibling Combinator (~)
   The subsequent-sibling combinator selects all elements that are next siblings of a specified element.
-  The following example selects all <p> elements that are next siblings of <div>, and share the same parent:  */
-div.subsequent ~ p {
-  color: rgb(255, 120, 120);
-  font-style: italic;
+  The following example selects all <p> elements that are next siblings of <h3>, and share the same parent:  */
+.subsequent-sibling-combinator h3 ~ p {
+  color: rgb(25, 0, 255);
 }
 
 /* Review All Combinator Selector 
@@ -119,65 +122,61 @@ Selector list	                  div, p	            Selects all <div> elements an
 Subsequent-sibling combinator	  p ~ ul	            Selects all <ul> elements that are preceded by a <p> element
  */
 
-/* ATTRIBUTE SELECTORS */
+/* ——————————————————————————————————————— 
+  ATTRIBUTE SELECTORS 
+——————————————————————————————————————————————————— */
 /* [attribute]
-	Selects all elements with (a lang) attribute  */
-[lang] {
-  color: rgb(88, 147, 149);
-}
-/*  specific  */
-a[href] {
-  font-family: sans-serif;
-}
-p[href] {
-  font-family: monospace;
+	Selects all elements with (a title) attribute  */
+.demo-attribute-exists [title] {
+  color: rgb(183, 0, 255);
 }
 
-/* [attribute=value] 
-	Selects all elements with (target="_blank") */
-[target="_blank"] {
-  color: burlywood;
+/* [attribute="value"] 
+	Selects all elements with (title="hello") */
+.demo-attribute-exact [title="hello"] {
+  color: rgb(248, 64, 248);
 }
 
-/* [attribute~=value] 
-  Selects all elements with (a title) attribute containing the word ("mi-ko") */
-[title~="mi-ko"] {
-  color: #ee82ee;
+/* [attribute~="value"] 
+  Selects all elements with (a title) attribute containing the word ("miko") */
+.demo-attribute-word [title~="miko"] {
+  color: rgb(255, 120, 239);
+}
+
+/* [attribute|="value"] 
+Selects all elements with a title attribute value equal to "en" or starting with "en-" */
+.demo-attribute-prefix-hyphen [lang|="en"] {
+  color: #820293;
+}
+
+/* [attribute^="value"]
+Selects all elements with a href attribute value that begins with "https" */
+.demo-attribute-starts-with [href="https"] {
+  color: #ff0b7d;
+}
+
+/* [attribute$="value"] 
+Selects all elements with a href attribute value ends with ".pdf"*/
+.demo-attribute-ends-with [href$=".pdf"] {
+  color: #c62323;
 }
 
 /* [attribute*=value]
-  Selects all elements with a href attribute value containing the substring "w3schools" */
-[title*="rai-den"] {
-  color: #8d01b3;
-}
-
-/* [attribute|=value] 
-  Selects all elements with a title attribute value equal to "yae" or starting with "yae-" */
-[title|="yae"] {
-  color: #ee0bcc;
-}
-
-/* [attribute^=value]
-	Selects all elements with a href attribute value that begins with "ei" */
-[title^="ei"] {
-  color: #35076e;
-}
-
-/* [attribute$=value] 
-	Selects all elements with a href attribute value ends with ".ei"*/
-[href$=".ei"] {
-  color: #442dd9;
-  font-weight: 700;
+  Selects all elements with a href attribute value containing the substring "word" */
+[title*="raiden"] {
+  color: #5000a0;
 }
 
 /* Review All Attribute Selector 
-[attribute ~= value] là chọn từ chỉ có mỗi value đó vd abc.
-[attribute *= value] có value là chọn vd abc, abc1.
+[attribute ~= value] Chọn phần tử có thuộc tính chứa một TỪ (word) hoàn chỉnh, được ngăn cách bởi khoảng trắng. (Đứng 1 mình)
 [attribute |= value] chọn từ có value đứng đầu và "chỉ 1 từ" hoặc có dấu gạch nối từ vd  abc-123 
 [attribute ^= value]  chọn từ có value đứng đầu là đc vd có chữ abc đứng đầu là đc hết
-[attribute $=  a] chọn từ có kết thúc là chữ a là đc */
+[attribute $=  a] chọn từ có kết thúc là chữ a là đc 
+[attribute *= value] có value là chọn vd abc, abc1.  */
 
-/* PSEUDO-CLASSES 
+/* ——————————————————————————————————————— 
+  PSEUDO-CLASSES 
+———————————————————————————————————————————————————  
 Some common use for pseudo-classes:
   Style an element when a user moves the mouse over it
   Style visited and unvisited links differently
@@ -185,40 +184,139 @@ Some common use for pseudo-classes:
   Style valid/invalid/required/optional form elements
   Style an element that is the first child of its parent
 # Pseudo-classes are always denoted by a single colon (:) followed by the pseudo-class name      */
+
+/* NHÓM 1: TRẠNG THÁI TƯƠNG TÁC CỦA NGƯỜI DÙNG */
 /* :hover 
   Selects element on mouse over */
-.hover:hover {
-  color: #8739e6;
+.demo-hover:hover {
+  color: #ffb700;
 }
 
 /* :active 
   Selects the active link */
-.active:active {
-  color: #ff0000;
+.demo-active:active {
+  color: #ff5555;
 }
 
+/* :focus 
+  Áp dụng style khi phần tử được "chọn" */
+.demo-focus:focus {
+  color: darkblue;
+  outline-color: #117f00;
+  border-width: 5px;
+}
+
+/* NHÓM 2: TRẠNG THÁI CỦA LIÊN KẾT (THẺ <a>) 
+  Để hoạt động đúng, các selector này nên được viết trong file CSS theo thứ tự L-V-H-A (Link-Visited-Hover-Active). */
 /* :link
   Selects any unvisited link */
-.click:link {
-  color: #ffa500;
+.demo-link-states:link {
+  color: #098cff;
 }
 
 /* :visited 
   Selects all visited links  */
-.click:visited {
-  color: rgb(127, 110, 237);
+.demo-link-states:visited {
+  color: rgb(50, 161, 19);
 }
 
+/* :hover */
+.demo-link-states:hover {
+  color: #a4a1f1;
+}
+
+/* :active */
+.demo-link-states:active {
+  color: #4b0082;
+}
+
+/* NHÓM 3: CẤU TRÚC VỊ TRÍ (CHILD SELECTORS)  */
+/* :first-child & :last-child & :only-child
+  Selects the element that is the first/last/only child of its parent (among a group of sibling elements)   */
+.demo-child-list li:first-child {
+  color: #fe4242;
+}
+
+.demo-child-list li:last-child {
+  color: #fa7a3e;
+}
+
+.parent-with-one-child:only-child {
+  color: #ffcf82;
+}
+
+/* :nth-child(n) 
+  Selects any <li> element that is the second child of its parent. */
+.demo-nth-child-list li:nth-child(2) {
+  color: rgb(108, 255, 55);
+}
+
+.demo-nth-child-list li:nth-child(odd) {
+  color: rgb(248, 255, 49);
+}
+
+.demo-nth-child-list li:nth-child(even) {
+  color: #00ffbf;
+}
+.demo-nth-child-list li:nth-child(2n + 1) {
+  font-style: italic;
+}
+
+/* Sự khác biệt giữa "-child" và "-of-type"
+  :first-child chọn phần tử đầu tiên NẾU NÓ KHỚP(vị trí). :first-of-type chọn phần tử đầu tiên CỦA LOẠI ĐÓ(kiểu loại).    */
+
+/* :first-of-type & :last-of-type & :only-of-type & :nth-of-type(n) & :nth-last-of-type(n)
+  Selects the first element of its type among a group of sibling elements 
+  Selects any <p> element that is the last <p> element of its parent  */
+.demo-type-vs-child h3:first-child {
+  color: #00bbff;
+}
+
+.demo-type-vs-child p:first-of-type {
+  color: #00ff44;
+}
+
+/* Error: */
+.demo-type-vs-child p:first-child {
+  color: #f51915;
+}
+/* Lúc này thẻ p không phải thẻ con đầu tiên */
+
+.demo-type-vs-child p:nth-of-type(2) {
+  color: #00ffbf;
+}
+
+.demo-type-vs-child div:only-of-type {
+  font-style: italic;
+}
+
+/* Error: */
+.demo-type-vs-child div:only-child {
+  color: #f51915;
+}
+/* Thẻ div không phải thẻ con duy nhất, tồn tại nhiều thẻ khác */
+
+.demo-type-vs-child p:last-of-type {
+  color: #4b0082;
+}
+
+/* Error: */
+.demo-type-vs-child p:last-child {
+  color: #f51915;
+}
+/* Không phải thẻ con cuối cùng, thẻ h5 mới là cuối cùng */
+
+/* NHÓM 4: TRẠNG THÁI NỘI DUNG & FORM */
 /* :empty
   Selects any element that has no children (including text nodes) */
 /* no content */
-.empty:empty {
+div[class*="empty"]:empty {
   height: 200px;
   width: 200px;
   background-color: darkmagenta;
 }
 /* can be used for elements with content */
-.empty {
+.demo-empty-comment {
   height: 200px;
   width: 200px;
   background-color: rgb(51, 71, 15);
@@ -226,65 +324,37 @@ Some common use for pseudo-classes:
 
 /* :target 
 	Selects the current active target element */
-#target1:target {
+#target-element:target {
   color: #4b0082;
   background-color: #a4a1f1;
 }
-#target2:target {
-  color: #f51915;
-  background-color: #a4a1f1;
-}
-#target3:target {
-  color: #ff1dce;
-  background-color: #a4a1f1;
+
+/* :checked
+  Selects the checkbox or radio ticked
+  BƯỚC 1: Style cho label ở trạng thái bình thường (tùy chọn)
+  Chúng ta dùng for="check" trong label để liên kết với id="check" của input, giúp người dùng có thể bấm vào chữ để tích checkbox. */
+label[for="check"] {
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* Thêm hiệu ứng chuyển động cho mượt */
 }
 
-/* :first-child  :last-child 
-  Selects the element that is the first/last child of its parent (among a group of sibling elements)   */
-p:first-child {
-  color: chartreuse;
-}
-p:last-child {
-  color: #3549fc;
-  font-style: oblique;
-}
-
-/* :nth-child(n) :nth-last-child(n)
-	Selects any <li> element that is the second child of its parent.(counting from the end for nth last child) */
-li:nth-child(2) {
-  color: brown;
-}
-li:nth-last-child(3) {
-  color: rgb(250, 143, 143);
+/*  BƯỚC 2: Style cho label KHI checkbox ĐƯỢC TÍCH (Đây là phần quan trọng nhất) 
+  Selector này đọc là:
+  "Hãy tìm một input có class là 'demo-check' KHI nó đang ở trạng thái :checked,"
+  "SAU ĐÓ, hãy chọn người anh em (+) đứng ngay sau nó (chính là thẻ label)"
+*/
+.demo-check:checked + label {
+  color: green;
+  font-weight: bold;
+  text-decoration: line-through;
+  /* Gạch ngang chữ */
 }
 
-/* :only-child 
-	Selects any <p> element that is the only child of its parent*/
-p:only-child {
-  font-size: large;
-  font-style: normal;
-  color: chocolate;
-}
-
-/* :first-of-type :last-of-type 
-  Selects the first element of its type among a group of sibling elements 
-  Selects any <p> element that is the last <p> element of its parent*/
-p:first-of-type {
-  color: rgb(220, 23, 204);
-}
-p:last-of-type {
-  color: #ff2ee0;
-}
-/* :nth-of-type(n) :nth-last-of-type :only-of-type
-  Selects any <li> element that is the ... <li> element of its parent 
-  Selects any <h2> element that is the second <h2> element of its parent, counting from the end
-  Selects any <h3> element that is the only <h3> element of its parent*/
-li:nth-of-type(2) {
-  font-style: italic;
-}
-h2:nth-last-of-type(2) {
-  color: #a4a1f1;
-}
-h3:only-of-type {
-  color: #ffa500;
+/* NHÓM 5: PHỦ ĐỊNH  */
+/* :not
+  Chọn tất cả các phần tử NGOẠI TRỪ những phần tử khớp với selector bên trong "not()".  */
+.demo-not-list li:not(.special-item) {
+  color: rgb(65, 176, 176);
 }

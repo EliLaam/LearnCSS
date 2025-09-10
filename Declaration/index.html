@@ -1,144 +1,297 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      h2{
+        color: rgba(9, 43, 179, 0.979);
+      }
+      h3{
+        color:rgb(87, 63, 195) ;
+        font-size: larger;
+      }
+
+    </style>
     <title>Tôi học CSS</title>
   </head>
   <body>
+    <!-- SIMPLE SELECTOR -->
     <div class="simple-selector">
-      <h1>Anh ấy hai mươi gì đấy</h1>
-      <h1 id="demo1">Mạnh mẽ đôi bàn tay</h1>
-      <h1 class="demo1">Đôi mắt luôn hy vọng, khát khao mơ mộng</h1>
-      <h2 class="demo1">Hoài bão dâng trong lòng</h2>
+      <h2>Simple Selector</h2><hr>
+
+        <section class="element-selector">
+          <h3>1. element</h3>
+          <p>Tất cả thẻ p nhận màu đỏ</p>
+          <p>Tất cả thẻ p nhận màu đỏ</p>
+          <p>Tất cả thẻ p nhận màu đỏ</p>
+          <p>Tất cả thẻ p nhận màu đỏ</p>
+        </section>
+
+        <section class="id-selector">
+          <h3>2. #id</h3>
+          <p id="example">Thẻ p mang id=example nhận màu cam</p>
+        </section>
+
+        <section class="class-selector">
+          <h3>3. .class</h3>
+          <p class="example">Thẻ p mang class=example nhận màu vàng (căn giữa cho cách 2)</p>
+          <p>In this example the &lt;p&gt; element will be styled according to class="two" and to class="class": </p>
+          <p class="two class">Thẻ p này có 2 class, nhận in nghiêng, màu vàng</p>
+        </section>
+
+        <section class="universal">
+          <h3>4. universal selector (*)</h3>
+          <p>Chọn tất cả các phần tử nhận phông chữ TNR, font size là medium. (Dành cho các định dạng chung)</p>
+        </section>
+
+        <section class="grouping">
+          <h3>5. element,element,class,id,..</h3>
+          <h4>Thẻ h4 trong nhóm nhận màu mint</h4>
+          <h5>Thẻ h5 trong nhóm nhận màu mint</h5>
+          <p class="grouping">Thẻ p mang class=grouping  nhận màu mint</p>
+          <p id="grouping">Thẻ p mang id=grouping nhận màu mint</p>
+        </section>
     </div>
-    <div class="simple-selector">
-      <h2 class="demo2 hehe">Dù nhiều gian nan vẫn thấy anh cười</h2>
-      <h4>Ѕức mạnh cho bao người</h4>
-      <h5>Cùng anh em sát cánh không rời</h5>
-      <h6>Đi tự do muôn nơi</h6>
-    </div>
+
+    <!-- COMBINATOR SELECTOR  -->
+    <!-- emmet: div.combinator-selector>h2{}-->
     <div class="combinator-selector">
-    <!-- emmet: div.combinator-selector>div*4>p*2  -->
-      <div class="descendant">
-        <p>
-          Tôi thấy như đang bừng sáng triệu trái tim Việt Nam
-          <section>
-            <p>đây là thẻ con của block</p>
-            <p>đây là thẻ con thứ 2</p>
-          </section>
-        </p>
-        <p>Cần lắm những con người giúp nhau xây đời</p>
-        <p>Nâng đỡ nhau không rời</p>
-      </div>
-      <div class="child">
-        <p>Biển trời bao la bát ngát đây mà</p>
-        <p>
-          Chúng ta vẫn một nhà
-          <section>
-            <p>đây là thẻ con của block, cháu của div</p>
-          </section>
-        </p>
-        <p>
-          Kề vai nhau dẫu có xa lạ
-          <section>
-            <p>đây là thẻ con</p>
-          </section>
-        </p>
-        <p>Ta cùng nhau vươn xa</p>
-      </div>
-      <!-- Thẻ p ngoài div sẽ không bị ảnh hưởng -->
-        <p>Việt Nam ta hướng về khát vọng chiến thắng</p>
-        <p>Ước mơ giữ trong ánh mắt</p>
-      <div class="next-sibling">
-        <!-- Thẻ p đứng sau h3 sẽ bị tác động -->
-          <h3>Dâng đầy tình yêu mãi trong tim này</h3>
-          <p>Việt Nam ta hướng về khát vọng chiến thắng</p>
-      </div>
-        <div class="subsequent">Tiến lên dẫu mưa, dẫu nắng</div>
-        <p>Đi về cùng nhau nắm tay vai kề</p>
-        <p>Hẹ hẹ hẹ </p>
-        </div>
-    </div>
+      <h2>Combinator Selector</h2><hr>
+        <section class="descendant-combinator">
+          <h3>1. Descendant Combinator (space)</h3>
+            <div class="descendant-combinator">
+              <p>Thẻ p con của div nhận màu xanh lá</p>
+              <ul>
+                <p>Thẻ cháu của div cũng nhận màu xanh lá</p>
+              </ul>
+            </div>
+        </section>
+
+        <section class="child-combinator">
+          <h3>2. Child Combinator (>)</h3>
+            <div class="child-combinator">
+              <p>Thẻ p con (trực tiếp) của div nhận màu aqua</p>
+              <ul>
+                <p>Thẻ cháu của div không nhận màu aqua</p> (gián tiếp)
+              </ul>
+            </div>
+            <p>Thẻ p ngoài div sẽ không bị ảnh hưởng</p>
+        </section>
+
+        <section class="next-sibling-combinator">
+          <h3>3. Next Sibling Combinator (+)</h3>
+            <p>Thẻ p đứng liền kề sau thẻ h3 nhận màu xanh nhạt </p>
+            <p>Cũng là thẻ p nhưng không đứng liền kề, không nhận màu</p>
+        </section>
+
+        <section class="subsequent-sibling-combinator">
+          <h3>4. Subsequent-sibling Combinator (~)</h3>
+            <p>Thẻ p đứng liền kề sau thẻ h3  nhận màu blue</p>
+            <p>Thẻ p không đứng liền kề sau thẻ h3 cũng nhận màu blue</p>
+        </section>
+    <!-- ATTRIBUTE SELECTOR  -->
     <div class="attribute-selector">
-      <!-- chọn all pt có thuộc tính lang -->
-      <a lang="">rai-den-mi-ko</a> <br>
-      <a lang="">a[attribute]</a>
-      <p lang="">p[attribute]</p>
-      <!-- chọn all pt có thuộc tính target và giá trị _blank -->
-      <a href="" target="_blank">[attribute=value]</a> <br>
-      <!-- chọn all pt có title chứa từ mi-ko --> 
-      <a href="" target="_self" title="mi-ko">[attribute~=value]</a>
-      <p title="mi--ko">không có từ hoặc sai từ mi-ko trong title</p>
-      <!-- có chuỗi rai-den trong title là chọn -->
-      <a href="" title="rai-den-mi-ko">[attribute*=value]</a>
-      <!-- có từ yae hoặc yae-...  -->
-      <p title="yae">[attribute|=value]</p>
-      <p title="yae-ei">[attribute|=value]</p>
-      <p title="yaeloveraiden">sai quy tắc</p>
-      <!-- bắt đầu bằng từ ei là được -->
-      <b title="eilovemiko">[attribute^=value]</b>
-      <!-- kết thúc bằng từ ei là được -->
-      <p href="mikolove.ei">[attribute$=value]</p>
+      <h2>Attribute Selector</h2><hr>
+        <p>Dùng để chọn các phần tử HTML dựa trên thuộc tính (attribute) hoặc giá trị của thuộc tính đó.</p>
+
+        <!-- [attribute] -->
+        <section class="demo-attribute-exists">
+          <h3>[attribute]</h3>
+            <p><strong>Công dụng:</strong> Chọn tất cả phần tử CÓ tồn tại một thuộc tính nào đó (bất kể giá trị là gì).</p>
+            <p title="any value">Thẻ p này CÓ thuộc tính 'title' -> Sẽ được chọn.</p>
+            <a title="some text">Thẻ a này CÓ thuộc tính 'title' -> Sẽ được chọn.</a>
+            <p>Thẻ p này KHÔNG CÓ 'title' -> Sẽ không được chọn.</p>
+        </section>
+
+        <!-- [attribute="value"] -->
+        <section class="demo-attribute-exact">
+          <h3>[attribute="value"]</h3>
+            <p><strong>Công dụng:</strong> Chọn phần tử có thuộc tính với giá trị KHỚP CHÍNH XÁC.</p>
+            <a title="hello">Thẻ a có title="hello" -> Sẽ được chọn.</a>
+            <a title="hello world">Thẻ a có title="hello world" -> KHÔNG được chọn (vì không khớp chính xác).</a>
+        </section>
+
+        <!-- [attribute~="value"] -->
+        <section class="demo-attribute-word">
+          <h3>[attribute~="value"]</h3>
+            <p><strong>Công dụng:</strong> Chọn phần tử có thuộc tính chứa một TỪ (word) hoàn chỉnh, được ngăn cách bởi khoảng trắng.</p>
+            <p title="raiden love miko">Title chứa từ "miko" -> Sẽ được chọn.</p>
+            <p title="raiden-miko love">Title KHÔNG chứa từ "miko" (từ ở đây là "raiden-miko") -> Không được chọn.</p>
+            <p title="raidenlovemiko">Title KHÔNG chứa từ "miko" (đây là một từ dính liền) -> Không được chọn.</p>
+        </section>
+
+        <!-- [attribute|="value"] -->
+        <section class="demo-attribute-prefix-hyphen">
+          <h3>[attribute|="value"]</h3>
+            <p><strong>Công dụng:</strong> Chọn phần tử có thuộc tính bằng chính xác giá trị, HOẶC bắt đầu bằng giá trị đó và theo sau là dấu gạch nối "-". Hữu ích cho mã ngôn ngữ.</p>
+            <p lang="en">Thẻ p có lang="en" -> Sẽ được chọn.</p>
+            <p lang="en-US">Thẻ p có lang="en-US" -> Sẽ được chọn.</p>
+            <p lang="english">Thẻ p có lang="english" -> KHÔNG được chọn.</p>
+        </section>
+
+        <!-- [attribute^="value"] -->
+        <section class="demo-attribute-starts-with">
+          <h3>[attribute^="value"]</h3>
+            <p><strong>Công dụng:</strong> Chọn phần tử có giá trị thuộc tính BẮT ĐẦU bằng một chuỗi ký tự.</p>
+            <a href="https://youtube.com">Link bắt đầu bằng "https" -> Sẽ được chọn.</a>
+            <a href="http://google.com">Link KHÔNG bắt đầu bằng "https" -> Không được chọn.</a>
+        </section>
+
+        <!-- [attribute$="value"] -->
+        <section class="demo-attribute-ends-with">
+          <h3>[attribute$="value"]</h3>
+            <p><strong>Công dụng:</strong> Chọn phần tử có giá trị thuộc tính KẾT THÚC bằng một chuỗi ký tự.</p>
+            <a href="/files/document.pdf">Link kết thúc bằng ".pdf" -> Sẽ được chọn.</a>
+            <a href="/files/archive.zip">Link KHÔNG kết thúc bằng ".pdf" -> Không được chọn.</a>
+        </section>
+
+        <!-- [attribute*="value"] -->
+        <section class="demo-attribute-contains">
+          <h3>[attribute*="value"]</h3>
+            <p><strong>Công dụng:</strong> Chọn phần tử có giá trị thuộc tính CHỨA một chuỗi ký tự ở bất kỳ vị trí nào.</p>
+            <p title="the great raiden shogun">Title chứa chuỗi "raiden" -> Sẽ được chọn.</p>
+            <p title="iloveraiden">Title chứa chuỗi "raiden" -> Sẽ được chọn.</p>
+            <p title="the shogun">Title KHÔNG chứa chuỗi "raiden" -> Không được chọn.</p>
+        </section>
     </div>
-    <div class="Pseudo-classes">
-      <!-- Lưu ý: phải có đường dẫn mới có tác dụng -->
-      <a href="hello" class="hover">change color on mouse hover</a> <br>
-      <a href="gei" class="active">change color when clicking on the link</a> <br>
-      <a href="https://youtube.com" class="click">format before and after clicking</a> <br>
-      <!-- định dạng khoảng trống, như điều kiện if -->
-      <!-- nếu thêm content vào sẽ định dạng khác -->
-      <div class="empty"></div> <hr>
-      <div class="target">
-        <!-- Tác động đến đích, không phải đường dẫn -->
-        <h2 id="target1">Raiden</h2>
-        <h2 id="target2">love</h2>
-        <h2 id="target3">Miko</h2> <hr>
-        <a href="#target1" >Husband is</a>
-        <a href="#target2" >Status</a>
-        <a href="#target3" >Wife is</a>
-      </div>
-      <div class="child-classes">
-      <!-- h (thẻ con) là thẻ đứng đầu trong thẻ div -->
-        <h1>tiêu đề</h1>
-        <li>du an 0</li>
-        <p>dự án 1</p>
-        <p>dự án 2</p>
-        <li>du an 3</li>
-        <ul>
-        <!-- p (thẻ con) là thẻ đứng đầu trong thẻ ul -->
-          <p>thẻ đứng đầu</p>
-          <li>item 1</li>
-          <li>item 2</li>
-          <li>item 3</li>
-          <li>item 4</li>
-          <li>item 5</li>
-          <p>Tổng kết</p>
-        <!-- p (thẻ con) là thẻ đứng cuối trong thẻ ul -->
-        </ul>
-        <li>du an 4</li>
-        <div>
-          <p>day la the con duy nhat</p>
+
+    <!-- Pseudo-classes -->
+    <div class="pseudo-classes">
+      <h2>Pseudo-classes (Lớp giả)</h2><hr>
+      <p>Dùng để chọn các phần tử HTML dựa trên một trạng thái đặc biệt, vị trí, hoặc tương tác của người dùng.</p>
+
+    <!-- ============================================= -->
+    <!--  NHÓM 1: TRẠNG THÁI TƯƠNG TÁC CỦA NGƯỜI DÙNG  -->
+    <!-- ============================================= -->
+      <section class="demo-user-action-states">
+        <h3>1. Trạng thái Tương tác Người dùng</h3>
+        <div class="example-container">
+            <h4>:hover</h4>
+            <p><strong>Công dụng:</strong> Áp dụng style khi người dùng di chuột qua phần tử.</p>
+            <p class="demo-hover">Di chuột qua tôi!</p>
         </div>
-        <p>Tổng quát toàn bộ</p>
-      <!-- p (thẻ con) là thẻ đứng cuối trong thẻ div -->
-      </div>
-    </div>
-    <div class="of-type">
-    <!-- Loại này chỉ tính phần tử mà nó chọn, không quan tâm các phần tử khác -->
-      <h2>Thẻ con của div 1</h2>
-      <p>Thẻ p con (đầu lòng) của div 2</p>
-      <p>Thẻ p (cuối cùng) con của div 3</p>
-      <h2>Thẻ con của div 4
-        <ul>
-          <li>Thẻ con của ul 1</li>
-          <li>Thẻ con của ul 2</li>
-          <li>Thẻ con của ul 2</li>
-        </ul>
-      </h2>
-      <h3>Thẻ h3 duy nhất</h3>
-      <h2>Thẻ h2 (cuối cùng) con của div 5</h2>
-    </div>
+
+        <div class="example-container">
+            <h4>:active</h4>
+            <p><strong>Công dụng:</strong> Áp dụng style trong khoảnh khắc người dùng bấm và giữ chuột vào phần tử.</p>
+            <button class="demo-active">Bấm và giữ tôi!</button>
+        </div>
+        
+        <div class="example-container">
+            <h4>:focus</h4>
+            <p><strong>Công dụng:</strong> Áp dụng style khi phần tử được "chọn" (bằng cách bấm vào hoặc dùng phím Tab). Rất quan trọng cho form.</p>
+            <input type="text" class="demo-focus" placeholder="Bấm vào đây để thấy focus">
+        </div>
+      </section>
+
+    <!-- ============================================= -->
+    <!-- NHÓM 2: TRẠNG THÁI CỦA LIÊN KẾT (THẺ <a>) -->
+    <!-- ============================================= -->
+    <section class="demo-link-states">
+        <h3>2. Trạng thái của Liên kết</h3>
+        <p><strong>Lưu ý:</strong> Để hoạt động đúng, các selector này nên được viết trong file CSS theo thứ tự L-V-H-A (Link-Visited-Hover-Active).</p>
+        <a class="demo-link-states" href="https://www.google.com/search?q=raiden+miko" target="_blank">
+            Link này sẽ đổi màu tùy trạng thái (chưa bấm, đã bấm, hover, active)
+        </a>
+    </section>
+
+    <!-- ============================================= -->
+    <!--   NHÓM 3: CẤU TRÚC VỊ TRÍ (CHILD SELECTORS)   -->
+    <!-- ============================================= -->
+    <section class="demo-structural-child">
+        <h3>3. Pseudo-classes về Cấu trúc (Rất quan trọng)</h3>
+
+        <div class="example-container">
+            <h4>:first-child & :last-child & :only-child</h4>
+            <p><strong>Công dụng:</strong> Chọn phần tử là con ĐẦU TIÊN, CUỐI CÙNG, hoặc DUY NHẤT của cha nó.</p>
+            <ul class="demo-child-list">
+                <li>Item 1 (Đây là first-child)</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4 (Đây là last-child)</li>
+            </ul>
+            <div class="parent-with-one-child">
+                <p>Tôi là con một (only-child)</p>
+            </div>
+        </div>
+
+        <div class="example-container">
+            <h4>:nth-child(n)</h4>
+            <p><strong>Công dụng:</strong> Chọn phần tử con ở vị trí thứ `n`.</p>
+            <ol class="demo-nth-child-list">
+                <li>Item 1</li>
+                <li>Item 2 (sẽ được chọn bởi nth-child(2))</li>
+                <li>Item 3 (sẽ được chọn bởi nth-child(odd))</li>
+                <li>Item 4 (sẽ được chọn bởi nth-child(even))</li>
+                <li>Item 5 (sẽ được chọn bởi nth-child(odd))</li>
+            </ol>
+        </div>
+        
+        <div class="example-container">
+            <h4>Sự khác biệt giữa "-child" và "-of-type"</h4>
+            <p><code>:first-child</code> chọn phần tử đầu tiên NẾU NÓ KHỚP(vị trí). <code>:first-of-type</code> chọn phần tử đầu tiên CỦA LOẠI ĐÓ(kiểu loại).</p>
+            <div class="demo-type-vs-child">
+                <h3>Đây là thẻ h3 (là first-child của div này)</h3>
+                <p>Tôi là thẻ p đầu tiên (p:first-of-type)</p>
+                <p>Tôi là thẻ p thứ hai (p:nth-of-type(2))</p>
+                <div>Một thẻ div duy nhất</div>
+                <p>Tôi là thẻ p cuối cùng (p:last-of-type)</p>
+                <h5>Tôi là thẻ h5 duy nhất và đứng cuối</h5>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================= -->
+    <!-- NHÓM 4: TRẠNG THÁI NỘI DUNG & FORM -->
+    <!-- ============================================= -->
+    <section class="demo-content-form-states">
+        <h3>4. Trạng thái Nội dung & Form</h3>
+        
+        <div class="example-container">
+            <h4>:empty</h4>
+            <p><strong>Công dụng:</strong> Chọn phần tử không có con, kể cả text.</p>
+            <div class="demo-empty"></div> <!-- Div này sẽ được chọn -->
+            <div class="demo-empty-not">Div này có comment, không được tính là empty</div>
+            <p>Ngoài ra có thể được sử dụng như thế này:</p>
+            <div class="demo-empty-comment">Div này có comment</div>
+        </div>
+        
+        <div class="example-container">
+            <h4>:target</h4>
+            <p><strong>Công dụng:</strong> Chọn phần tử có "id" khớp với "#"" trên URL.</p>
+            <div id="target-element" class="demo-target-box">
+                Khi bạn bấm link bên dưới, tôi sẽ đổi màu.
+            </div>
+            <a href="#target-element">Kích hoạt :target cho hộp trên</a>
+        </div>
+        
+        <div class="example-container">
+            <h4>:checked</h4>
+            <p><strong>Công dụng:</strong> Chọn các input dạng checkbox hoặc radio đã được tích.</p>
+            <input type="checkbox" id="check" class="demo-check">
+            <label for="check">Tích vào đây để style cho label này.</label>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- NHÓM 5: PHỦ ĐỊNH -->
+    <!-- ============================================= -->
+    <section class="demo-negation">
+        <h3>5. Lớp giả Phủ định</h3>
+        <div class="example-container">
+            <h4>:not()</h4>
+            <p><strong>Công dụng:</strong> Chọn tất cả các phần tử NGOẠI TRỪ những phần tử khớp với selector bên trong `not()`.</p>
+            <ul class="demo-not-list">
+                <li>Item bình thường</li>
+                <li class="special-item">Tôi là item đặc biệt, sẽ không bị ảnh hưởng</li>
+                <li>Item bình thường</li>
+                <li>Item bình thường</li>
+            </ul>
+        </div>
+    </section>
+
+    </div>  
   </body>
 </html>
