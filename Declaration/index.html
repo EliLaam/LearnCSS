@@ -17,7 +17,7 @@
     <title>Tôi học CSS</title>
   </head>
   <body>
-    <!-- SIMPLE SELECTOR -->
+    <!--------------SIMPLE SELECTOR----------------->
     <div class="simple-selector">
       <h2>Simple Selector</h2><hr>
 
@@ -48,14 +48,14 @@
 
         <section class="grouping">
           <h3>5. element,element,class,id,..</h3>
-          <h4>Thẻ h4 trong nhóm nhận màu mint</h4>
           <h5>Thẻ h5 trong nhóm nhận màu mint</h5>
+          <h6>Thẻ h6 trong nhóm nhận màu mint</h6>
           <p class="grouping">Thẻ p mang class=grouping  nhận màu mint</p>
           <p id="grouping">Thẻ p mang id=grouping nhận màu mint</p>
         </section>
     </div>
 
-    <!-- COMBINATOR SELECTOR  -->
+    <!--------------COMBINATOR SELECTOR--------------->
     <!-- emmet: div.combinator-selector>h2{}-->
     <div class="combinator-selector">
       <h2>Combinator Selector</h2><hr>
@@ -91,7 +91,8 @@
             <p>Thẻ p đứng liền kề sau thẻ h3  nhận màu blue</p>
             <p>Thẻ p không đứng liền kề sau thẻ h3 cũng nhận màu blue</p>
         </section>
-    <!-- ATTRIBUTE SELECTOR  -->
+
+    <!---------------ATTRIBUTE SELECTOR------------------>
     <div class="attribute-selector">
       <h2>Attribute Selector</h2><hr>
         <p>Dùng để chọn các phần tử HTML dựa trên thuộc tính (attribute) hoặc giá trị của thuộc tính đó.</p>
@@ -157,7 +158,7 @@
         </section>
     </div>
 
-    <!-- Pseudo-classes -->
+    <!-----------------Pseudo-classes------------------->
     <div class="pseudo-classes">
       <h2>Pseudo-classes (Lớp giả)</h2><hr>
       <p>Dùng để chọn các phần tử HTML dựa trên một trạng thái đặc biệt, vị trí, hoặc tương tác của người dùng.</p>
@@ -227,6 +228,7 @@
                 <li>Item 4 (sẽ được chọn bởi nth-child(even))</li>
                 <li>Item 5 (sẽ được chọn bởi nth-child(odd))</li>
             </ol>
+            <p>Thẻ theo Bước nhảy sẽ được in nghiêng</p>
         </div>
         
         <div class="example-container">
@@ -291,7 +293,60 @@
             </ul>
         </div>
     </section>
-
+    <p class="note-selector">Thứ tự ưu tiên: !important > Inline styles > Id selectors > Classes, attribute selectors and pseudo-classes > Elements and pseudo-elements > Universal selector   
+    </p>
     </div>  
+
+
+    <!----------------BOX MODEL-------------------->
+    <div class="box-model">
+      <h2>Box Model</h2>
+
+      <p>In CSS, the term "box model" is used when talking about web design and layout. <br>The CSS box model is essentially a box that wraps around every HTML element. <br>Every box consists of four parts: content, padding, borders and margins. </p> 
+      <p>Explanation of the different parts (from innermost part to outermost part): </p>
+
+      <ul>
+        <li><strong>Content</strong> - The content of the box, where text and images appear</li> 
+        <li><strong>Padding</strong> - Clears an area around the content. The padding is transparent</li> 
+        <li><strong>Border</strong> - A border that goes around the padding and content</li> 
+        <li><strong>Margin</strong> - Clears an area outside the border. The margin is transparent </li>
+      </ul>
+
+      <!-- PADDING -->
+      <section class="padding-demo">
+        <h3>Padding</h3>
+        <div class="box padding-demo1">
+          Tất cả các cạnh cách phần content 20px
+        </div>
+        <div class="box padding-demo2">
+          Mỗi cạch cách content có độ dài khác nhau
+        </div>
+        <div class="box padding-demo3">
+          Cách viết tắt khác
+        </div>
+      </section>
+
+      <!-- BORDER -->
+      <section class="border-demo">
+        <h3>Border</h3>
+        <div class="box border-demo1">
+          Syntax Border
+        </div>
+        <div class="box border-demo2">
+          Tạo kiểu cho mỗi cạnh
+        </div>
+        <div class="box border-demo3">
+          Cách viết tắt khác
+        </div>
+      </section>
+
+      <!-- MARGIN -->
+      <section>
+        <h3>Margin</h3>
+        <div class="box margin-demo1">Box này cách các pt khác 15px</div>
+        <div class="box margin-demo2">box này thụt qua phải bằng độ dài box trên</div>
+        <div class="box margin-demo3">box n mang margin âm</div>
+      </section>
+    </div>
   </body>
 </html>

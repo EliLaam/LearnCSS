@@ -64,8 +64,8 @@ p.example {
 
 /* THE GROUPING SELECTOR 
   The grouping selector selects all the HTML elements with the same style definitions. It will be better to group the selectors, to minimize the code. To group selectors, separate each selector with a comma (,).    */
-h4,
 h5,
+h6,
 p.grouping,
 #grouping {
   color: #7bff00;
@@ -357,4 +357,103 @@ label[for="check"] {
   Chọn tất cả các phần tử NGOẠI TRỪ những phần tử khớp với selector bên trong "not()".  */
 .demo-not-list li:not(.special-item) {
   color: rgb(65, 176, 176);
+}
+
+/* NOTE: !important > Inline styles > Id selectors > Classes, attribute selectors and pseudo-classes > Elements and pseudo-elements > Universal selector */
+.note-selector {
+  color: #981a1a;
+  font-size: larger;
+}
+
+/* ——————————————————————————————————————— 
+  BOX MODEL 
+——————————————————————————————————————————————————— */
+.box {
+  width: 150px;
+  height: 100px;
+  color: #ffa007;
+}
+
+/*  Padding  
+The CSS padding properties are used to generate space around an element's content, inside of any defined borders.  */
+div.padding-demo1 {
+  background-color: #117f00;
+  padding: 20px; /* Tất cả các cạnh cách content 20px */
+}
+
+div.padding-demo2 {
+  background-color: #56f13e;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 15px;
+}
+
+div.padding-demo3 {
+  background-color: #34a123;
+  /*       ↑↓    ←→         */
+  padding: 20px 15px;
+  /*        ↑    ←→    ↓    */
+  padding: 30px 25px 20px;
+  /*      ↑   →   ↓   ←     theo kim đồng hồ */
+  padding: 15px 25mm 10px 25px;
+}
+
+/*  Border  
+  The CSS border properties allow you to specify the style, width, and color of an element's border.*/
+div.border-demo1 {
+  border: 10px solid blue; /* Size, style, color */
+}
+
+div.border-demo2 {
+  border-top: 20px dashed black;
+  border-bottom: 20px solid black;
+  border-left: 10px dotted black;
+  border-right: 15px double black;
+}
+
+div.border-demo3 {
+  border-width: 10px 20px 25px 10px;
+  border-color: #333 #5000a0 #6d1478 #b3326e;
+  border-style: dashed double dotted ridge;
+}
+
+/* border-radius, có thể ghi chung ở trên*/
+.border-demo1 {
+  border-radius: 15%;
+}
+
+.border-demo2 {
+  border-radius: 15px 20px 25px 20px;
+}
+
+.border-demo3 {
+  border-top-right-radius: 50%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 5cm;
+  border-bottom-right-radius: 12mm;
+}
+
+/*  Margin  
+The CSS margin properties are used to create space around elements, outside of any defined borders.
+
+Margins define the distance between an element's border and the surrounding elements.*/
+
+/*   có những cách viết như padding   */
+.margin-demo1 {
+  background-color: #1e708e;
+  border: 10px solid blueviolet;
+  margin: 15px;
+}
+
+.margin-demo2 {
+  background-color: #298e1e;
+  border: 10px solid rgb(43, 113, 226);
+  margin-left: 184.2px;
+}
+
+.margin-demo3 {
+  background-color: #818e1e;
+  border: 10px solid rgb(43, 226, 159);
+  margin: -50px;
 }
