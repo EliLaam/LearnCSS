@@ -368,14 +368,17 @@ label[for="check"] {
 /* ——————————————————————————————————————— 
   BOX MODEL 
 ——————————————————————————————————————————————————— */
+
+/* TÌM HIỂU SÂU */
+/*  Padding  
+The CSS padding properties are used to generate space around an element's content, inside of any defined borders.  */
+
 .box {
   width: 150px;
   height: 100px;
   color: #ffa007;
 }
 
-/*  Padding  
-The CSS padding properties are used to generate space around an element's content, inside of any defined borders.  */
 div.padding-demo1 {
   background-color: #117f00;
   padding: 20px; /* Tất cả các cạnh cách content 20px */
@@ -400,7 +403,7 @@ div.padding-demo3 {
 }
 
 /*  Border  
-  The CSS border properties allow you to specify the style, width, and color of an element's border.*/
+The CSS border properties allow you to specify the style, width, and color of an element's border.*/
 div.border-demo1 {
   border: 10px solid blue; /* Size, style, color */
 }
@@ -455,5 +458,114 @@ Margins define the distance between an element's border and the surrounding elem
 .margin-demo3 {
   background-color: #818e1e;
   border: 10px solid rgb(43, 226, 159);
-  margin: -50px;
+  margin-left: -50px;
+}
+
+/* TỔNG QUAN */
+/*  CÁC LỚP CỦA HỘP (TỪ TRONG RA NGOÀI)  */
+/* Thêm một chút style cơ bản cho toàn bộ khu vực demo */
+
+.box-model-visualizer {
+  background-color: #f0f8ff; /* Màu nền nhạt để thấy rõ lớp Margin */
+  border: 1px dashed #ccc; /* Viền mờ cho container ngoài cùng */
+  /* min-height: 400px; Đảm bảo container đủ cao để chứa mọi thứ */
+  max-width: 400px;
+  padding: 50px;
+
+  /* == "ĐŨA THẦN" FLEXBOX ĐÂY RỒI! ==
+  Ba dòng này sẽ căn giữa một cách hoàn hảo cho phần tử con TRỰC TIẾP của nó (chính là .margin-layer)   */
+
+  /* display: flex; Bật chế độ Flexbox */
+  justify-content: center; /* Căn giữa theo chiều ngang*/
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+/* --- Style cho từng lớp --- */
+
+/* Lớp MARGIN (lớp ngoài cùng bên trong visualizer) */
+.margin-layer {
+  background-color: #ffe4e1; /* Màu của Margin (giả lập) */
+  padding: 30px; /* Khoảng cách 30px này chính là "vùng margin" mà chúng ta đang minh họa */
+
+  /* Lặp lại "đũa thần" để căn giữa cho ĐỨA CON của nó (là .border-layer) */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Lớp BORDER */
+.border-layer {
+  background-color: #fffacd; /* Màu của Border (giả lập) */
+  padding: 10px; /* Khoảng cách 10px này chính là "đường viền" */
+
+  /* Lại lặp lại "đũa thần" để căn giữa cho ĐỨA CON của nó (là .padding-layer) */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Lớp PADDING */
+.padding-layer {
+  background-color: #add8e6; /* Màu của Padding */
+  padding: 20px; /* Khoảng cách 20px này chính là VÙNG ĐỆM THẬT SỰ */
+  border: 2px solid #4682b4; /* Thêm border thật để thấy rõ hơn */
+
+  /* Lại lặp lại... bạn hiểu ý rồi đó ;) */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Lớp CONTENT (lớp trong cùng) */
+.content-layer {
+  background-color: #ffffff; /* Màu trắng cho vùng nội dung */
+  /* width: 300px;  nhận từ div cha, dùng sẽ vỡ layout*/
+  height: 100px;
+
+  padding: 40px; /* Thêm chút padding cho nội dung bên trong không bị dính sát lề */
+  border: 1px solid #333;
+
+  /* Lớp trong cùng cũng cần căn giữa TEXT của nó */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Đảm bảo text được căn giữa nếu có nhiều dòng */
+}
+
+/*  Tóm Lại Một Cách Đơn Giản Nhất:
+HTML là những chiếc hộp lồng vào nhau.
+"Nội dung" (content) của một hộp cha chính là TẤT CẢ những chiếc hộp con nằm ngay bên trong nó.
+Kích thước của hộp cha (nếu không được set cứng) sẽ được quyết định bởi tổng không gian mà tất cả các hộp con đó chiếm giữ.  */
+
+/* PHẦN KHÓ 1: MARGIN AUTO & MARGIN COLLAPSING */
+
+.margin-auto-example {
+  background-color: #34748b;
+  margin: 0 auto;
+}
+
+.collapse-box-1 {
+  background-color: #117f00;
+  margin-bottom: 30px;
+}
+
+.collapse-box-2 {
+  background-color: #34748b;
+  margin-top: 50px;
+}
+
+/* PHẦN KHÓ 2: BOX-SIZING (KHÁI NIỆM QUAN TRỌNG NHẤT) */
+.sizing-comparison-container .box {
+  width: 200px;
+  background-color: #4682b4;
+  padding: 40px;
+  border: 10px solid #333;
+}
+
+.sizing-content-box {
+  box-sizing: content-box;
+}
+
+.sizing-border-box {
+  box-sizing: border-box;
 }

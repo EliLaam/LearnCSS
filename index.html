@@ -299,6 +299,7 @@
 
 
     <!----------------BOX MODEL-------------------->
+    
     <section class="demo-box-model">
       <h2>Box Model</h2>
       <p>In CSS, the term "box model" is used when talking about web design and layout. <br>The CSS box model is essentially a box that wraps around every HTML element. <br>Every box consists of four parts: content, padding, borders and margins. </p> 
@@ -310,6 +311,43 @@
         <li><strong>Border</strong> - A border that goes around the padding and content</li> 
         <li><strong>Margin</strong> - Clears an area outside the border. The margin is transparent </li>
       </ul>
+
+        <!-- PADDING -->
+      <section class="padding-demo">
+        <h3>Padding</h3>
+        <div class="box padding-demo1">
+          Tất cả các cạnh cách phần content 20px
+        </div>
+        <div class="box padding-demo2">
+          Mỗi cạch cách content có độ dài khác nhau
+        </div>
+        <div class="box padding-demo3">
+          Cách viết tắt khác
+        </div>
+      </section>
+
+      <!-- BORDER -->
+      <section class="border-demo">
+        <h3>Border</h3>
+        <div class="box border-demo1">
+          Syntax Border
+        </div>
+        <div class="box border-demo2">
+          Tạo kiểu cho mỗi cạnh
+        </div>
+        <div class="box border-demo3">
+          Cách viết tắt khác
+        </div>
+      </section>
+
+      <!-- MARGIN -->
+      <section>
+        <h3>Margin</h3>
+        <div class="box margin-demo1">Box này cách các pt khác 15px</div>
+        <div class="box margin-demo2">box này thụt qua phải bằng độ dài box trên</div>
+        <div class="box margin-demo3">mang margin âm</div>
+      </section>
+
     <!-- ============================================= -->
     <!-- CÁC LỚP CỦA HỘP (TỪ TRONG RA NGOÀI) -->
     <!-- ============================================= -->
@@ -319,17 +357,16 @@
         
         <div class="box-model-visualizer">
             <div class="margin-layer">
-                Margin (Vùng lề - Bên ngoài)
-                <div class="border-layer">
-                    Border (Đường viền)
-                    <div class="padding-layer">
-                        Padding (Vùng đệm - Bên trong)
-                        <div class="content-layer">
-                            Content (Nội dung) <br>
-                            <code>width</code> & <code>height</code>
-                        </div>
+              Margin (Vùng lề)
+              <div class="border-layer">
+                  Border (Đường viền)
+                  <div class="padding-layer">
+                    Padding (Vùng đệm - Bên trong)
+                    <div class="content-layer">
+                      Content (Nội dung) <br>
                     </div>
-                </div>
+                  </div>
+              </div>
             </div>
         </div>
         </div>
@@ -351,6 +388,7 @@
             <p><code>margin-bottom</code> của hộp trên (30px) và <code>margin-top</code> của hộp dưới (50px) sẽ gộp lại và lấy giá trị lớn hơn (50px), chứ không phải cộng dồn thành 80px.</p>
             <div class="box collapse-box-1">Margin Bottom: 30px</div>
             <div class="box collapse-box-2">Margin Top: 50px</div>
+            <p>Dùng F12 hoặc kiểm tra trên web</p>
         </div>
       </div>
 
@@ -362,25 +400,32 @@
         <p>Thuộc tính này quyết định cách trình duyệt tính toán kích thước cuối cùng của một chiếc hộp.</p>
 
         <div class="sizing-comparison-container">
-            <!-- Ví dụ 1: Mặc định -->
-            <div class="sub-example">
-                <h4><code>box-sizing: content-box;</code> (Mặc định)</h4>
-                <p><strong>Rắc rối:</strong> Kích thước cuối cùng = <code>width</code> + <code>padding</code> + <code>border</code>.</p>
-                <div class="box sizing-content-box">
-                    Tôi được set <code>width: 200px;</code> nhưng kích thước thật lại to hơn nhiều!
-                </div>
-                <p><em>(Width 200px + Padding 40px + Border 10px = <strong>Rộng 250px</strong>)</em></p>
-            </div>
 
-            <!-- Ví dụ 2: Cách làm hiện đại -->
-            <div class="sub-example">
-                <h4><code>box-sizing: border-box;</code> (Cách làm hiện đại)</h4>
-                <p><strong>Dễ dàng:</strong> <code>width</code> chính là kích thước cuối cùng. Padding và Border sẽ tự chui vào bên trong.</p>
-                <div class="box sizing-border-box">
-                    Tôi được set <code>width: 200px;</code> và kích thước thật đúng là 200px!
-                </div>
-                <p><em>(Width 200px đã bao gồm Padding và Border)</em></p>
+          <!-- Ví dụ 1: Mặc định -->
+          <div class="sub-example">
+            <h4><code>box-sizing: content-box;</code> (Mặc định)</h4>
+
+            <p><strong>Rắc rối:</strong> Kích thước cuối cùng = <code>width</code> + <code>padding</code> + <code>border</code>.</p>
+
+            <div class="box sizing-content-box">
+              Tôi được set <code>width: 200px;</code> nhưng kích thước thật lại to hơn nhiều!
             </div>
+              <p><em>(Width 200px + Padding 40px + Border 10px = <strong>Rộng 250px</strong>)</em></p>
+              <p>Lưu ý: Nếu bạn kiểm tra trình duyệt mà thấy 10px border là 9.600 px: Đây là một "lỗi làm tròn" (rounding artifact) trong quá trình hiển thị của trình duyệt, không phải là lỗi logic trong code của bạn. <br>
+              Đối với trình duyệt: Nó "đúng", vì đó là con số chính xác nhất mà trình duyệt có thể báo cáo lại sau khi đã tính toán với Display Scaling.</n></p>
+          </div>
+
+          <!-- Ví dụ 2: Cách làm hiện đại -->
+          <div class="sub-example">
+            <h4><code>box-sizing: border-box;</code> (Cách làm hiện đại)</h4>
+
+            <p><strong>Dễ dàng:</strong> <code>width</code> chính là kích thước cuối cùng. Padding và Border sẽ tự chui vào bên trong.</p>
+
+            <div class="box sizing-border-box">
+              Tôi được set <code>width: 200px;</code> và kích thước thật đúng là 200px!
+            </div>
+              <p><em>(Width 200px đã bao gồm Padding và Border)</em></p>
+          </div>
         </div>
         
         <div class="sub-example">
@@ -393,6 +438,14 @@
             </code></pre>
         </div>
       </div>
+
+    <p style="color: rgb(97, 21, 168);">
+      Tóm Lại Một Cách Đơn Giản Nhất:
+        HTML là những chiếc hộp <strong>lồng vào nhau</strong>.
+        "Nội dung" (content) của một hộp cha chính là <strong>TẤT CẢ</strong> những chiếc <strong>hộp con</strong> nằm ngay bên trong nó.
+        Kích thước của hộp cha (nếu không được set cứng) sẽ được quyết định bởi <strong>tổng không gian mà tất cả các hộp con đó chiếm giữ</strong>.
+    </p>
+
     </section>
   </body>
 </html>
