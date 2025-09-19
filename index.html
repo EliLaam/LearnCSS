@@ -14,6 +14,7 @@
       }
       h1{
         color: rgb(31, 10, 135);
+        background-color: rgb(125, 93, 240);
         font-weight: bolder;
         font-family: sans-serif;
         line-height: 1.5;
@@ -21,7 +22,7 @@
         text-align: center;
         border: 3px solid rgb(30, 9, 77);
         border-radius: 12px;
-        background-color: rgb(125, 93, 240);
+        margin: 50px;
       }
     </style>
     <title>Tôi học CSS</title>
@@ -316,7 +317,7 @@
     </div>  
 
 
-    <!--------------- DEFAULT - RESET ----------------->
+    <!------------- DEFAULT - RESET ----------------->
 
     <div class="demo-default-reset">
       <h1>DEFAULT - RESET</h1>
@@ -326,6 +327,12 @@
         <p>Chẳng hạn như các thẻ heading, anchor,... 
           <a href="https://www.w3schools.com/cssref/css_default_values.php">Tìm hiểu thêm tại đây.</a>
         </p>
+        <div>
+          <p>By default, an a element is displayed like this:</p>
+          <a href="https://www.w3schools.com">Visit W3Schools.com!</a>
+          <p>A customized a element (changed text-decoration and color):</p>
+          <a style="text-decoration:none;color:red;" href="https://www.w3schools.com">Visit W3Schools.com!</a>
+        </div>
       </section>
 
       <section>
@@ -334,11 +341,67 @@
           <strong>Tại sao cần phải Reset CSS:</strong> Trình duyệt sẽ tự động thêm các thuộc tính mặc định để hiển thị các thẻ HTML, tuy nhiên <strong>các trình duyệt khác nhau có thể làm các thuộc tính được thêm vào sẽ khác nhau.</strong>
         </p>
         <p>
-          <strong>Cách làm:</strong>Copy toàn bộ phần code và cho vào file CSS <strong><em>riêng biệt (đặt tên là reset.css để dễ nhận dạng)</em></strong> -->>
+          <strong>Cách làm:</strong>Copy toàn bộ phần code và cho vào file CSS <strong><em>riêng biệt (đặt tên là reset.css để dễ nhận dạng)</em></strong> →→→→
           <a href="https://meyerweb.com/eric/tools/css/reset/">Truy cập vào đây</a> <br>
         </p>
         <p><strong >Lưu ý quan trọng:</strong> Hãy đặt <strong><em>file reset.cc</em></strong> ở vị trí trên cùng trước khi sử dụng các CSS khác để tránh file reset CSS bị ghi đè. <strong>Do thứ tự ưu tiên về vị trí đặt.</strong></p>
         <p></p>
+      </section>
+    </div>
+
+    <!------------------ COLOR -------------------->
+
+    <div class="demo-color">
+      <h1>COLOR</h1>
+      <section>
+        <p>CSS supports 140+ color names, HEX values, RGB values, RGBA values, HSL values, HSLA values, and opacity.</p>
+
+        <section>
+          <h2>RGBA Color</h2>
+          <p>RGBA color values are an extension of RGB colors with an alpha channel - which specifies the opacity for a color.</p>
+          <p>An RGBA color value is specified with:</p> 
+          <p><strong style="font-size: 24px;">rgba(red, green, blue, alpha)</strong></p>
+          <div class="rgba-demo">
+            Example:
+            <p class="p1">Green</p>
+            <p class="p2">Light green</p>
+            <p class="p3">Dark green</p>
+            <p class="p4">Pastel green</p>
+            <p class="p5">Violet</p>
+            <p class="p6">Pastel violet</p>
+          </div>
+        </section>
+
+        <section >
+          <h2>HSLA Colors</h2>
+          <p>HSLA color values are an extension of HSL colors with an alpha channel - which specifies the opacity for a color.</p>
+          <p>An HSLA color value is specified with:</p>
+          <p style="font-size: 24px;"><strong>hsla(hue, saturation, lightness, alpha)</strong></p>
+          <div class="hsla-demo">
+            Example:
+            <p class="p1">Red</p>
+            <p class="p2">Green</p>
+            <p class="p3">Blue</p>
+            <p class="p4">Grey</p>
+            <p class="p5">Yellow</p>
+            <p class="p6">Cerise</p>
+          </div>
+        </section>
+        <section>
+          <h2>CSS opacity Property</h2>
+          <p>The opacity property sets the opacity for the whole element (both background color and text will be opaque/transparent).</p> 
+          <p>The opacity property value must be a number between 0.0 (fully transparent) and 1.0 (fully opaque).</p>
+          <p><strong>Notice</strong> that the text inside the element will also be transparent/opaque!</p>
+          <div class="opacity-demo">
+            Example:
+            <p class="p1">Red</p>
+            <p class="p2">Green</p>
+            <p class="p3">Blue</p>
+            <p class="p4">Grey</p>
+            <p class="p5">Yellow</p>
+            <p class="p6">Cerise</p>
+          </div>
+        </section>
       </section>
     </div>
 
