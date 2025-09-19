@@ -12,14 +12,25 @@
         color:rgb(87, 63, 195) ;
         font-size: larger;
       }
-
+      h1{
+        color: rgb(31, 10, 135);
+        font-weight: bolder;
+        font-family: sans-serif;
+        line-height: 1.5;
+        text-transform: uppercase;
+        text-align: center;
+        border: 3px solid rgb(30, 9, 77);
+        border-radius: 12px;
+        background-color: rgb(125, 93, 240);
+      }
     </style>
     <title>Tôi học CSS</title>
   </head>
   <body>
     <!--------------SIMPLE SELECTOR----------------->
     <div class="simple-selector">
-      <h2>Simple Selector</h2><hr>
+      <h1>SELECTOR</h1>
+      <h2> Simple Selector</h2><hr>
 
         <section class="element-selector">
           <h3>1. element</h3>
@@ -160,14 +171,14 @@
 
     <!-----------------Pseudo-classes------------------->
     <div class="pseudo-classes">
-      <h2>Pseudo-classes (Lớp giả)</h2><hr>
+      <h1>Pseudo-classes</h1>
       <p>Dùng để chọn các phần tử HTML dựa trên một trạng thái đặc biệt, vị trí, hoặc tương tác của người dùng.</p>
 
-    <!-- ============================================= -->
-    <!--  NHÓM 1: TRẠNG THÁI TƯƠNG TÁC CỦA NGƯỜI DÙNG  -->
-    <!-- ============================================= -->
+      <!-- ============================================= -->
+      <!--  NHÓM 1: TRẠNG THÁI TƯƠNG TÁC CỦA NGƯỜI DÙNG  -->
+      <!-- ============================================= -->
       <section class="demo-user-action-states">
-        <h3>1. Trạng thái Tương tác Người dùng</h3>
+        <h2>1. Trạng thái Tương tác Người dùng</h2><hr>  
         <div class="example-container">
             <h4>:hover</h4>
             <p><strong>Công dụng:</strong> Áp dụng style khi người dùng di chuột qua phần tử.</p>
@@ -187,121 +198,154 @@
         </div>
       </section>
 
-    <!-- ============================================= -->
-    <!-- NHÓM 2: TRẠNG THÁI CỦA LIÊN KẾT (THẺ <a>) -->
-    <!-- ============================================= -->
-    <section class="demo-link-states">
-        <h3>2. Trạng thái của Liên kết</h3>
-        <p><strong>Lưu ý:</strong> Để hoạt động đúng, các selector này nên được viết trong file CSS theo thứ tự L-V-H-A (Link-Visited-Hover-Active).</p>
-        <a class="demo-link-states" href="https://www.google.com/search?q=raiden+miko" target="_blank">
-            Link này sẽ đổi màu tùy trạng thái (chưa bấm, đã bấm, hover, active)
-        </a>
-    </section>
+      <!-- ============================================= -->
+      <!-- NHÓM 2: TRẠNG THÁI CỦA LIÊN KẾT (THẺ <a>) -->
+      <!-- ============================================= -->
+      <section class="demo-link-states">
+          <h2>2. Trạng thái của Liên kết</h2><hr>
+          <p><strong>Lưu ý:</strong> Để hoạt động đúng, các selector này nên được viết trong file CSS theo thứ tự L-V-H-A (Link-Visited-Hover-Active).</p>
+          <a class="demo-link-states" href="https://www.google.com/search?q=raiden+miko" target="_blank">
+              Link này sẽ đổi màu tùy trạng thái (chưa bấm, đã bấm, hover, active)
+          </a>
+      </section>
 
-    <!-- ============================================= -->
-    <!--   NHÓM 3: CẤU TRÚC VỊ TRÍ (CHILD SELECTORS)   -->
-    <!-- ============================================= -->
-    <section class="demo-structural-child">
-        <h3>3. Pseudo-classes về Cấu trúc (Rất quan trọng)</h3>
+      <!-- ============================================= -->
+      <!--   NHÓM 3: CẤU TRÚC VỊ TRÍ (CHILD SELECTORS)   -->
+      <!-- ============================================= -->
+      <section class="demo-structural-child">
+          <h2>3. Pseudo-classes về Cấu trúc (Rất quan trọng)</h2><hr>
 
-        <div class="example-container">
-            <h4>:first-child & :last-child & :only-child</h4>
-            <p><strong>Công dụng:</strong> Chọn phần tử là con ĐẦU TIÊN, CUỐI CÙNG, hoặc DUY NHẤT của cha nó.</p>
-            <ul class="demo-child-list">
-                <li>Item 1 (Đây là first-child)</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-                <li>Item 4 (Đây là last-child)</li>
-            </ul>
-            <div class="parent-with-one-child">
-                <p>Tôi là con một (only-child)</p>
-            </div>
-        </div>
+          <div class="example-container">
+              <h4>:first-child & :last-child & :only-child</h4>
+              <p><strong>Công dụng:</strong> Chọn phần tử là con ĐẦU TIÊN, CUỐI CÙNG, hoặc DUY NHẤT của cha nó.</p>
+              <ul class="demo-child-list">
+                  <li>Item 1 (Đây là first-child)</li>
+                  <li>Item 2</li>
+                  <li>Item 3</li>
+                  <li>Item 4 (Đây là last-child)</li>
+              </ul>
+              <div class="parent-with-one-child">
+                  <p>Tôi là con một (only-child)</p>
+              </div>
+          </div>
 
-        <div class="example-container">
-            <h4>:nth-child(n)</h4>
-            <p><strong>Công dụng:</strong> Chọn phần tử con ở vị trí thứ `n`.</p>
-            <ol class="demo-nth-child-list">
-                <li>Item 1</li>
-                <li>Item 2 (sẽ được chọn bởi nth-child(2))</li>
-                <li>Item 3 (sẽ được chọn bởi nth-child(odd))</li>
-                <li>Item 4 (sẽ được chọn bởi nth-child(even))</li>
-                <li>Item 5 (sẽ được chọn bởi nth-child(odd))</li>
-            </ol>
-            <p>Thẻ theo Bước nhảy sẽ được in nghiêng</p>
-        </div>
-        
-        <div class="example-container">
-            <h4>Sự khác biệt giữa "-child" và "-of-type"</h4>
-            <p><code>:first-child</code> chọn phần tử đầu tiên NẾU NÓ KHỚP(vị trí). <code>:first-of-type</code> chọn phần tử đầu tiên CỦA LOẠI ĐÓ(kiểu loại).</p>
-            <div class="demo-type-vs-child">
-                <h3>Đây là thẻ h3 (là first-child của div này)</h3>
-                <p>Tôi là thẻ p đầu tiên (p:first-of-type)</p>
-                <p>Tôi là thẻ p thứ hai (p:nth-of-type(2))</p>
-                <div>Một thẻ div duy nhất</div>
-                <p>Tôi là thẻ p cuối cùng (p:last-of-type)</p>
-                <h5>Tôi là thẻ h5 duy nhất và đứng cuối</h5>
-            </div>
-        </div>
-    </section>
+          <div class="example-container">
+              <h4>:nth-child(n)</h4>
+              <p><strong>Công dụng:</strong> Chọn phần tử con ở vị trí thứ `n`.</p>
+              <ol class="demo-nth-child-list">
+                  <li>Item 1</li>
+                  <li>Item 2 (sẽ được chọn bởi nth-child(2))</li>
+                  <li>Item 3 (sẽ được chọn bởi nth-child(odd))</li>
+                  <li>Item 4 (sẽ được chọn bởi nth-child(even))</li>
+                  <li>Item 5 (sẽ được chọn bởi nth-child(odd))</li>
+              </ol>
+              <p>Thẻ theo Bước nhảy sẽ được in nghiêng</p>
+          </div>
+          
+          <div class="example-container">
+              <h4>Sự khác biệt giữa "-child" và "-of-type"</h4>
+              <p><code>:first-child</code> chọn phần tử đầu tiên NẾU NÓ KHỚP(vị trí). <code>:first-of-type</code> chọn phần tử đầu tiên CỦA LOẠI ĐÓ(kiểu loại).</p>
+              <div class="demo-type-vs-child">
+                  <h3>Đây là thẻ h3 (là first-child của div này)</h3>
+                  <p>Tôi là thẻ p đầu tiên (p:first-of-type)</p>
+                  <p>Tôi là thẻ p thứ hai (p:nth-of-type(2))</p>
+                  <div>Một thẻ div duy nhất</div>
+                  <p>Tôi là thẻ p cuối cùng (p:last-of-type)</p>
+                  <h5>Tôi là thẻ h5 duy nhất và đứng cuối</h5>
+              </div>
+          </div>
+      </section>
     
-    <!-- ============================================= -->
-    <!-- NHÓM 4: TRẠNG THÁI NỘI DUNG & FORM -->
-    <!-- ============================================= -->
-    <section class="demo-content-form-states">
-        <h3>4. Trạng thái Nội dung & Form</h3>
-        
-        <div class="example-container">
-            <h4>:empty</h4>
-            <p><strong>Công dụng:</strong> Chọn phần tử không có con, kể cả text.</p>
-            <div class="demo-empty"></div> <!-- Div này sẽ được chọn -->
-            <div class="demo-empty-not">Div này có comment, không được tính là empty</div>
-            <p>Ngoài ra có thể được sử dụng như thế này:</p>
-            <div class="demo-empty-comment">Div này có comment</div>
-        </div>
-        
-        <div class="example-container">
-            <h4>:target</h4>
-            <p><strong>Công dụng:</strong> Chọn phần tử có "id" khớp với "#"" trên URL.</p>
-            <div id="target-element" class="demo-target-box">
-                Khi bạn bấm link bên dưới, tôi sẽ đổi màu.
-            </div>
-            <a href="#target-element">Kích hoạt :target cho hộp trên</a>
-        </div>
-        
-        <div class="example-container">
-            <h4>:checked</h4>
-            <p><strong>Công dụng:</strong> Chọn các input dạng checkbox hoặc radio đã được tích.</p>
-            <input type="checkbox" id="check" class="demo-check">
-            <label for="check">Tích vào đây để style cho label này.</label>
-        </div>
-    </section>
+      <!-- ============================================= -->
+      <!-- NHÓM 4: TRẠNG THÁI NỘI DUNG & FORM -->
+      <!-- ============================================= -->
+      <section class="demo-content-form-states">
+          <h2>4. Trạng thái Nội dung & Form</h2><hr>
+          
+          <div class="example-container">
+              <h4>:empty</h4>
+              <p><strong>Công dụng:</strong> Chọn phần tử không có con, kể cả text.</p>
+              <div class="demo-empty"></div> <!-- Div này sẽ được chọn -->
+              <div class="demo-empty-not">Div này có comment, không được tính là empty</div>
+              <p>Ngoài ra có thể được sử dụng như thế này:</p>
+              <div class="demo-empty-comment">Div này có comment</div>
+          </div>
+          
+          <div class="example-container">
+              <h4>:target</h4>
+              <p><strong>Công dụng:</strong> Chọn phần tử có "id" khớp với "#"" trên URL.</p>
+              <div id="target-element" class="demo-target-box">
+                  Khi bạn bấm link bên dưới, tôi sẽ đổi màu.
+              </div>
+              <a href="#target-element">Kích hoạt :target cho hộp trên</a>
+          </div>
+          
+          <div class="example-container">
+              <h4>:checked</h4>
+              <p><strong>Công dụng:</strong> Chọn các input dạng checkbox hoặc radio đã được tích.</p>
+              <input type="checkbox" id="check" class="demo-check">
+              <label for="check">Tích vào đây để style cho label này.</label>
+          </div>
+      </section>
 
-    <!-- ============================================= -->
-    <!-- NHÓM 5: PHỦ ĐỊNH -->
-    <!-- ============================================= -->
-    <section class="demo-negation">
-        <h3>5. Lớp giả Phủ định</h3>
-        <div class="example-container">
-            <h4>:not()</h4>
-            <p><strong>Công dụng:</strong> Chọn tất cả các phần tử NGOẠI TRỪ những phần tử khớp với selector bên trong `not()`.</p>
-            <ul class="demo-not-list">
-                <li>Item bình thường</li>
-                <li class="special-item">Tôi là item đặc biệt, sẽ không bị ảnh hưởng</li>
-                <li>Item bình thường</li>
-                <li>Item bình thường</li>
-            </ul>
-        </div>
-    </section>
-    <p class="note-selector">Thứ tự ưu tiên: !important > Inline styles > Id selectors > Classes, attribute selectors and pseudo-classes > Elements and pseudo-elements > Universal selector   
-    </p>
+      <!-- ============================================= -->
+      <!-- NHÓM 5: PHỦ ĐỊNH -->
+      <!-- ============================================= -->
+      <section class="demo-negation">
+          <h2>5. Lớp giả Phủ định</h2><hr>
+          <div class="example-container">
+              <h4>:not()</h4>
+              <p><strong>Công dụng:</strong> Chọn tất cả các phần tử NGOẠI TRỪ những phần tử khớp với selector bên trong `not()`.</p>
+              <ul class="demo-not-list">
+                  <li>Item bình thường</li>
+                  <li class="special-item">Tôi là item đặc biệt, sẽ không bị ảnh hưởng</li>
+                  <li>Item bình thường</li>
+                  <li>Item bình thường</li>
+              </ul>
+          </div>
+      </section>
+      <p class="note-selector">
+        <strong>Thứ tự ưu tiên:</strong> !important > Inline styles > Id selectors > Classes, attribute selectors and pseudo-classes > Elements and pseudo-elements > Universal selector <br>
+      </p>
+      <p class="note-selector">
+        <strong> Inheritance - Kế thừa:</strong> Các <strong>phần tử con nhận</strong> được <strong>các giá trị thuộc tính</strong> thừa kế <strong>từ phần tử cha</strong>.
+      </p>
+      <p class="note-selector">
+        <strong>The Cascade (Tính Thác Nước):</strong> Các quy tắc CSS được đọc từ trên xuống dưới. Quy tắc nào được viết sau cùng sẽ ghi đè lên quy tắc trước đó (nếu chúng có cùng độ ưu tiên).
+      </p>
     </div>  
 
 
-    <!----------------BOX MODEL-------------------->
+    <!--------------- DEFAULT - RESET ----------------->
+
+    <div class="demo-default-reset">
+      <h1>DEFAULT - RESET</h1>
+      <section>
+        <h2>Default CSS</h2> <hr>
+        <p><strong>Default CSS Values:</strong> Trình duyệt sẽ tự động thêm các thuộc tính mặc định để hiện thị các thẻ cơ bản.</p>
+        <p>Chẳng hạn như các thẻ heading, anchor,... 
+          <a href="https://www.w3schools.com/cssref/css_default_values.php">Tìm hiểu thêm tại đây.</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>Reset CSS</h2> <hr>
+        <p>
+          <strong>Tại sao cần phải Reset CSS:</strong> Trình duyệt sẽ tự động thêm các thuộc tính mặc định để hiển thị các thẻ HTML, tuy nhiên <strong>các trình duyệt khác nhau có thể làm các thuộc tính được thêm vào sẽ khác nhau.</strong>
+        </p>
+        <p>
+          <strong>Cách làm:</strong>Copy toàn bộ phần code và cho vào file CSS <strong><em>riêng biệt (đặt tên là reset.css để dễ nhận dạng)</em></strong> -->>
+          <a href="https://meyerweb.com/eric/tools/css/reset/">Truy cập vào đây</a> <br>
+        </p>
+        <p><strong >Lưu ý quan trọng:</strong> Hãy đặt <strong><em>file reset.cc</em></strong> ở vị trí trên cùng trước khi sử dụng các CSS khác để tránh file reset CSS bị ghi đè. <strong>Do thứ tự ưu tiên về vị trí đặt.</strong></p>
+        <p></p>
+      </section>
+    </div>
+
+    <!---------------- BOX MODEL -------------------->
     
-    <section class="demo-box-model">
-      <h2>Box Model</h2>
+    <div class="demo-box-model">
+      <h1> Box Model </h1>
       <p>In CSS, the term "box model" is used when talking about web design and layout. <br>The CSS box model is essentially a box that wraps around every HTML element. <br>Every box consists of four parts: content, padding, borders and margins. </p> 
       <p>Mỗi phần tử HTML trên trang là một chiếc hộp chữ nhật. Mô hình hộp mô tả 4 lớp cấu tạo nên chiếc hộp đó.</p>
       <p>Explanation of the different parts (from innermost part to outermost part): </p>
@@ -314,7 +358,7 @@
 
         <!-- PADDING -->
       <section class="padding-demo">
-        <h3>Padding</h3>
+        <h2>Padding</h2><hr>
         <div class="box padding-demo1">
           Tất cả các cạnh cách phần content 20px
         </div>
@@ -328,7 +372,7 @@
 
       <!-- BORDER -->
       <section class="border-demo">
-        <h3>Border</h3>
+        <h2>Border</h2><hr>
         <div class="box border-demo1">
           Syntax Border
         </div>
@@ -342,7 +386,7 @@
 
       <!-- MARGIN -->
       <section>
-        <h3>Margin</h3>
+        <h2>Margin</h2><hr>
         <div class="box margin-demo1">Box này cách các pt khác 15px</div>
         <div class="box margin-demo2">box này thụt qua phải bằng độ dài box trên</div>
         <div class="box margin-demo3">mang margin âm</div>
@@ -351,8 +395,8 @@
     <!-- ============================================= -->
     <!-- CÁC LỚP CỦA HỘP (TỪ TRONG RA NGOÀI) -->
     <!-- ============================================= -->
-        <div class="example-container">
-        <h3>1. Bốn Lớp Của Một Chiếc Hộp</h3>
+        <section></section> class="example-container">
+        <h2>1. Bốn Lớp Của Một Chiếc Hộp</h2><hr>
         <p>Thứ tự từ trong ra ngoài: <strong>Content -> Padding -> Border -> Margin</strong>.</p>
         
         <div class="box-model-visualizer">
@@ -369,13 +413,13 @@
               </div>
             </div>
         </div>
-        </div>
+        </section>
 
     <!-- ============================================= -->
     <!-- PHẦN KHÓ 1: MARGIN AUTO & MARGIN COLLAPSING -->
     <!-- ============================================= -->
-      <div class="example-container">
-        <h3>2. Các "Tuyệt Chiêu" & "Cạm Bẫy" Của Margin</h3>
+      <section class="example-container">
+        <h2>2. Các "Tuyệt Chiêu" & "Cạm Bẫy" Của Margin</h2><hr>
 
         <div class="sub-example">
             <h4>Căn giữa với <code>margin: 0 auto;</code></h4>
@@ -390,13 +434,13 @@
             <div class="box collapse-box-2">Margin Top: 50px</div>
             <p>Dùng F12 hoặc kiểm tra trên web</p>
         </div>
-      </div>
+      </section>
 
     <!-- ============================================= -->
     <!-- PHẦN KHÓ 2: BOX-SIZING (KHÁI NIỆM QUAN TRỌNG NHẤT) -->
     <!-- ============================================= -->
-      <div class="example-container">
-        <h3>3. Khái Niệm Quan Trọng Nhất: <code>box-sizing</code></h3>
+      <section class="example-container">
+        <h2>3. Khái Niệm Quan Trọng Nhất: <code>box-sizing</code></h2><hr>
         <p>Thuộc tính này quyết định cách trình duyệt tính toán kích thước cuối cùng của một chiếc hộp.</p>
 
         <div class="sizing-comparison-container">
@@ -445,7 +489,7 @@
         "Nội dung" (content) của một hộp cha chính là <strong>TẤT CẢ</strong> những chiếc <strong>hộp con</strong> nằm ngay bên trong nó.
         Kích thước của hộp cha (nếu không được set cứng) sẽ được quyết định bởi <strong>tổng không gian mà tất cả các hộp con đó chiếm giữ</strong>.
     </p>
-
+ 
     </section>
   </body>
 </html>
