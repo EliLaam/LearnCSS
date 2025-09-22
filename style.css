@@ -449,6 +449,56 @@ a:link:active, a:visited:active {
 }
 
 /* ——————————————————————————————————————— 
+  CSS TYPOGRAPHY 
+——————————————————————————————————————————————————— Có thể sử dụng các font hệ thống, GG font, điều chỉnh kích thước kiểu dáng yêu thích    */
+.suse-font {
+  font-family: "SUSE Mono", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+/* The CSS font property is a shorthand property for:
+font-style
+font-variant
+font-weight
+font-stretch
+font-size
+line-height
+font-family */
+
+.suse-font2 {
+  /* font-family: "SUSE Mono", sans-serif;
+  font-optical-sizing: auto; dòng này không cần thiết
+  font-size: larger;
+  font-weight: bold;
+  font-style: italic; */
+  font: italic bold large "SUSE Mono", sans-serif;
+}
+
+.ink-font {
+  font-family: "Bitcount Prop Double Ink", system-ui;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0, "SZP1" 0,
+    "SZP2" 0, "XPN1" 0, "XPN2" 0, "YPN1" 0, "YPN2" 0;
+}
+/* Lưu ý quan trọng: Phải luôn có font thay thế đằng sau các font mình dùng, vì trình duyệt người khác có thể không tải font đó, font đứng sau sẽ hiển thị thay, thứ tự từ trái sang phải. */
+
+.property-font th {
+  text-align: left;
+  width: 200px;
+}
+
+/* Property	Description
+font	        -Sets all the font properties in one declaration
+font-family	  -Specifies the font family for text
+font-size	    -Specifies the font size of text
+font-style	  -Specifies the font style for text
+font-variant	-Specifies whether or not a text should be displayed in a small-caps font
+font-weight	  -Specifies the weight of a font */
+
+/* ——————————————————————————————————————— 
   BOX MODEL 
 ——————————————————————————————————————————————————— */
 
