@@ -361,7 +361,7 @@
         <p>CSS supports 140+ color names, HEX values, RGB values, RGBA values, HSL values, HSLA values, and opacity.</p>
 
         <section>
-          <h2>RGBA Color</h2>
+          <h2>RGBA Color</h2> <hr>
           <p>RGBA color values are an extension of RGB colors with an alpha channel - which specifies the opacity for a color.</p>
           <p>An RGBA color value is specified with:</p> 
           <p><strong style="font-size: 24px;">rgba(red, green, blue, alpha)</strong></p>
@@ -377,7 +377,7 @@
         </section>
 
         <section >
-          <h2>HSLA Colors</h2>
+          <h2>HSLA Colors</h2> <hr>
           <p>HSLA color values are an extension of HSL colors with an alpha channel - which specifies the opacity for a color.</p>
           <p>An HSLA color value is specified with:</p>
           <p style="font-size: 24px;"><strong>hsla(hue, saturation, lightness, alpha)</strong></p>
@@ -392,7 +392,7 @@
           </div>
         </section>
         <section>
-          <h2>CSS opacity Property</h2>
+          <h2>CSS opacity Property</h2> <hr>
           <p>The opacity property sets the opacity for the whole element (both background color and text will be opaque/transparent).</p> 
           <p>The opacity property value must be a number between 0.0 (fully transparent) and 1.0 (fully opaque).</p>
           <p><strong>Notice</strong> that the text inside the element will also be transparent/opaque!</p>
@@ -414,7 +414,7 @@
     <div>
       <h1>CSS TYPOGRAPHY</h1>
       <section>
-        <h2>Font Name & Font Family & GG Font</h2>
+        <h2>Font-</h2> <hr>
         <p>Font Name là tên của nhóm họ font. Truy cập Website <a href="https://fonts.google.com/">Google Font</a> để lựa chọn Font yêu thích. Làm theo hướng dẫn để thêm Font vào file.</p>
         <p>Khi khai báo font family, mỗi font sẽ được ngăn cách nhau bởi dấu phẩy. Hệ thống sẽ tìm theo thứ tự <strong>từ trái qua phải</strong>. Những font nào viết liền thì không cần viết trong dấu nháy kép "" hoặc nháy đơn'' (vd: Arial, roboto); font nào có dấu cách ở giữa thì phải viết trong dấu nháy kép hoặc nháy đơn (vd: "SUSE mono",...)</p>
         <div class="example-font">
@@ -428,30 +428,316 @@
           <tbody>
             <tr>
               <th>font</th>	        
-              <td>Sets all the font properties in one declaration</td> 
+              <td class="ex-font">Sets all the font properties in one declaration</td> 
             </tr>
+
+            <tr>
+              <td colspan="2" style="color: rgb(251, 93, 93);">
+                Shorthand property for <strong>font-style</strong> <em>font-variant</em> <strong>font-weight</strong> <em>font-size </em><strong>line-height</strong> and <em>font-family.</em>
+              </td>
+            </tr>
+
             <tr>
               <th>font-family</th>	        
-              <td>Specifies the font family for text</td> 
+              <td class="ex-font-family">Specifies the font family for text</td> 
             </tr>
+
             <tr>
               <th>font-size</th>	        
-              <td>Specifies the font size of text</td> 
+              <td class="ex-font-size">Specifies the font size of text</td> 
             </tr>
+
             <tr>
               <th>font-style</th>	        
-              <td>Specifies the font style for text </td> 
+              <td class="ex-font-style">Specifies the font style for text </td> 
             </tr>
+
             <tr>
               <th>font-variant</th>	        
-              <td>Specifies whether or not a text should be displayed in a small-caps font </td> 
+              <td class="ex-font-variant">Specifies whether or not a text should be displayed in a small-caps font </td> 
             </tr>
+
             <tr>
               <th>font-weight</th>	        
-              <td>Specifies the weight of a font </td> 
+              <td class="ex-font-weight">Specifies the weight of a font </td> 
+            </tr>
+            <tr>
+              <td colspan="2" style="color: rgb(255, 161, 78);">
+                If the font family doesn't provide the requested weight, it will use the closest available one.</td>
             </tr>
           </tbody>
         </Table>
+      </section>
+
+      <section>
+        <h2>Line-height & Letter-spacing</h2> <hr>
+        <div>
+          <h3>Line-height</h3>
+          <p>Defines the height of a single line of text.</p>
+  
+          <p>Reverts to the default value of the browser: </p>
+          <p class="demo-line-height">  
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero neque, blanditiis tempora modi ea mollitia?
+          </p>
+  
+          <p>You can use unitless values: the line height will be relative to the font size:</p>
+          <p class="demo-line-height2">  
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero neque, blanditiis tempora modi ea mollitia?
+          </p>
+  
+          <p>You can use pixel values.</p>
+          <p class="demo-line-height3">  
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero neque, blanditiis tempora modi ea mollitia?
+          </p>
+  
+          <p>You can use em values: like with unitless values, the line height will be relative to the font size.</p>
+          <p class="demo-line-height4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit perferendis odio temporibus beatae, consequuntur nobis!</p>
+        </div>
+
+        <div>
+          <h3>Letter-Spacing</h3>
+          <p>Defines the spacing between the characters of a block of text.</p>
+
+          <p>The spacing between the characters is normal.</p>
+          <p class="letter-spacing">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, natus ipsum consectetur consequuntur beatae quibusdam.</p>
+
+          <p>You can use pixel values.</p>
+          <p class="letter-spacing2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident maxime aut quidem quos eveniet impedit?</p>
+
+          <p>You can use em values: this allows the spacing to remain relative to the font-size.</p>
+          <p class="letter-spacing3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, vero! Eum iure ut a tempore.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Text-Effect</h2> <hr>
+        <div class="demo-text-align">
+          <h3>Text-align</h3>
+          <p>Defines how the text content of the element is horizontally aligned.</p>
+          <table class="demo-text-align">
+            <tr class="text-left">
+              <td>
+                The text content is aligned to the <strong>left</strong>.
+              </td>
+              <td>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores veritatis placeat debitis aspernatur molestias, quam adipisci? Voluptatem fuga ut distinctio.
+              </td>
+            <tr>
+
+            <tr class="text-right">
+              <td>
+                The text content is aligned to the <strong>right</strong>.
+              </td>
+              <td>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores veritatis placeat debitis aspernatur molestias, quam adipisci? Voluptatem fuga ut distinctio.
+              </td>
+            </tr>
+
+            <tr class="text-centered">
+              <td>
+                The text content is <strong>centered</strong>.
+              </td>
+              <td>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores veritatis placeat debitis aspernatur molestias, quam adipisci? Voluptatem fuga ut distinctio.
+              </td>
+            </tr>
+
+            <tr class="text-justified">
+              <td>
+                The text content is <strong>justified</strong>.
+              </td>
+              <td>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores veritatis placeat debitis aspernatur molestias, quam adipisci? Voluptatem fuga ut distinctio.
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="demo-text-decoration">
+          <h3>Text-decoration</h3>
+          <p>Removes any text decoration.</p>
+          <p>Underlines the text content.</p>
+          <p>Line-through the text content</p> 
+          <p>Over-line the text content</p> 
+        </div>
+
+        <div class="demo-text-indent">
+          <h3>Text-indent</h3>
+          <p>Defines the indentation of the element's first line of text.</p>
+
+          <table class="demo-text-indent">
+            <tr>
+              <td>The text is <strong>not indented</strong>.</td>
+              <td class="not-indented-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laudantium voluptatibus veniam earum quas voluptatem similique sint iusto ut aliquam.
+              </td>
+            </tr>
+  
+            <tr>
+              <td>
+                You can use <strong>numeric values</strong> like pixels, (r)em, percentages... <br>
+                Notice how only the first line is indented.
+              </td>
+              <td class="indented-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit omnis tempore consequatur! Vitae ratione dolor laudantium, nobis enim sed dolorem.</td>
+            </tr>
+  
+            <tr>
+              <td>You can also use<strong> negative</strong> values.</td>
+              <td class="negative-indented-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id earum, magnam dolor ducimus ab porro minima velit esse suscipit vel.
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="demo-text-overflow">
+          <h3>Text-overflow</h3>
+          <p>The CSS text-overflow property specifies how overflowed content that is not displayed should be signaled to the user. It can be clipped or rendered with ellipsis (...).</p>
+          <ul>Both of the following properties are <strong>required</strong> for <strong>text-overflow</strong> to take effect:
+            <li>
+              <strong style="color: brown; text-decoration: underline;">white-space: nowrap;</strong> 
+            </li>
+            <li>
+              <strong style="color: brown; text-decoration: underline;">overflow: hidden;</strong>
+            </li>
+          </ul>
+
+          <p>Here, the overflowed content is clipped:</p>
+          <div class="default-text-overflow">
+            You can use the overflow property when you want to have better control of the layout.
+          </div>
+
+          <p>Here, the overflowed content is rendered with ellipsis (...):</p>
+          <div class="clipped-text-overflow">
+            You can use the overflow property when you want to have better control of the layout.
+          </div>
+        </div>
+
+        <div class="demo-text-shadow">
+          <h3>Text-shadow</h3>
+          <p>
+            The CSS text-shadow property applies a shadow to text.</p>
+          <p>
+            In its simplest use, you only specify the horizontal and the vertical shadow. </p>
+          <p>
+            In addition, you can add a shadow color and blur effect.</p>
+
+          <p style="font-size: 20px;">Example:</p>
+
+          <p>Horizontal and vertical shadow:</p>
+          <div class="text-shadow1">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
+
+          <p>Horizontal and vertical shadow, with color:</p>
+          <div class="text-shadow2">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
+
+          <p>Then, add a blur effect to the shadow:</p>
+          <div class="text-shadow3">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
+
+          <p>Text-shadow with red neon glow:</p>
+          <div class="text-shadow4">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
+
+          <p> To add more than one shadow to the text, you can add a comma-separated list of shadows.-> <a href="https://www.w3schools.com/css/css3_shadows.asp">Multiple Shadows</a></p>
+        </div>
+
+        <div class="demo-text-transform">
+          <h3>Text-transform</h3>
+          <p>Defines how the text content should be transformed.</p>
+
+          <p>Removes any text transformation: the text will appear the same as in the HTML code.</p>
+          <p class="removes-text-transform">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur totam illo reprehenderit quia reiciendis? Amet aperiam illum optio modi rerum.</p>
+
+          <p>Turns the first letter of each word into a capital letter.</p>
+          <p class="capital-first-text-transform">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae tenetur sapiente consequatur ratione voluptatibus nam earum officia aliquid qui velit.</p>
+
+          <p>Turns all letters into capital letters.</p>
+          <p class="capital-all-text-transform">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione quidem at eos id fugiat eveniet nam ipsam est harum error?</p>
+
+          <p>Turns all letters into lowercase letters.</p>
+          <p  class="lowercase-text-transform">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum sapiente sequi distinctio! Placeat neque eos magni quos consequatur unde dolores!</p>
+        </div>     
+        
+        <div class="demo-word">
+          <h3>Word-wrap & Word-break & Word-spacing</h3>
+
+          <h4>The CSS word-wrap property allows long words to be able to be broken and wrap onto the next line. </h4>
+          <p>If a word is too long to fit within an area, it expands outside:</p>
+          <div class="no-word-wrap">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modilaudantiumquopossimuscumqueobcaecati excepturi.
+          </div>
+
+          <p>The word-wrap property allows you to force the text to wrap - even if it means splitting it in the middle of a word:</p>
+          <div class="word-wrap">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minimaearumcorruptivoluptatum hic similique! Facere.
+          </div>
+
+          <h4>The CSS word-break property specifies how words should break when reaching the end of a line.</h4>
+          <ul>This property can take one of the following values:
+            <li>normal - This is default. Uses the default line breaking rules of the language</li>
+            <li>break-all - Allows words to be broken at any character to prevent overflow</li>
+            <li>keep-all - Prevents words from breaking</li>
+          </ul>
+
+          <p>Here, we use normal:</p>
+          <div class="word-break">
+            This paragraph contains some text. This line will-break-at-hyphens.
+          </div>
+
+          <p>Here, we use break-all:</p>
+          <div class="word-break2">
+            This paragraph contains some text. The lines will break at any character.
+          </div>
+
+          <h4>The word-spacing defines the spacing between words of a block of text.</h4>
+          <p class="word-spacing">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, iste! Enim, amet reiciendis. Sunt, sed?
+          </p>
+        </div>
+
+        <div>
+          <h3>White-space</h3>
+          <p>Defines how the element's white space is handled.</p>
+          <h4>white-space: nowrap:</h4>
+          <p class="white-space-nowrap">
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+          </p>
+
+          <h4>white-space: normal:</h4>
+          <p class="white-space-normal">
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+          </p>
+
+          <h4>white-space: pre:</h4>
+          <p class="white-space-pre">
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+          This is some text. This is some text. This is some text.
+          </p>
+
+          <h4>white-space: pre-wrap:</h4>
+          <p class="white-space-pre-wrap">
+          This is some text. This is s
+          ome text. This is some text.
+          This is some text. This is s
+          ome text. This is some text.
+          This is some text. This is some te
+          xt. This is some text.
+          This is some text. This i
+          s some text. This is some text.
+          </p>
+
+          <h4>white-space: pre-line:</h4>
+          <p class="white-space-pre-line">
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+            This is some text. This is some text. This is some text.
+          </p>
+        </div>
       </section>
     </div>
 
