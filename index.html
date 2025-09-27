@@ -623,7 +623,89 @@
       </section>
     </div>
     
-    <!------------- DEFAULT - RESET ----------------->
+    <!--------------------UNITS------------------------>
+
+    <div class="demo-units">
+      <h1>UNITS</h1>
+    <section>
+      <p>CSS has several different units for expressing a length.</p>
+      <p>Many CSS properties take "length" values, such as width, margin, padding, font-size, etc.</p>
+      <p>The length value is a number followed by a length unit, such as px, em, rem, etc.</p>
+      <ul>CSS has two types of length units:
+        <li>Absolute units</li>
+        <li>Relative units</li>
+      </ul>
+
+      <div>
+        <h2>Absolute units</h2> <hr>
+        <p>The most used absolute unit is px (pixels). Kích thước cố định.</p>
+        <h5 class="demo-pixel">Dòng chữ này đang có cỡ chữ là 15px</h5>
+      </div>
+
+      <div>
+        <h2>Relative units</h2> <hr>
+        <p>Relative units specify a length relative to another length <strong>(like parent element, root element, or viewport)</strong>.</p>
+        <p>Relative length units scale better between different screen sizes.</p>
+        <p><strong>Note</strong>: Hãy co dãn trình duyệt để thấy thay đổi, hoặc F12.</p>
+
+        <h3>%: percent</h3>
+        <p>Relative to <strong>the size</strong> of <strong>the parent element</strong>.</p>
+        <div class="demo-percent">
+          <p>Thẻ p này có font size 150% so với phần tử cha</p>
+        </div>
+        <div class="demo-percent2">
+          <div>
+            Thẻ div này có kích cỡ 50% so với phần tử cha
+          </div>
+        </div>
+
+        <h3>em </h3>
+        <p>Tương đối so với font-size (nên ưu tiên rem).</p>
+
+        <div class="demo-em"> 
+          <p>em: Relative to <strong>the font-size</strong> of <strong>the parent element</strong></p>
+          <h5>These paragraphs have a calculated line-height of: 2x16px = 32px.</h5>
+          <div>The font-size of the div element is set to 30px. <span>The span element inside the div element has a font-size of 0.5em, which equals to 0.5x30 = 15px</span>.</div>
+        </div>
+        
+        <h3>rem</h3>
+        <div class="demo-rem"> 
+          <p>rem: Relative to <strong>the font-size</strong> of <strong>the root HTML element</strong></p>
+          <p>The font-size of this document is 16px.</p>
+          <div>The font-size of this div element is 2rem.</div>
+          <p>The rem unit sets the font-size relative to the browsers base font-size, and will not inherit from its parents.</p>
+        </div>
+
+        <h3>vw (view width)</h3>
+        <div class="demo-vw">
+          <p>	Relative to 1% of the width of the viewport*. 100vw = full width of the viewport.</p>
+          <h6>5% of viewport width</h6>
+          <p>Resize the width of the browser window to see how the font-size of h6 changes.</p>
+          <p>1vw = 1% of viewport width.</p>
+        </div>
+        
+        <h3>vh (view height)</h3>
+        <div class="demo-vh">
+          <p>	Relative to 1% of the height of the viewport*. 100vh = full height of the viewport</p>
+          <h6>5% of viewport height</h6>
+          <p>Resize the height of the browser window to see how the font-size of h6 changes.</p>
+          <p>1vw = 1% of viewport height.</p>
+        </div>
+
+        <div class="example-vh-vw">
+          <h4>Ví dụ dễ nhìn hơn:</h4>
+          <div> khối này chiếm 50% viewport
+            <div>
+              Khối này chiếm 30% view width
+              20% view height.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+
+    <!--------------- DEFAULT - RESET ----------------->
     
     <div class="demo-default-reset">
       <h1>DEFAULT - RESET</h1>

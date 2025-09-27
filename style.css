@@ -572,6 +572,7 @@ Defines how the text content should be transformed.*/
 
 /* Word-wrap & Word-break & Word-spacing */
 /* Allow long words to be able to be broken and wrap onto the next line:  */
+
 .no-word-wrap {
   width: 170px;
   border: 1px solid #000000;
@@ -590,6 +591,7 @@ This property can take one of the following values:
 normal - This is default. Uses the default line breaking rules of the language
 break-all - Allows words to be broken at any character to prevent overflow
 keep-all - Prevents words from breaking */
+
 .word-break {
   width: 170px;
   border: 1px solid #000000;
@@ -611,7 +613,7 @@ You can use pixel, em values: this allows the spacing to remain relative to the 
 }
 
 /* White-space 
-Defines how the element's white  space is handled  */
+Defines how the element's white  space is handled */
 .white-space-nowrap {
   white-space: nowrap;
 }
@@ -628,9 +630,101 @@ Defines how the element's white  space is handled  */
   white-space: pre-line;
 }
 
-/* ——————————————————————————————————————— 
+/* ———————————————————————————————————— 
+  UNITS
+  ——————————————————————————————————————————————— */
+/* Many CSS properties take "length" values, such as width, margin, padding, font-size, etc.
+The length value is a number followed by a length unit, such as px, em, rem, etc.
+CSS has two types of length units:
+Absolute units
+Relative units */
+
+/* Absolute units 
+  The most used absolute unit is px (pixels). */
+
+.demo-pixel {
+  font-size: 15px;
+  color: black;
+}
+
+/* Relative units */
+/* %
+  Relative to the size of the parent element.*/
+.demo-percent {
+  background-color: #1e708e;
+}
+.demo-percent p {
+  font-size: 150%;
+}
+
+.demo-percent2 {
+  background-color: #00bbff;
+  height: 200px;
+  width: 200px;
+}
+.demo-percent2 div {
+  background-color: #ef5353;
+  width: 50%;
+  height: 50%;
+}
+
+/* em & rem
+  Tương đối so với font-size (nên ưu tiên rem). 
+  em: so với phần tử gốc */
+.demo-em h5 {
+  font-size: 16px; /* đây là gốc font */
+  line-height: 2em; /* 2x16px = 32px */
+  color: #117f00;
+}
+
+.demo-em div {
+  font-size: 30px; /* đây là gốc font */
+  border: 1px solid black;
+}
+
+.demo-em span {
+  font-size: 0.5em; /* 0.5x30px = 15px */
+}
+
+/* rem: so với root html */
+body {
+  font-size: 16px;
+}
+.demo-rem div {
+  font-size: 2rem; /* 2x16 = 32px */
+  border: 1px solid black;
+}
+
+/* vw ( view width ) 
+  Relative to 1% of the width of the viewport*. 100vw = full width of the viewport.*/
+.demo-vw h6 {
+  font-size: 5vw;
+  margin: auto;
+}
+
+/* vh ( view height )
+  Relative to 1% of the height of the viewport*. 100vh = full height of the viewport*/
+.demo-vh h6 {
+  font-size: 5vh;
+  margin: auto;
+}
+
+/* Ví dụ dễ nhìn hơn */
+.example-vh-vw > div {
+  height: 50vh; /* chiếm 50% chiều cao */
+  width: 50vw; /* chiếm 50% chiều ngang */
+  background-color: #098cff;
+}
+
+.example-vh-vw div div {
+  height: 20vh;
+  width: 30vw;
+  background-color: #1e708e;
+}
+
+/* ————————————————————————————————————— 
   DEFAULT - RESET
-  ——————————————————————————————————————————————————— */
+  ——————————————————————————————————————————————— */
 /* Default CSS Values 
   a:link, a:visited { 
     color:  browser's internal value ;
