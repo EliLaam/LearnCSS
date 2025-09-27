@@ -72,6 +72,7 @@
     </div>
 
     <!--------------COMBINATOR SELECTOR--------------->
+
     <!-- emmet: div.combinator-selector>h2{}-->
     <div class="combinator-selector">
       <h2>Combinator Selector</h2><hr>
@@ -174,192 +175,18 @@
         </section>
     </div>
 
-    <!-----------------Pseudo-classes------------------->
-    <div class="pseudo-classes">
-      <h1>Pseudo-classes</h1>
-      <p>Dùng để chọn các phần tử HTML dựa trên một trạng thái đặc biệt, vị trí, hoặc tương tác của người dùng.</p>
-
-      <!-- ============================================= -->
-      <!--  NHÓM 1: TRẠNG THÁI TƯƠNG TÁC CỦA NGƯỜI DÙNG  -->
-      <!-- ============================================= -->
-      <section class="demo-user-action-states">
-        <h2>1. Trạng thái Tương tác Người dùng</h2><hr>  
-        <div class="example-container">
-            <h4>:hover</h4>
-            <p><strong>Công dụng:</strong> Áp dụng style khi người dùng di chuột qua phần tử.</p>
-            <p class="demo-hover">Di chuột qua tôi!</p>
-        </div>
-
-        <div class="example-container">
-            <h4>:active</h4>
-            <p><strong>Công dụng:</strong> Áp dụng style trong khoảnh khắc người dùng bấm và giữ chuột vào phần tử.</p>
-            <button class="demo-active">Bấm và giữ tôi!</button>
-        </div>
-        
-        <div class="example-container">
-            <h4>:focus</h4>
-            <p><strong>Công dụng:</strong> Áp dụng style khi phần tử được "chọn" (bằng cách bấm vào hoặc dùng phím Tab). Rất quan trọng cho form.</p>
-            <input type="text" class="demo-focus" placeholder="Bấm vào đây để thấy focus">
-        </div>
-      </section>
-
-      <!-- ============================================= -->
-      <!-- NHÓM 2: TRẠNG THÁI CỦA LIÊN KẾT (THẺ <a>) -->
-      <!-- ============================================= -->
-      <section class="demo-link-states">
-          <h2>2. Trạng thái của Liên kết</h2><hr>
-          <p><strong>Lưu ý:</strong> Để hoạt động đúng, các selector này nên được viết trong file CSS theo thứ tự L-V-H-A (Link-Visited-Hover-Active).</p>
-          <a class="demo-link-states" href="https://www.google.com/search?q=raiden+miko" target="_blank">
-              Link này sẽ đổi màu tùy trạng thái (chưa bấm, đã bấm, hover, active)
-          </a>
-      </section>
-
-      <!-- ============================================= -->
-      <!--   NHÓM 3: CẤU TRÚC VỊ TRÍ (CHILD SELECTORS)   -->
-      <!-- ============================================= -->
-      <section class="demo-structural-child">
-          <h2>3. Pseudo-classes về Cấu trúc (Rất quan trọng)</h2><hr>
-
-          <div class="example-container">
-              <h4>:first-child & :last-child & :only-child</h4>
-              <p><strong>Công dụng:</strong> Chọn phần tử là con ĐẦU TIÊN, CUỐI CÙNG, hoặc DUY NHẤT của cha nó.</p>
-              <ul class="demo-child-list">
-                  <li>Item 1 (Đây là first-child)</li>
-                  <li>Item 2</li>
-                  <li>Item 3</li>
-                  <li>Item 4 (Đây là last-child)</li>
-              </ul>
-              <div class="parent-with-one-child">
-                  <p>Tôi là con một (only-child)</p>
-              </div>
-          </div>
-
-          <div class="example-container">
-              <h4>:nth-child(n)</h4>
-              <p><strong>Công dụng:</strong> Chọn phần tử con ở vị trí thứ `n`.</p>
-              <ol class="demo-nth-child-list">
-                  <li>Item 1</li>
-                  <li>Item 2 (sẽ được chọn bởi nth-child(2))</li>
-                  <li>Item 3 (sẽ được chọn bởi nth-child(odd))</li>
-                  <li>Item 4 (sẽ được chọn bởi nth-child(even))</li>
-                  <li>Item 5 (sẽ được chọn bởi nth-child(odd))</li>
-              </ol>
-              <p>Thẻ theo Bước nhảy sẽ được in nghiêng</p>
-          </div>
-          
-          <div class="example-container">
-              <h4>Sự khác biệt giữa "-child" và "-of-type"</h4>
-              <p><code>:first-child</code> chọn phần tử đầu tiên NẾU NÓ KHỚP(vị trí). <code>:first-of-type</code> chọn phần tử đầu tiên CỦA LOẠI ĐÓ(kiểu loại).</p>
-              <div class="demo-type-vs-child">
-                  <h3>Đây là thẻ h3 (là first-child của div này)</h3>
-                  <p>Tôi là thẻ p đầu tiên (p:first-of-type)</p>
-                  <p>Tôi là thẻ p thứ hai (p:nth-of-type(2))</p>
-                  <div>Một thẻ div duy nhất</div>
-                  <p>Tôi là thẻ p cuối cùng (p:last-of-type)</p>
-                  <h5>Tôi là thẻ h5 duy nhất và đứng cuối</h5>
-              </div>
-          </div>
-      </section>
     
-      <!-- ============================================= -->
-      <!-- NHÓM 4: TRẠNG THÁI NỘI DUNG & FORM -->
-      <!-- ============================================= -->
-      <section class="demo-content-form-states">
-          <h2>4. Trạng thái Nội dung & Form</h2><hr>
-          
-          <div class="example-container">
-              <h4>:empty</h4>
-              <p><strong>Công dụng:</strong> Chọn phần tử không có con, kể cả text.</p>
-              <div class="demo-empty"></div> <!-- Div này sẽ được chọn -->
-              <div class="demo-empty-not">Div này có comment, không được tính là empty</div>
-              <p>Ngoài ra có thể được sử dụng như thế này:</p>
-              <div class="demo-empty-comment">Div này có comment</div>
-          </div>
-          
-          <div class="example-container">
-              <h4>:target</h4>
-              <p><strong>Công dụng:</strong> Chọn phần tử có "id" khớp với "#"" trên URL.</p>
-              <div id="target-element" class="demo-target-box">
-                  Khi bạn bấm link bên dưới, tôi sẽ đổi màu.
-              </div>
-              <a href="#target-element">Kích hoạt :target cho hộp trên</a>
-          </div>
-          
-          <div class="example-container">
-              <h4>:checked</h4>
-              <p><strong>Công dụng:</strong> Chọn các input dạng checkbox hoặc radio đã được tích.</p>
-              <input type="checkbox" id="check" class="demo-check">
-              <label for="check">Tích vào đây để style cho label này.</label>
-          </div>
-      </section>
-
-      <!-- ============================================= -->
-      <!-- NHÓM 5: PHỦ ĐỊNH -->
-      <!-- ============================================= -->
-      <section class="demo-negation">
-          <h2>5. Lớp giả Phủ định</h2><hr>
-          <div class="example-container">
-              <h4>:not()</h4>
-              <p><strong>Công dụng:</strong> Chọn tất cả các phần tử NGOẠI TRỪ những phần tử khớp với selector bên trong `not()`.</p>
-              <ul class="demo-not-list">
-                  <li>Item bình thường</li>
-                  <li class="special-item">Tôi là item đặc biệt, sẽ không bị ảnh hưởng</li>
-                  <li>Item bình thường</li>
-                  <li>Item bình thường</li>
-              </ul>
-          </div>
-      </section>
-      <p class="note-selector">
-        <strong>Thứ tự ưu tiên:</strong> !important > Inline styles > Id selectors > Classes, attribute selectors and pseudo-classes > Elements and pseudo-elements > Universal selector <br>
-      </p>
-      <p class="note-selector">
-        <strong> Inheritance - Kế thừa:</strong> Các <strong>phần tử con nhận</strong> được <strong>các giá trị thuộc tính</strong> thừa kế <strong>từ phần tử cha</strong>.
-      </p>
-      <p class="note-selector">
-        <strong>The Cascade (Tính Thác Nước):</strong> Các quy tắc CSS được đọc từ trên xuống dưới. Quy tắc nào được viết sau cùng sẽ ghi đè lên quy tắc trước đó (nếu chúng có cùng độ ưu tiên).
-      </p>
-    </div>  
-
-
-    <!------------- DEFAULT - RESET ----------------->
-
-    <div class="demo-default-reset">
-      <h1>DEFAULT - RESET</h1>
-      <section>
-        <h2>Default CSS</h2> <hr>
-        <p><strong>Default CSS Values:</strong> Trình duyệt sẽ tự động thêm các thuộc tính mặc định để hiện thị các thẻ cơ bản.</p>
-        <p>Chẳng hạn như các thẻ heading, anchor,... 
-          <a href="https://www.w3schools.com/cssref/css_default_values.php">Tìm hiểu thêm tại đây.</a>
-        </p>
-        <div>
-          <p>By default, an a element is displayed like this:</p>
-          <a href="https://www.w3schools.com">Visit W3Schools.com!</a>
-          <p>A customized a element (changed text-decoration and color):</p>
-          <a style="text-decoration:none;color:red;" href="https://www.w3schools.com">Visit W3Schools.com!</a>
-        </div>
-      </section>
-
-      <section>
-        <h2>Reset CSS</h2> <hr>
-        <p>
-          <strong>Tại sao cần phải Reset CSS:</strong> Trình duyệt sẽ tự động thêm các thuộc tính mặc định để hiển thị các thẻ HTML, tuy nhiên <strong>các trình duyệt khác nhau có thể làm các thuộc tính được thêm vào sẽ khác nhau.</strong>
-        </p>
-        <p>
-          <strong>Cách làm:</strong>Copy toàn bộ phần code và cho vào file CSS <strong><em>riêng biệt (đặt tên là reset.css để dễ nhận dạng)</em></strong> →→→→
-          <a href="https://meyerweb.com/eric/tools/css/reset/">Truy cập vào đây</a> <br>
-        </p>
-        <p><strong >Lưu ý quan trọng:</strong> Hãy đặt <strong><em>file reset.cc</em></strong> ở vị trí trên cùng trước khi sử dụng các CSS khác để tránh file reset CSS bị ghi đè. <strong>Do thứ tự ưu tiên về vị trí đặt.</strong></p>
-        <p></p>
-      </section>
-    </div>
-
+    
+    
     <!------------------ COLOR -------------------->
-
+    
     <div class="demo-color">
       <h1>COLOR</h1>
       <section>
         <p>CSS supports 140+ color names, HEX values, RGB values, RGBA values, HSL values, HSLA values, and opacity.</p>
-
+        <p>Các thuộc tính sử dụng đến color như: color (màu chữ), background-color (màu nền),...
+        </p>
+        
         <section>
           <h2>RGBA Color</h2> <hr>
           <p>RGBA color values are an extension of RGB colors with an alpha channel - which specifies the opacity for a color.</p>
@@ -375,7 +202,7 @@
             <p class="p6">Pastel violet</p>
           </div>
         </section>
-
+        
         <section >
           <h2>HSLA Colors</h2> <hr>
           <p>HSLA color values are an extension of HSL colors with an alpha channel - which specifies the opacity for a color.</p>
@@ -409,8 +236,63 @@
       </section>
     </div>
 
-    <!-----------------CSS TYPOGRAPHY----------------->
+    <!-----------------BACKGROUND-------------------->
+    
+    <div>
+      <h1>BACKGROUND</h1>
+      <section class="demo-background-color">
+        <h2>Background-color</h2> <hr>
+        <p>Quy định màu nền cho nội dung:</p>
+        <h4>Nội dung này có background color là xanh.</h4>
+        <div>Khối div có background color là vàng.</div>
+      </section>
 
+      <section class="demo-background-image">
+        <h2>Background-image</h2> <hr>
+        <p>Dùng hình ảnh làm background, khác với thẻ img</p>
+        <div class="box-background-image"> có thể chèn nội dung bên trong như background color</div>
+      </section>
+
+      <section class="demo-background-size">
+        <h2>Background-size</h2> <hr>
+        <p>Điều chỉnh kích thước background </p>
+        <h3>Khi chưa set kích cỡ, ảnh mặc định hiển thị kích thước với tỉ lệ 1:1</h3>
+        <div class="box-background-size"> </div>
+        
+        <h3>Khi set kích cỡ là contain, ảnh vừa khung hình, giữ nguyên tỉ lệ ảnh</h3>
+        <p><strong>Không bị mất ảnh. Nếu còn khoảng trống, ảnh sẽ lặp lại</strong></p>
+        <div class="box-background-size2"> </div> 
+
+        <h3>Khi set kích cỡ là cover, ảnh vừa khớp khung hình, giữ nguyên tỉ lệ ảnh(không bị méo)</h3>
+        <p><strong>Có thể bị mất 1 phần ảnh. Ảnh không lặp lại</strong></p>
+        <div class="box-background-size3"> </div> 
+        
+        <h3>Khi set kích cỡ là %, ảnh có thể bị méo, kéo giãn nếu không cùng tỉ lệ box</h3>
+        <p><strong>ảnh bị kéo giãn</strong></p>
+        <div class="box-background-size4"> </div> 
+        <p><strong>ảnh bị co, méo</strong></p>
+        <div class="box-background-size5"> </div> 
+        <p><strong>khi cạnh ngang bằng 100% tỉ lệ box => mất ảnh phần dưới </strong></p>
+        <div class="box-background-size6"> </div> 
+      </section>
+
+      <section>
+        <h2>Background-repeat</h2> <hr>
+        <p>Ngăn cho ảnh lặp lại hoặc điều chỉnh ảnh lặp lại</p>
+        <h3>Ảnh bị lặp</h3>
+        <div class="demo-background-repeat"></div>
+        <h3>Không lặp</h3>
+        <div class="demo-background-repeat2"></div>
+        <h3>Ảnh lặp theo trục ngang</h3>
+        <div class="demo-background-repeat3"></div>
+        <h3>Ảnh lặp theo trục dọc</h3>
+        <div class="demo-background-repeat4"></div>
+      </section>
+      
+    </div>
+
+    <!-----------------CSS TYPOGRAPHY----------------->
+    
     <div>
       <h1>CSS TYPOGRAPHY</h1>
       <section>
@@ -430,33 +312,33 @@
               <th>font</th>	        
               <td class="ex-font">Sets all the font properties in one declaration</td> 
             </tr>
-
+            
             <tr>
               <td colspan="2" style="color: rgb(251, 93, 93);">
                 Shorthand property for <strong>font-style</strong> <em>font-variant</em> <strong>font-weight</strong> <em>font-size </em><strong>line-height</strong> and <em>font-family.</em>
               </td>
             </tr>
-
+            
             <tr>
               <th>font-family</th>	        
               <td class="ex-font-family">Specifies the font family for text</td> 
             </tr>
-
+            
             <tr>
               <th>font-size</th>	        
               <td class="ex-font-size">Specifies the font size of text</td> 
             </tr>
-
+            
             <tr>
               <th>font-style</th>	        
               <td class="ex-font-style">Specifies the font style for text </td> 
             </tr>
-
+            
             <tr>
               <th>font-variant</th>	        
               <td class="ex-font-variant">Specifies whether or not a text should be displayed in a small-caps font </td> 
             </tr>
-
+            
             <tr>
               <th>font-weight</th>	        
               <td class="ex-font-weight">Specifies the weight of a font </td> 
@@ -474,41 +356,41 @@
         <div>
           <h3>Line-height</h3>
           <p>Defines the height of a single line of text.</p>
-  
+          
           <p>Reverts to the default value of the browser: </p>
           <p class="demo-line-height">  
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero neque, blanditiis tempora modi ea mollitia?
-          </p>
-  
-          <p>You can use unitless values: the line height will be relative to the font size:</p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero neque, blanditiis tempora modi ea mollitia?
+        </p>
+        
+        <p>You can use unitless values: the line height will be relative to the font size:</p>
           <p class="demo-line-height2">  
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero neque, blanditiis tempora modi ea mollitia?
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero neque, blanditiis tempora modi ea mollitia?
           </p>
-  
+          
           <p>You can use pixel values.</p>
           <p class="demo-line-height3">  
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero neque, blanditiis tempora modi ea mollitia?
-          </p>
-  
-          <p>You can use em values: like with unitless values, the line height will be relative to the font size.</p>
-          <p class="demo-line-height4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit perferendis odio temporibus beatae, consequuntur nobis!</p>
-        </div>
-
-        <div>
-          <h3>Letter-Spacing</h3>
-          <p>Defines the spacing between the characters of a block of text.</p>
-
-          <p>The spacing between the characters is normal.</p>
-          <p class="letter-spacing">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, natus ipsum consectetur consequuntur beatae quibusdam.</p>
-
-          <p>You can use pixel values.</p>
-          <p class="letter-spacing2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident maxime aut quidem quos eveniet impedit?</p>
-
-          <p>You can use em values: this allows the spacing to remain relative to the font-size.</p>
-          <p class="letter-spacing3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, vero! Eum iure ut a tempore.</p>
-        </div>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero neque, blanditiis tempora modi ea mollitia?
+        </p>
+        
+        <p>You can use em values: like with unitless values, the line height will be relative to the font size.</p>
+        <p class="demo-line-height4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit perferendis odio temporibus beatae, consequuntur nobis!</p>
+      </div>
+      
+      <div>
+        <h3>Letter-Spacing</h3>
+        <p>Defines the spacing between the characters of a block of text.</p>
+        
+        <p>The spacing between the characters is normal.</p>
+        <p class="letter-spacing">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, natus ipsum consectetur consequuntur beatae quibusdam.</p>
+        
+        <p>You can use pixel values.</p>
+        <p class="letter-spacing2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident maxime aut quidem quos eveniet impedit?</p>
+        
+        <p>You can use em values: this allows the spacing to remain relative to the font-size.</p>
+        <p class="letter-spacing3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, vero! Eum iure ut a tempore.</p>
+      </div>
       </section>
-
+      
       <section>
         <h2>Text-Effect</h2> <hr>
         <div class="demo-text-align">
@@ -522,9 +404,9 @@
               <td>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores veritatis placeat debitis aspernatur molestias, quam adipisci? Voluptatem fuga ut distinctio.
               </td>
-            <tr>
-
-            <tr class="text-right">
+              <tr>
+                
+                <tr class="text-right">
               <td>
                 The text content is aligned to the <strong>right</strong>.
               </td>
@@ -532,7 +414,7 @@
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores veritatis placeat debitis aspernatur molestias, quam adipisci? Voluptatem fuga ut distinctio.
               </td>
             </tr>
-
+            
             <tr class="text-centered">
               <td>
                 The text content is <strong>centered</strong>.
@@ -552,7 +434,7 @@
             </tr>
           </table>
         </div>
-
+        
         <div class="demo-text-decoration">
           <h3>Text-decoration</h3>
           <p>Removes any text decoration.</p>
@@ -560,11 +442,11 @@
           <p>Line-through the text content</p> 
           <p>Over-line the text content</p> 
         </div>
-
+        
         <div class="demo-text-indent">
           <h3>Text-indent</h3>
           <p>Defines the indentation of the element's first line of text.</p>
-
+          
           <table class="demo-text-indent">
             <tr>
               <td>The text is <strong>not indented</strong>.</td>
@@ -572,7 +454,7 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laudantium voluptatibus veniam earum quas voluptatem similique sint iusto ut aliquam.
               </td>
             </tr>
-  
+            
             <tr>
               <td>
                 You can use <strong>numeric values</strong> like pixels, (r)em, percentages... <br>
@@ -580,7 +462,7 @@
               </td>
               <td class="indented-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit omnis tempore consequatur! Vitae ratione dolor laudantium, nobis enim sed dolorem.</td>
             </tr>
-  
+            
             <tr>
               <td>You can also use<strong> negative</strong> values.</td>
               <td class="negative-indented-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id earum, magnam dolor ducimus ab porro minima velit esse suscipit vel.
@@ -588,7 +470,7 @@
             </tr>
           </table>
         </div>
-
+        
         <div class="demo-text-overflow">
           <h3>Text-overflow</h3>
           <p>The CSS text-overflow property specifies how overflowed content that is not displayed should be signaled to the user. It can be clipped or rendered with ellipsis (...).</p>
@@ -600,75 +482,75 @@
               <strong style="color: brown; text-decoration: underline;">overflow: hidden;</strong>
             </li>
           </ul>
-
+          
           <p>Here, the overflowed content is clipped:</p>
           <div class="default-text-overflow">
             You can use the overflow property when you want to have better control of the layout.
           </div>
-
+          
           <p>Here, the overflowed content is rendered with ellipsis (...):</p>
           <div class="clipped-text-overflow">
             You can use the overflow property when you want to have better control of the layout.
           </div>
         </div>
-
+        
         <div class="demo-text-shadow">
           <h3>Text-shadow</h3>
           <p>
             The CSS text-shadow property applies a shadow to text.</p>
           <p>
             In its simplest use, you only specify the horizontal and the vertical shadow. </p>
-          <p>
-            In addition, you can add a shadow color and blur effect.</p>
-
+            <p>
+              In addition, you can add a shadow color and blur effect.</p>
+              
           <p style="font-size: 20px;">Example:</p>
-
+          
           <p>Horizontal and vertical shadow:</p>
           <div class="text-shadow1">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
-
+          
           <p>Horizontal and vertical shadow, with color:</p>
           <div class="text-shadow2">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
-
+          
           <p>Then, add a blur effect to the shadow:</p>
           <div class="text-shadow3">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
-
+          
           <p>Text-shadow with red neon glow:</p>
           <div class="text-shadow4">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
-
+          
           <p> To add more than one shadow to the text, you can add a comma-separated list of shadows.-> <a href="https://www.w3schools.com/css/css3_shadows.asp">Multiple Shadows</a></p>
         </div>
-
+        
         <div class="demo-text-transform">
           <h3>Text-transform</h3>
           <p>Defines how the text content should be transformed.</p>
-
+          
           <p>Removes any text transformation: the text will appear the same as in the HTML code.</p>
           <p class="removes-text-transform">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur totam illo reprehenderit quia reiciendis? Amet aperiam illum optio modi rerum.</p>
-
+          
           <p>Turns the first letter of each word into a capital letter.</p>
           <p class="capital-first-text-transform">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae tenetur sapiente consequatur ratione voluptatibus nam earum officia aliquid qui velit.</p>
-
+          
           <p>Turns all letters into capital letters.</p>
           <p class="capital-all-text-transform">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione quidem at eos id fugiat eveniet nam ipsam est harum error?</p>
-
+          
           <p>Turns all letters into lowercase letters.</p>
           <p  class="lowercase-text-transform">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum sapiente sequi distinctio! Placeat neque eos magni quos consequatur unde dolores!</p>
         </div>     
         
         <div class="demo-word">
           <h3>Word-wrap & Word-break & Word-spacing</h3>
-
+          
           <h4>The CSS word-wrap property allows long words to be able to be broken and wrap onto the next line. </h4>
           <p>If a word is too long to fit within an area, it expands outside:</p>
           <div class="no-word-wrap">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modilaudantiumquopossimuscumqueobcaecati excepturi.
           </div>
-
+          
           <p>The word-wrap property allows you to force the text to wrap - even if it means splitting it in the middle of a word:</p>
           <div class="word-wrap">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minimaearumcorruptivoluptatum hic similique! Facere.
           </div>
-
+          
           <h4>The CSS word-break property specifies how words should break when reaching the end of a line.</h4>
           <ul>This property can take one of the following values:
             <li>normal - This is default. Uses the default line breaking rules of the language</li>
@@ -690,7 +572,7 @@
           <p class="word-spacing">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, iste! Enim, amet reiciendis. Sunt, sed?
           </p>
         </div>
-
+        
         <div>
           <h3>White-space</h3>
           <p>Defines how the element's white space is handled.</p>
@@ -704,22 +586,22 @@
 
           <h4>white-space: normal:</h4>
           <p class="white-space-normal">
+            This is some text. This is some text. This is some text.
           This is some text. This is some text. This is some text.
           This is some text. This is some text. This is some text.
           This is some text. This is some text. This is some text.
-          This is some text. This is some text. This is some text.
-          </p>
+        </p>
 
-          <h4>white-space: pre:</h4>
-          <p class="white-space-pre">
+        <h4>white-space: pre:</h4>
+        <p class="white-space-pre">
           This is some text. This is some text. This is some text.
           This is some text. This is some text. This is some text.
           This is some text. This is some text. This is some text.
           This is some text. This is some text. This is some text.
-          </p>
-
-          <h4>white-space: pre-wrap:</h4>
-          <p class="white-space-pre-wrap">
+        </p>
+        
+        <h4>white-space: pre-wrap:</h4>
+        <p class="white-space-pre-wrap">
           This is some text. This is s
           ome text. This is some text.
           This is some text. This is s
@@ -729,7 +611,7 @@
           This is some text. This i
           s some text. This is some text.
           </p>
-
+          
           <h4>white-space: pre-line:</h4>
           <p class="white-space-pre-line">
             This is some text. This is some text. This is some text.
@@ -738,6 +620,38 @@
             This is some text. This is some text. This is some text.
           </p>
         </div>
+      </section>
+    </div>
+    
+    <!------------- DEFAULT - RESET ----------------->
+    
+    <div class="demo-default-reset">
+      <h1>DEFAULT - RESET</h1>
+      <section>
+        <h2>Default CSS</h2> <hr>
+        <p><strong>Default CSS Values:</strong> Trình duyệt sẽ tự động thêm các thuộc tính mặc định để hiện thị các thẻ cơ bản.</p>
+        <p>Chẳng hạn như các thẻ heading, anchor,... 
+          <a href="https://www.w3schools.com/cssref/css_default_values.php">Tìm hiểu thêm tại đây.</a>
+        </p>
+        <div>
+          <p>By default, an a element is displayed like this:</p>
+          <a href="https://www.w3schools.com">Visit W3Schools.com!</a>
+          <p>A customized a element (changed text-decoration and color):</p>
+          <a style="text-decoration:none;color:red;" href="https://www.w3schools.com">Visit W3Schools.com!</a>
+        </div>
+      </section>
+      
+      <section>
+        <h2>Reset CSS</h2> <hr>
+        <p>
+          <strong>Tại sao cần phải Reset CSS:</strong> Trình duyệt sẽ tự động thêm các thuộc tính mặc định để hiển thị các thẻ HTML, tuy nhiên <strong>các trình duyệt khác nhau có thể làm các thuộc tính được thêm vào sẽ khác nhau.</strong>
+        </p>
+        <p>
+          <strong>Cách làm:</strong>Copy toàn bộ phần code và cho vào file CSS <strong><em>riêng biệt (đặt tên là reset.css để dễ nhận dạng)</em></strong> →→→→
+          <a href="https://meyerweb.com/eric/tools/css/reset/">Truy cập vào đây</a> <br>
+        </p>
+        <p><strong >Lưu ý quan trọng:</strong> Hãy đặt <strong><em>file reset.cc</em></strong> ở vị trí trên cùng trước khi sử dụng các CSS khác để tránh file reset CSS bị ghi đè. <strong>Do thứ tự ưu tiên về vị trí đặt.</strong></p>
+        <p></p>
       </section>
     </div>
 
@@ -755,7 +669,7 @@
         <li><strong>Margin</strong> - Clears an area outside the border. The margin is transparent </li>
       </ul>
 
-        <!-- PADDING -->
+      <!-- PADDING -->
       <section class="padding-demo">
         <h2>Padding</h2><hr>
         <div class="box padding-demo1">
@@ -768,7 +682,7 @@
           Cách viết tắt khác
         </div>
       </section>
-
+      
       <!-- BORDER -->
       <section class="border-demo">
         <h2>Border</h2><hr>
@@ -791,10 +705,10 @@
         <div class="box margin-demo3">mang margin âm</div>
       </section>
 
-    <!-- ============================================= -->
-    <!-- CÁC LỚP CỦA HỘP (TỪ TRONG RA NGOÀI) -->
-    <!-- ============================================= -->
-        <section></section> class="example-container">
+      <!-- ============================================= -->
+      <!-- CÁC LỚP CỦA HỘP (TỪ TRONG RA NGOÀI) -->
+      <!-- ============================================= -->
+      <section></section> class="example-container">
         <h2>1. Bốn Lớp Của Một Chiếc Hộp</h2><hr>
         <p>Thứ tự từ trong ra ngoài: <strong>Content -> Padding -> Border -> Margin</strong>.</p>
         
@@ -809,19 +723,19 @@
                       Content (Nội dung) <br>
                     </div>
                   </div>
-              </div>
+                </div>
             </div>
-        </div>
+          </div>
         </section>
-
-    <!-- ============================================= -->
-    <!-- PHẦN KHÓ 1: MARGIN AUTO & MARGIN COLLAPSING -->
-    <!-- ============================================= -->
-      <section class="example-container">
-        <h2>2. Các "Tuyệt Chiêu" & "Cạm Bẫy" Của Margin</h2><hr>
-
+        
+        <!-- ============================================= -->
+        <!-- PHẦN KHÓ 1: MARGIN AUTO & MARGIN COLLAPSING -->
+        <!-- ============================================= -->
+        <section class="example-container">
+          <h2>2. Các "Tuyệt Chiêu" & "Cạm Bẫy" Của Margin</h2><hr>
+          
         <div class="sub-example">
-            <h4>Căn giữa với <code>margin: 0 auto;</code></h4>
+          <h4>Căn giữa với <code>margin: 0 auto;</code></h4>
             <p>Để căn giữa một khối, hãy cho nó <code>width</code> và <code>margin: 0 auto;</code>.</p>
             <div class="box margin-auto-example">Tôi được căn giữa</div>
         </div>
@@ -832,22 +746,22 @@
             <div class="box collapse-box-1">Margin Bottom: 30px</div>
             <div class="box collapse-box-2">Margin Top: 50px</div>
             <p>Dùng F12 hoặc kiểm tra trên web</p>
-        </div>
+          </div>
       </section>
-
+      
     <!-- ============================================= -->
     <!-- PHẦN KHÓ 2: BOX-SIZING (KHÁI NIỆM QUAN TRỌNG NHẤT) -->
     <!-- ============================================= -->
-      <section class="example-container">
+    <section class="example-container">
         <h2>3. Khái Niệm Quan Trọng Nhất: <code>box-sizing</code></h2><hr>
         <p>Thuộc tính này quyết định cách trình duyệt tính toán kích thước cuối cùng của một chiếc hộp.</p>
-
+        
         <div class="sizing-comparison-container">
 
           <!-- Ví dụ 1: Mặc định -->
           <div class="sub-example">
             <h4><code>box-sizing: content-box;</code> (Mặc định)</h4>
-
+            
             <p><strong>Rắc rối:</strong> Kích thước cuối cùng = <code>width</code> + <code>padding</code> + <code>border</code>.</p>
 
             <div class="box sizing-content-box">
@@ -855,40 +769,186 @@
             </div>
               <p><em>(Width 200px + Padding 40px + Border 10px = <strong>Rộng 250px</strong>)</em></p>
               <p>Lưu ý: Nếu bạn kiểm tra trình duyệt mà thấy 10px border là 9.600 px: Đây là một "lỗi làm tròn" (rounding artifact) trong quá trình hiển thị của trình duyệt, không phải là lỗi logic trong code của bạn. <br>
-              Đối với trình duyệt: Nó "đúng", vì đó là con số chính xác nhất mà trình duyệt có thể báo cáo lại sau khi đã tính toán với Display Scaling.</n></p>
-          </div>
+                Đối với trình duyệt: Nó "đúng", vì đó là con số chính xác nhất mà trình duyệt có thể báo cáo lại sau khi đã tính toán với Display Scaling.</n></p>
+              </div>
 
           <!-- Ví dụ 2: Cách làm hiện đại -->
           <div class="sub-example">
             <h4><code>box-sizing: border-box;</code> (Cách làm hiện đại)</h4>
-
+            
             <p><strong>Dễ dàng:</strong> <code>width</code> chính là kích thước cuối cùng. Padding và Border sẽ tự chui vào bên trong.</p>
-
+            
             <div class="box sizing-border-box">
               Tôi được set <code>width: 200px;</code> và kích thước thật đúng là 200px!
             </div>
               <p><em>(Width 200px đã bao gồm Padding và Border)</em></p>
+            </div>
           </div>
-        </div>
-        
+          
         <div class="sub-example">
-            <h4>"Thần chú" Reset hiện đại:</h4>
+          <h4>"Thần chú" Reset hiện đại:</h4>
             <p>Hầu hết các dự án ngày nay đều bắt đầu bằng đoạn code này để mọi thứ trở nên dễ đoán hơn.</p>
             <pre><code>
 * {
   box-sizing: border-box;
 }
-            </code></pre>
-        </div>
-      </div>
+</code></pre>
+</div>
+</div>
 
-    <p style="color: rgb(97, 21, 168);">
+<p style="color: rgb(97, 21, 168);">
       Tóm Lại Một Cách Đơn Giản Nhất:
-        HTML là những chiếc hộp <strong>lồng vào nhau</strong>.
-        "Nội dung" (content) của một hộp cha chính là <strong>TẤT CẢ</strong> những chiếc <strong>hộp con</strong> nằm ngay bên trong nó.
-        Kích thước của hộp cha (nếu không được set cứng) sẽ được quyết định bởi <strong>tổng không gian mà tất cả các hộp con đó chiếm giữ</strong>.
+      HTML là những chiếc hộp <strong>lồng vào nhau</strong>.
+      "Nội dung" (content) của một hộp cha chính là <strong>TẤT CẢ</strong> những chiếc <strong>hộp con</strong> nằm ngay bên trong nó.
+      Kích thước của hộp cha (nếu không được set cứng) sẽ được quyết định bởi <strong>tổng không gian mà tất cả các hộp con đó chiếm giữ</strong>.
     </p>
  
-    </section>
+  </section>
   </body>
-</html>
+  </html>
+
+  <!-----------------Pseudo-classes------------------->
+  <div class="pseudo-classes">
+    <h1>Pseudo-classes</h1>
+    <p>Dùng để chọn các phần tử HTML dựa trên một trạng thái đặc biệt, vị trí, hoặc tương tác của người dùng.</p>
+  
+    <!-- ============================================= -->
+    <!--  NHÓM 1: TRẠNG THÁI TƯƠNG TÁC CỦA NGƯỜI DÙNG  -->
+    <!-- ============================================= -->
+    <section class="demo-user-action-states">
+      <h2>1. Trạng thái Tương tác Người dùng</h2><hr>  
+      <div class="example-container">
+          <h4>:hover</h4>
+          <p><strong>Công dụng:</strong> Áp dụng style khi người dùng di chuột qua phần tử.</p>
+          <p class="demo-hover">Di chuột qua tôi!</p>
+      </div>
+  
+      <div class="example-container">
+          <h4>:active</h4>
+          <p><strong>Công dụng:</strong> Áp dụng style trong khoảnh khắc người dùng bấm và giữ chuột vào phần tử.</p>
+          <button class="demo-active">Bấm và giữ tôi!</button>
+      </div>
+      
+      <div class="example-container">
+          <h4>:focus</h4>
+          <p><strong>Công dụng:</strong> Áp dụng style khi phần tử được "chọn" (bằng cách bấm vào hoặc dùng phím Tab). Rất quan trọng cho form.</p>
+          <input type="text" class="demo-focus" placeholder="Bấm vào đây để thấy focus">
+      </div>
+    </section>
+  
+    <!-- ============================================= -->
+    <!-- NHÓM 2: TRẠNG THÁI CỦA LIÊN KẾT (THẺ <a>) -->
+    <!-- ============================================= -->
+    <section class="demo-link-states">
+        <h2>2. Trạng thái của Liên kết</h2><hr>
+        <p><strong>Lưu ý:</strong> Để hoạt động đúng, các selector này nên được viết trong file CSS theo thứ tự L-V-H-A (Link-Visited-Hover-Active).</p>
+        <a class="demo-link-states" href="https://www.google.com/search?q=raiden+miko" target="_blank">
+            Link này sẽ đổi màu tùy trạng thái (chưa bấm, đã bấm, hover, active)
+        </a>
+    </section>
+  
+    <!-- ============================================= -->
+    <!--   NHÓM 3: CẤU TRÚC VỊ TRÍ (CHILD SELECTORS)   -->
+    <!-- ============================================= -->
+    <section class="demo-structural-child">
+        <h2>3. Pseudo-classes về Cấu trúc (Rất quan trọng)</h2><hr>
+  
+        <div class="example-container">
+            <h4>:first-child & :last-child & :only-child</h4>
+            <p><strong>Công dụng:</strong> Chọn phần tử là con ĐẦU TIÊN, CUỐI CÙNG, hoặc DUY NHẤT của cha nó.</p>
+            <ul class="demo-child-list">
+                <li>Item 1 (Đây là first-child)</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4 (Đây là last-child)</li>
+            </ul>
+            <div class="parent-with-one-child">
+                <p>Tôi là con một (only-child)</p>
+            </div>
+        </div>
+  
+        <div class="example-container">
+            <h4>:nth-child(n)</h4>
+            <p><strong>Công dụng:</strong> Chọn phần tử con ở vị trí thứ `n`.</p>
+            <ol class="demo-nth-child-list">
+                <li>Item 1</li>
+                <li>Item 2 (sẽ được chọn bởi nth-child(2))</li>
+                <li>Item 3 (sẽ được chọn bởi nth-child(odd))</li>
+                <li>Item 4 (sẽ được chọn bởi nth-child(even))</li>
+                <li>Item 5 (sẽ được chọn bởi nth-child(odd))</li>
+            </ol>
+            <p>Thẻ theo Bước nhảy sẽ được in nghiêng</p>
+        </div>
+        
+        <div class="example-container">
+            <h4>Sự khác biệt giữa "-child" và "-of-type"</h4>
+            <p><code>:first-child</code> chọn phần tử đầu tiên NẾU NÓ KHỚP(vị trí). <code>:first-of-type</code> chọn phần tử đầu tiên CỦA LOẠI ĐÓ(kiểu loại).</p>
+            <div class="demo-type-vs-child">
+                <h3>Đây là thẻ h3 (là first-child của div này)</h3>
+                <p>Tôi là thẻ p đầu tiên (p:first-of-type)</p>
+                <p>Tôi là thẻ p thứ hai (p:nth-of-type(2))</p>
+                <div>Một thẻ div duy nhất</div>
+                <p>Tôi là thẻ p cuối cùng (p:last-of-type)</p>
+                <h5>Tôi là thẻ h5 duy nhất và đứng cuối</h5>
+            </div>
+        </div>
+    </section>
+  
+    <!-- ============================================= -->
+    <!-- NHÓM 4: TRẠNG THÁI NỘI DUNG & FORM -->
+    <!-- ============================================= -->
+    <section class="demo-content-form-states">
+        <h2>4. Trạng thái Nội dung & Form</h2><hr>
+        
+        <div class="example-container">
+            <h4>:empty</h4>
+            <p><strong>Công dụng:</strong> Chọn phần tử không có con, kể cả text.</p>
+            <div class="demo-empty"></div> <!-- Div này sẽ được chọn -->
+            <div class="demo-empty-not">Div này có comment, không được tính là empty</div>
+            <p>Ngoài ra có thể được sử dụng như thế này:</p>
+            <div class="demo-empty-comment">Div này có comment</div>
+        </div>
+        
+        <div class="example-container">
+            <h4>:target</h4>
+            <p><strong>Công dụng:</strong> Chọn phần tử có "id" khớp với "#"" trên URL.</p>
+            <div id="target-element" class="demo-target-box">
+                Khi bạn bấm link bên dưới, tôi sẽ đổi màu.
+            </div>
+            <a href="#target-element">Kích hoạt :target cho hộp trên</a>
+        </div>
+        
+        <div class="example-container">
+            <h4>:checked</h4>
+            <p><strong>Công dụng:</strong> Chọn các input dạng checkbox hoặc radio đã được tích.</p>
+            <input type="checkbox" id="check" class="demo-check">
+            <label for="check">Tích vào đây để style cho label này.</label>
+        </div>
+    </section>
+  
+    <!-- ============================================= -->
+    <!-- NHÓM 5: PHỦ ĐỊNH -->
+    <!-- ============================================= -->
+    <section class="demo-negation">
+        <h2>5. Lớp giả Phủ định</h2><hr>
+        <div class="example-container">
+            <h4>:not()</h4>
+            <p><strong>Công dụng:</strong> Chọn tất cả các phần tử NGOẠI TRỪ những phần tử khớp với selector bên trong `not()`.</p>
+            <ul class="demo-not-list">
+                <li>Item bình thường</li>
+                <li class="special-item">Tôi là item đặc biệt, sẽ không bị ảnh hưởng</li>
+                <li>Item bình thường</li>
+                <li>Item bình thường</li>
+            </ul>
+        </div>
+    </section>
+    <p class="note-selector">
+      <strong>Thứ tự ưu tiên:</strong> !important > Inline styles > Id selectors > Classes, attribute selectors and pseudo-classes > Elements and pseudo-elements > Universal selector <br>
+    </p>
+    <p class="note-selector">
+      <strong> Inheritance - Kế thừa:</strong> Các <strong>phần tử con nhận</strong> được <strong>các giá trị thuộc tính</strong> thừa kế <strong>từ phần tử cha</strong>.
+    </p>
+    <p class="note-selector">
+      <strong>The Cascade (Tính Thác Nước):</strong> Các quy tắc CSS được đọc từ trên xuống dưới. Quy tắc nào được viết sau cùng sẽ ghi đè lên quy tắc trước đó (nếu chúng có cùng độ ưu tiên).
+    </p>
+  </div>  

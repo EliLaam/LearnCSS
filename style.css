@@ -27,7 +27,7 @@ p {
   Đây là cách làm đúng chuẩn để tránh xung đột với các phần tử p ở khu vực khác.
 */
 .element-selector p {
-  color: #fb0000;
+  color: #fb0000; /* màu chữ */
 }
 
 /* THE ID SELECTOR 
@@ -47,7 +47,7 @@ p {
 }
 /* You can also specify that only specific HTML elements should be affected by a class. In this example only <p> elements with class="example" will be ...   */
 p.example {
-  text-align: center;
+  text-align: center; /* căn chữ */
 }
 /* HTML elements can also refer to more than one class. In this example the <p> element will be styled according to class="two" and to class="class":    */
 .two.class {
@@ -175,213 +175,9 @@ Selects all elements with a href attribute value ends with ".pdf"*/
 [attribute *= value] có value là chọn vd abc, abc1.  */
 
 /* ——————————————————————————————————————— 
-  PSEUDO-CLASSES 
-———————————————————————————————————————————————————  
-Some common use for pseudo-classes:
-  Style an element when a user moves the mouse over it
-  Style visited and unvisited links differently
-  Style an element when it gets focus
-  Style valid/invalid/required/optional form elements
-  Style an element that is the first child of its parent
-# Pseudo-classes are always denoted by a single colon (:) followed by the pseudo-class name      */
-
-/* NHÓM 1: TRẠNG THÁI TƯƠNG TÁC CỦA NGƯỜI DÙNG */
-/* :hover 
-  Selects element on mouse over */
-.demo-hover:hover {
-  color: #ffb700;
-}
-
-/* :active 
-  Selects the active link */
-.demo-active:active {
-  color: #ff5555;
-}
-
-/* :focus 
-  Áp dụng style khi phần tử được "chọn" */
-.demo-focus:focus {
-  color: darkblue;
-  outline-color: #117f00;
-  border-width: 5px;
-}
-
-/* NHÓM 2: TRẠNG THÁI CỦA LIÊN KẾT (THẺ <a>) 
-  Để hoạt động đúng, các selector này nên được viết trong file CSS theo thứ tự L-V-H-A (Link-Visited-Hover-Active). */
-/* :link
-  Selects any unvisited link */
-.demo-link-states:link {
-  color: #098cff;
-}
-
-/* :visited 
-  Selects all visited links  */
-.demo-link-states:visited {
-  color: rgb(50, 161, 19);
-}
-
-/* :hover */
-.demo-link-states:hover {
-  color: #a4a1f1;
-}
-
-/* :active */
-.demo-link-states:active {
-  color: #4b0082;
-}
-
-/* NHÓM 3: CẤU TRÚC VỊ TRÍ (CHILD SELECTORS)  */
-/* :first-child & :last-child & :only-child
-  Selects the element that is the first/last/only child of its parent (among a group of sibling elements)   */
-.demo-child-list li:first-child {
-  color: #fe4242;
-}
-
-.demo-child-list li:last-child {
-  color: #fa7a3e;
-}
-
-.parent-with-one-child:only-child {
-  color: #ffcf82;
-}
-
-/* :nth-child(n) 
-  Selects any <li> element that is the second child of its parent. */
-.demo-nth-child-list li:nth-child(2) {
-  color: rgb(108, 255, 55);
-}
-
-.demo-nth-child-list li:nth-child(odd) {
-  color: rgb(248, 255, 49);
-}
-
-.demo-nth-child-list li:nth-child(even) {
-  color: #00ffbf;
-}
-.demo-nth-child-list li:nth-child(2n + 1) {
-  font-style: italic;
-}
-
-/* Sự khác biệt giữa "-child" và "-of-type"
-  :first-child chọn phần tử đầu tiên NẾU NÓ KHỚP(vị trí). :first-of-type chọn phần tử đầu tiên CỦA LOẠI ĐÓ(kiểu loại).    */
-
-/* :first-of-type & :last-of-type & :only-of-type & :nth-of-type(n) & :nth-last-of-type(n)
-  Selects the first element of its type among a group of sibling elements 
-  Selects any <p> element that is the last <p> element of its parent  */
-.demo-type-vs-child h3:first-child {
-  color: #00bbff;
-}
-
-.demo-type-vs-child p:first-of-type {
-  color: #00ff44;
-}
-
-/* Error: */
-.demo-type-vs-child p:first-child {
-  color: #f51915;
-}
-/* Lúc này thẻ p không phải thẻ con đầu tiên */
-
-.demo-type-vs-child p:nth-of-type(2) {
-  color: #00ffbf;
-}
-
-.demo-type-vs-child div:only-of-type {
-  font-style: italic;
-}
-
-/* Error: */
-.demo-type-vs-child div:only-child {
-  color: #f51915;
-}
-/* Thẻ div không phải thẻ con duy nhất, tồn tại nhiều thẻ khác */
-
-.demo-type-vs-child p:last-of-type {
-  color: #4b0082;
-}
-
-/* Error: */
-.demo-type-vs-child p:last-child {
-  color: #f51915;
-}
-/* Không phải thẻ con cuối cùng, thẻ h5 mới là cuối cùng */
-
-/* NHÓM 4: TRẠNG THÁI NỘI DUNG & FORM */
-/* :empty
-  Selects any element that has no children (including text nodes) */
-/* no content */
-div[class*="empty"]:empty {
-  height: 200px;
-  width: 200px;
-  background-color: darkmagenta;
-}
-/* can be used for elements with content */
-.demo-empty-comment {
-  height: 200px;
-  width: 200px;
-  background-color: rgb(51, 71, 15);
-}
-
-/* :target 
-	Selects the current active target element */
-#target-element:target {
-  color: #4b0082;
-  background-color: #a4a1f1;
-}
-
-/* :checked
-  Selects the checkbox or radio ticked
-  BƯỚC 1: Style cho label ở trạng thái bình thường (tùy chọn)
-  Chúng ta dùng for="check" trong label để liên kết với id="check" của input, giúp người dùng có thể bấm vào chữ để tích checkbox. */
-label[for="check"] {
-  color: #333;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  /* Thêm hiệu ứng chuyển động cho mượt */
-}
-
-/*  BƯỚC 2: Style cho label KHI checkbox ĐƯỢC TÍCH (Đây là phần quan trọng nhất) 
-  Selector này đọc là:
-  "Hãy tìm một input có class là 'demo-check' KHI nó đang ở trạng thái :checked,"
-  "SAU ĐÓ, hãy chọn người anh em (+) đứng ngay sau nó (chính là thẻ label)"
-*/
-.demo-check:checked + label {
-  color: green;
-  font-weight: bold;
-  text-decoration: line-through;
-  /* Gạch ngang chữ */
-}
-
-/* NHÓM 5: PHỦ ĐỊNH  */
-/* :not
-  Chọn tất cả các phần tử NGOẠI TRỪ những phần tử khớp với selector bên trong "not()".  */
-.demo-not-list li:not(.special-item) {
-  color: rgb(65, 176, 176);
-}
-
-/* NOTE: !important > Inline styles > Id selectors > Classes, attribute selectors and pseudo-classes > Elements and pseudo-elements > Universal selector */
-.note-selector {
-  color: #981a1a;
-  font-size: larger;
-}
-
-/* ——————————————————————————————————————— 
-  DEFAULT - RESET
+COLOR
 ——————————————————————————————————————————————————— */
-/* Default CSS Values 
-a:link, a:visited { 
-  color:  browser's internal value ;
-  text-decoration: underline;
-  cursor: auto;
-}
-
-a:link:active, a:visited:active { 
-  color:  browser's internal value ;
-}    ... */
-
-/* ——————————————————————————————————————— 
-  COLOR
-——————————————————————————————————————————————————— */
+/* Được sử dụng cho các thuộc tính như color (màu chữ) , background-color (màu nền),... */
 /*  RGBA Color  */
 .rgba-demo .p1 {
   background-color: rgba(255, 0, 0, 0.3);
@@ -422,7 +218,8 @@ a:link:active, a:visited:active {
   background-color: hsla(290, 60%, 70%, 0.3);
 }
 
-/*  CSS opacity Property  */
+/*  CSS Opacity Property  
+  Độ mờ cho nội dung được chọn */
 .opacity-demo .p1 {
   background-color: rgb(255, 0, 0);
   opacity: 0.1;
@@ -449,7 +246,98 @@ a:link:active, a:visited:active {
 }
 
 /* ——————————————————————————————————————— 
-  CSS TYPOGRAPHY 
+CSS BACKGROUND
+——————————————————————————————————————————————————— */
+/* Background color */
+.demo-background-color h4 {
+  background-color: #098cff;
+}
+.demo-background-color div {
+  height: 100px; /* chiều cao cho nội dung */
+  width: 100px; /* chiều rộng cho nội dung */
+  background-color: yellow;
+}
+
+/* Background image 
+  Dùng hình ảnh làm nền cho nội dung bằng url*/
+.box-background-image {
+  height: 200px; /* chiều cao cho nội dung */
+  width: 800px; /* chiều rộng cho nội dung */
+  background-image: url(./img/20250807164636.png);
+}
+
+/* Background size 
+  Điều chỉnh kích thước background*/
+
+/* dùng height & width */
+.box-background-size {
+  height: 200px; /* chiều cao cho nội dung */
+  width: 200px; /* chiều rộng cho nội dung */
+  background-image: url(./img/20250807164921.png);
+}
+
+/* dùng thuộc tính background-size */
+.box-background-size2 {
+  height: 200px;
+  width: 200px;
+  background-size: contain;
+  background-image: url(./img/20250807164921.png);
+}
+
+.box-background-size3 {
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  background-image: url(./img/20250807164921.png);
+}
+
+/* 2 đối số  */
+.box-background-size4 {
+  height: 200px;
+  width: 500px;
+  background-size: 100% 100%; /* ngang dọc */
+  background-image: url(./img/20250807164921.png);
+}
+
+.box-background-size5 {
+  height: 200px;
+  width: 200px;
+  background-size: 100% 100%; /*bằng 100% ngang, dọc*/
+  background-image: url(./img/20250807164921.png);
+}
+
+/* 1 đối số */
+.box-background-size6 {
+  height: 200px;
+  width: 500px;
+  background-size: 100%; /*bằng 100% ngang*/
+  background-image: url(./img/20250807164921.png);
+}
+
+/* Background repeat
+  Ảnh lặp lại */
+.demo-background-repeat {
+  height: 50vh; /* bằng 50 view height */
+  background-image: url(./ico/android-icon-144x144.png);
+}
+.demo-background-repeat2 {
+  height: 50vh; /* bằng 50 view height */
+  background-image: url(./ico/android-icon-144x144.png);
+  background-repeat: no-repeat; /*không lặp lại*/
+}
+.demo-background-repeat3 {
+  height: 50vh; /* bằng 50 view height */
+  background-image: url(./ico/android-icon-144x144.png);
+  background-repeat: repeat-x; /*lặp theo trục ngang */
+}
+.demo-background-repeat4 {
+  height: 50vh; /* bằng 50 view height */
+  background-image: url(./ico/android-icon-144x144.png);
+  background-repeat: repeat-y; /*lặp theo trục dọc */
+}
+
+/* ——————————————————————————————————————— 
+CSS TYPOGRAPHY 
 ——————————————————————————————————————————————————— */
 /* FONT - 
 Có thể sử dụng các font hệ thống, GG font, điều chỉnh kích thước kiểu dáng yêu thích    */
@@ -513,12 +401,12 @@ font-family */
 }
 
 /* Property	Description
-font	        -Sets all the font properties in one declaration
-font-family	  -Specifies the font family for text
-font-size	    -Specifies the font size of text
-font-style	  -Specifies the font style for text
-font-variant	-Specifies whether or not a text should be displayed in a small-caps font
-font-weight	  -Specifies the weight of a font */
+  font	        -Sets all the font properties in one declaration
+  font-family	  -Specifies the font family for text
+  font-size	    -Specifies the font size of text
+  font-style	  -Specifies the font style for text
+  font-variant	-Specifies whether or not a text should be displayed in a small-caps font
+  font-weight	  -Specifies the weight of a font */
 
 /* LINE HEIGHT & LETTER SPACING */
 /* Line height 
@@ -542,7 +430,7 @@ font-weight	  -Specifies the weight of a font */
 }
 
 /* Letter spacing
-  Defines the spacing between the characters of a block of text.*/
+Defines the spacing between the characters of a block of text.*/
 .letter-spacing {
   letter-spacing: normal;
   background-color: #34a123;
@@ -558,7 +446,7 @@ font-weight	  -Specifies the weight of a font */
 
 /*  TEXT  */
 /* Text-Align
-  Defines how the text content of the element is horizontally aligned   */
+Defines how the text content of the element is horizontally aligned   */
 table.demo-text-align td:first-child {
   width: 200px;
   background-color: #96c2ff;
@@ -584,7 +472,7 @@ table.demo-text-align td:last-child {
 }
 
 /* Text-Decoration
-  Defines how the text content of the element is decorated.      */
+Defines how the text content of the element is decorated.      */
 
 .demo-text-decoration p:first-of-type {
   text-decoration: none;
@@ -600,7 +488,7 @@ table.demo-text-align td:last-child {
 }
 
 /* Text-Indent
-  Defines the indentation of the element's first line of text.        */
+Defines the indentation of the element's first line of text.        */
 
 .demo-text-indent td:first-child {
   width: 200px;
@@ -623,10 +511,10 @@ table.demo-text-align td:last-child {
 }
 
 /* Text-Overflow
-  Defines how the hidden text content behaves if it's overflowing.  
-  Both of the following properties are required for text-overflow to take effect: 
-  white-space: nowrap;
-  overflow: hidden */
+Defines how the hidden text content behaves if it's overflowing.  
+Both of the following properties are required for text-overflow to take effect: 
+white-space: nowrap;
+overflow: hidden */
 
 .default-text-overflow {
   width: 200px;
@@ -644,9 +532,9 @@ table.demo-text-align td:last-child {
 }
 
 /* Text-Shadow
-  The CSS text-shadow property applies a shadow to text.
-  In its simplest use, you only specify the horizontal and the vertical shadow.
-  In addition, you can add a shadow color and blur effect.   */
+The CSS text-shadow property applies a shadow to text.
+In its simplest use, you only specify the horizontal and the vertical shadow.
+In addition, you can add a shadow color and blur effect.   */
 
 .text-shadow1 {
   text-shadow: 2px 2px;
@@ -663,7 +551,7 @@ table.demo-text-align td:last-child {
 }
 
 /* Text-Transform
-  Defines how the text content should be transformed.*/
+Defines how the text content should be transformed.*/
 
 .demo-text-transform p[class*="transform"] {
   background-color: #dcbaff;
@@ -723,7 +611,7 @@ You can use pixel, em values: this allows the spacing to remain relative to the 
 }
 
 /* White-space 
-  Defines how the element's white  space is handled  */
+Defines how the element's white  space is handled  */
 .white-space-nowrap {
   white-space: nowrap;
 }
@@ -741,7 +629,21 @@ You can use pixel, em values: this allows the spacing to remain relative to the 
 }
 
 /* ——————————————————————————————————————— 
-  BOX MODEL 
+  DEFAULT - RESET
+  ——————————————————————————————————————————————————— */
+/* Default CSS Values 
+  a:link, a:visited { 
+    color:  browser's internal value ;
+    text-decoration: underline;
+    cursor: auto;
+  }
+
+a:link:active, a:visited:active { 
+  color:  browser's internal value ;
+}    ... */
+
+/* ——————————————————————————————————————— 
+BOX MODEL 
 ——————————————————————————————————————————————————— */
 
 /* TÌM HIỂU SÂU */
@@ -943,4 +845,195 @@ Kích thước của hộp cha (nếu không được set cứng) sẽ được 
 
 .sizing-border-box {
   box-sizing: border-box;
+}
+
+/* ——————————————————————————————————————— 
+  PSEUDO-CLASSES 
+———————————————————————————————————————————————————  
+Some common use for pseudo-classes:
+  Style an element when a user moves the mouse over it
+  Style visited and unvisited links differently
+  Style an element when it gets focus
+  Style valid/invalid/required/optional form elements
+  Style an element that is the first child of its parent
+# Pseudo-classes are always denoted by a single colon (:) followed by the pseudo-class name      */
+
+/* NHÓM 1: TRẠNG THÁI TƯƠNG TÁC CỦA NGƯỜI DÙNG */
+/* :hover 
+  Selects element on mouse over */
+.demo-hover:hover {
+  color: #ffb700;
+}
+
+/* :active 
+  Selects the active link */
+.demo-active:active {
+  color: #ff5555;
+}
+
+/* :focus 
+  Áp dụng style khi phần tử được "chọn" */
+.demo-focus:focus {
+  color: darkblue;
+  outline-color: #117f00;
+  border-width: 5px;
+}
+
+/* NHÓM 2: TRẠNG THÁI CỦA LIÊN KẾT (THẺ <a>) 
+  Để hoạt động đúng, các selector này nên được viết trong file CSS theo thứ tự L-V-H-A (Link-Visited-Hover-Active). */
+/* :link
+  Selects any unvisited link */
+.demo-link-states:link {
+  color: #098cff;
+}
+
+/* :visited 
+  Selects all visited links  */
+.demo-link-states:visited {
+  color: rgb(50, 161, 19);
+}
+
+/* :hover */
+.demo-link-states:hover {
+  color: #a4a1f1;
+}
+
+/* :active */
+.demo-link-states:active {
+  color: #4b0082;
+}
+
+/* NHÓM 3: CẤU TRÚC VỊ TRÍ (CHILD SELECTORS)  */
+/* :first-child & :last-child & :only-child
+  Selects the element that is the first/last/only child of its parent (among a group of sibling elements)   */
+.demo-child-list li:first-child {
+  color: #fe4242;
+}
+
+.demo-child-list li:last-child {
+  color: #fa7a3e;
+}
+
+.parent-with-one-child:only-child {
+  color: #ffcf82;
+}
+
+/* :nth-child(n) 
+  Selects any <li> element that is the second child of its parent. */
+.demo-nth-child-list li:nth-child(2) {
+  color: rgb(108, 255, 55);
+}
+
+.demo-nth-child-list li:nth-child(odd) {
+  color: rgb(248, 255, 49);
+}
+
+.demo-nth-child-list li:nth-child(even) {
+  color: #00ffbf;
+}
+.demo-nth-child-list li:nth-child(2n + 1) {
+  font-style: italic;
+}
+
+/* Sự khác biệt giữa "-child" và "-of-type"
+  :first-child chọn phần tử đầu tiên NẾU NÓ KHỚP(vị trí). :first-of-type chọn phần tử đầu tiên CỦA LOẠI ĐÓ(kiểu loại).    */
+
+/* :first-of-type & :last-of-type & :only-of-type & :nth-of-type(n) & :nth-last-of-type(n)
+  Selects the first element of its type among a group of sibling elements 
+  Selects any <p> element that is the last <p> element of its parent  */
+.demo-type-vs-child h3:first-child {
+  color: #00bbff;
+}
+
+.demo-type-vs-child p:first-of-type {
+  color: #00ff44;
+}
+
+/* Error: */
+.demo-type-vs-child p:first-child {
+  color: #f51915;
+}
+/* Lúc này thẻ p không phải thẻ con đầu tiên */
+
+.demo-type-vs-child p:nth-of-type(2) {
+  color: #00ffbf;
+}
+
+.demo-type-vs-child div:only-of-type {
+  font-style: italic;
+}
+
+/* Error: */
+.demo-type-vs-child div:only-child {
+  color: #f51915;
+}
+/* Thẻ div không phải thẻ con duy nhất, tồn tại nhiều thẻ khác */
+
+.demo-type-vs-child p:last-of-type {
+  color: #4b0082;
+}
+
+/* Error: */
+.demo-type-vs-child p:last-child {
+  color: #f51915;
+}
+/* Không phải thẻ con cuối cùng, thẻ h5 mới là cuối cùng */
+
+/* NHÓM 4: TRẠNG THÁI NỘI DUNG & FORM */
+/* :empty
+  Selects any element that has no children (including text nodes) */
+/* no content */
+div[class*="empty"]:empty {
+  height: 200px;
+  width: 200px;
+  background-color: darkmagenta;
+}
+/* can be used for elements with content */
+.demo-empty-comment {
+  height: 200px;
+  width: 200px;
+  background-color: rgb(51, 71, 15);
+}
+
+/* :target 
+  Selects the current active target element */
+#target-element:target {
+  color: #4b0082;
+  background-color: #a4a1f1;
+}
+
+/* :checked
+  Selects the checkbox or radio ticked
+  BƯỚC 1: Style cho label ở trạng thái bình thường (tùy chọn)
+  Chúng ta dùng for="check" trong label để liên kết với id="check" của input, giúp người dùng có thể bấm vào chữ để tích checkbox. */
+label[for="check"] {
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* Thêm hiệu ứng chuyển động cho mượt */
+}
+
+/*  BƯỚC 2: Style cho label KHI checkbox ĐƯỢC TÍCH (Đây là phần quan trọng nhất) 
+  Selector này đọc là:
+  "Hãy tìm một input có class là 'demo-check' KHI nó đang ở trạng thái :checked,"
+  "SAU ĐÓ, hãy chọn người anh em (+) đứng ngay sau nó (chính là thẻ label)"
+*/
+.demo-check:checked + label {
+  color: green;
+  font-weight: bold;
+  text-decoration: line-through;
+  /* Gạch ngang chữ */
+}
+
+/* NHÓM 5: PHỦ ĐỊNH  */
+/* :not
+  Chọn tất cả các phần tử NGOẠI TRỪ những phần tử khớp với selector bên trong "not()".  */
+.demo-not-list li:not(.special-item) {
+  color: rgb(65, 176, 176);
+}
+
+/* NOTE: !important > Inline styles > Id selectors > Classes, attribute selectors and pseudo-classes > Elements and pseudo-elements > Universal selector */
+.note-selector {
+  color: #981a1a;
+  font-size: larger;
 }
