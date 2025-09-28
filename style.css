@@ -909,7 +909,6 @@ HTML là những chiếc hộp lồng vào nhau.
 Kích thước của hộp cha (nếu không được set cứng) sẽ được quyết định bởi tổng không gian mà tất cả các hộp con đó chiếm giữ.  */
 
 /* PHẦN KHÓ 1: MARGIN AUTO & MARGIN COLLAPSING */
-
 .margin-auto-example {
   background-color: #34748b;
   margin: 0 auto;
@@ -940,6 +939,186 @@ Kích thước của hộp cha (nếu không được set cứng) sẽ được 
 .sizing-border-box {
   box-sizing: border-box;
 }
+
+/* ——————————————————————————————————————— 
+  FLEX-BOX
+——————————————————————————————————————————————  
+Flexbox is a layout method for arranging items in rows or columns.
+A flexbox always consists of: Flex Container & Flex Items
+The flex container becomes flexible by setting the display property to flex: */
+.flex-container {
+  background-color: DodgerBlue;
+  display: flex;
+  /* Bật chế độ flexbox cho phần tử cha */
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+/* Flex-direction: 
+The flex-direction property specifies the display-direction of flex items in the flex container.  */
+
+.row-default {
+  flex-direction: default; /* default (row) */
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+  /* hàng bắt đầu phải sang trái*/
+}
+
+.column-reverse {
+  flex-direction: column-reverse;
+  /* Cột bắt đầu từ dưới lên */
+}
+
+/* Flex-wrap: 
+  The flex-wrap property specifies whether the flex items should wrap or not, if there is not enough room for them on one flex line.*/
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+  /* start từ phải sang trái, dưới lên trên */
+}
+
+/* Flex-flow:
+  The flex-flow property is a shorthand property for setting both the flex-direction and flex-wrap properties.*/
+/* 
+  .flex-container {
+  display: flex;
+  flex-flow: row wrap;
+}    */
+
+/* Flex-content:
+  The justify-content property is used to align the flex items when they do not use all available space on the main-axis (horizontally). */
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.content-flex-start {
+  justify-content: flex-start;
+  /* mặc định căn trái */
+}
+
+.content-flex-end {
+  justify-content: flex-end;
+  /* căn phải */
+}
+
+.content-space-around {
+  justify-content: space-around;
+  /* căn đều xung quanh của 1 khối */
+}
+
+.content-space-between {
+  justify-content: space-between;
+  /* căn đều khoảng cách giữa các khối */
+}
+
+.content-space-evenly {
+  justify-content: space-evenly;
+  /* căn đều khoảng cách trung bình cả hàng */
+}
+
+/* Align-items
+  The align-items property is used to align the flex items when they do not use all available space on the cross-axis (vertically).*/
+
+.align-items-center {
+  height: 200px;
+  /* BẮT BUỘC phải có chiều cao để thấy rõ hiệu ứng */
+  align-items: center;
+}
+.align-flex-start {
+  height: 200px;
+  align-items: flex-start;
+}
+.align-flex-end {
+  height: 200px;
+  align-items: flex-end;
+}
+.align-items-stretch {
+  height: 200px;
+  align-items: stretch;
+}
+.align-items-baseline {
+  height: 200px;
+  align-items: baseline;
+}
+
+/* Align-content:
+  Dùng để căn chỉnh sự phân bố của CÁC HÀNG flex item khi chúng bị xuống dòng. */
+.ac-flex-start {
+  height: 400px;
+  /* BẮT BUỘC phải có chiều cao để thấy rõ hiệu ứng */
+  flex-wrap: wrap;
+  /*bắt buộc phải có để item xuống dòng*/
+  align-content: flex-start;
+}
+.ac-flex-end {
+  height: 400px;
+  flex-wrap: wrap;
+  align-content: flex-end;
+}
+.ac-center {
+  height: 400px;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.ac-space-between {
+  height: 400px;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.ac-space-around {
+  height: 400px;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+.ac-stretch {
+  height: 400px;
+  flex-wrap: wrap;
+  align-content: stretch;
+}
+
+/*  Review
+align-content :   	
+Modifies the behavior of the flex-wrap property. It is similar to align-items, but instead of aligning flex items, it aligns flex lines
+
+align-items	:
+Vertically aligns the flex items when the items do not use all available space on the cross-axis
+
+display	:
+Specifies the display behavior (the type of rendering box) for an element
+
+flex-direction	:
+Specifies the direction of the flex items inside a flex container
+
+flex-flow	:
+A shorthand property for flex-direction and flex-wrap
+
+flex-wrap	:
+Specifies whether the flex items should wrap or not, if there is not enough room for them on one flex line
+
+justify-content	:
+Horizontally aligns the flex items when the items do not use all available space on the main-axis */
 
 /* ——————————————————————————————————————— 
   PSEUDO-CLASSES 
@@ -1130,4 +1309,53 @@ label[for="check"] {
 .note-selector {
   color: #981a1a;
   font-size: larger;
+}
+
+/* Pseudo-element */
+/* --- Ví dụ cho ::before và ::after --- */
+.demo-before-after {
+  background: #f4f4f4;
+  padding: 20px;
+  border-left: 5px solid #ccc;
+}
+
+.demo-before-after::before {
+  content: "“"; /* Bắt buộc phải có content */
+  font-size: 3em;
+  color: #ccc;
+  font-weight: bold;
+}
+
+.demo-before-after::after {
+  content: "”";
+  font-size: 3em;
+  color: #ccc;
+  font-weight: bold;
+  /* Dùng float hoặc các kỹ thuật khác để di chuyển dấu ngoặc kép xuống cuối */
+}
+
+/* --- Ví dụ cho ::first-letter và ::first-line --- */
+.demo-first-letter-line::first-letter {
+  font-size: 3em;
+  color: darkred;
+  float: left; /* Để chữ bao quanh ký tự đầu tiên */
+  margin-right: 5px;
+}
+
+.demo-first-letter-line::first-line {
+  font-weight: bold;
+}
+
+/* --- Ví dụ cho ::marker --- */
+.demo-marker li::marker {
+  content: "✅ ";
+  color: green;
+  font-size: 1.2em;
+}
+
+/* --- Ví dụ cho ::selection --- */
+/* Lưu ý: Firefox dùng -moz-selection */
+.demo-selection::selection {
+  background-color: #ffc107; /* Màu vàng */
+  color: #333; /* Chữ đen */
 }
