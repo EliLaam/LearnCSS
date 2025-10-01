@@ -1236,6 +1236,90 @@
       </section>
     </section>
   </div>
+  
+    <!--------------------GRID----------------------->
+  <section class="demo-grid">
+    <h2>Grid Layout</h2>
+    <p><strong>Công dụng:</strong> Một hệ thống layout 2 chiều (hoạt động trên cả hàng và cột cùng lúc), được thiết kế để xây dựng các bố cục phức tạp một cách dễ dàng và linh hoạt.</p>
+
+    <!-- ============================================= -->
+    <!-- 1. GRID CƠ BẢN: ĐỊNH NGHĨA CỘT VÀ HÀNG -->
+    <!-- ============================================= -->
+    <div class="example-container">
+        <h3>1. Grid Cơ Bản: <code>grid-template-columns</code> & <code>gap</code></h3>
+        <p>Bắt đầu bằng cách bật <code>display: grid</code> và định nghĩa cấu trúc cột của bạn.</p>
+        <div class="grid-container basic-grid">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- 2. ĐƠN VỊ FR VÀ HÀM REPEAT() -->
+    <!-- ============================================= -->
+    <div class="example-container">
+        <h3>2. Đơn vị <code>fr</code> và Hàm <code>repeat()</code></h3>
+        <p>Đơn vị <code>fr</code> (fraction - phần) đại diện cho một phần không gian có sẵn trong grid container. Hàm <code>repeat()</code> giúp viết code ngắn gọn hơn.</p>
+        <div class="grid-container fr-grid">
+            <div class="grid-item">1fr</div>
+            <div class="grid-item">2fr</div>
+            <div class="grid-item">1fr</div>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- 3. KÉO DÀI ITEM: SPANNING -->
+    <!-- ============================================= -->
+    <div class="example-container">
+        <h3>3. Kéo Dài Item (Spanning)</h3>
+        <p>Sử dụng <code>grid-column</code> và <code>grid-row</code> để ra lệnh cho một item chiếm nhiều hơn một ô.</p>
+        <div class="grid-container spanning-grid">
+            <div class="grid-item item-span-col-2">Item này chiếm 2 cột</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item item-span-row-2">Item này chiếm 2 hàng</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- 4. "TUYỆT CHIÊU" RESPONSIVE GRID -->
+    <!-- ============================================= -->
+    <div class="example-container">
+        <h3>4. Responsive Grid "Thần Thánh" với <code>auto-fit</code> & <code>minmax()</code></h3>
+        <p>Đây là cách mạnh mẽ nhất để tạo một layout tự động responsive mà không cần Media Query. Hãy thử thay đổi kích thước cửa sổ trình duyệt để xem điều kỳ diệu!</p>
+        <div class="grid-container responsive-grid">
+            <div class="grid-item">A</div>
+            <div class="grid-item">B</div>
+            <div class="grid-item">C</div>
+            <div class="grid-item">D</div>
+            <div class="grid-item">E</div>
+            <div class="grid-item">F</div>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- 5. CĂN CHỈNH ITEM (ALIGNMENT) -->
+    <!-- ============================================= -->
+    <div class="example-container">
+        <h3>5. Căn Chỉnh Item (Alignment)</h3>
+        <p>Giống như Flexbox, Grid cũng có các thuộc tính để căn chỉnh vị trí của các item bên trong ô của chúng.</p>
+        <div class="grid-container alignment-grid">
+            <div class="grid-item">Mặc định (stretch)</div>
+            <div class="grid-item item-align-center">align-self: center</div>
+            <div class="grid-item item-align-end">align-self: end</div>
+        </div>
+    </div>
+
+  </section>
+
 
     <!-----------------Pseudo-selector------------------->
   <div class="pseudo-classes">
@@ -1434,7 +1518,7 @@
         </p>
     </div>
 
-</section> 
+  </section> 
 
   </body>
 </html>

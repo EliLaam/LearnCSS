@@ -1121,6 +1121,78 @@ justify-content	:
 Horizontally aligns the flex items when the items do not use all available space on the main-axis */
 
 /* ——————————————————————————————————————— 
+  GRID 
+———————————————————————————————————————————————————  
+/* --- Style nền chung cho các ví dụ Grid --- */
+
+.grid-container {
+  display: grid;
+  gap: 1rem; /* Tạo khoảng trống giữa các ô */
+
+  /* Style phụ để dễ nhìn */
+  background-color: #f0f8ff;
+  border: 2px solid #ccc;
+  padding: 1rem;
+}
+
+.grid-item {
+  /* Style phụ để dễ nhìn */
+  background-color: #4682b4;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* --- CSS cho từng ví dụ cụ thể --- */
+
+/* 1. Grid Cơ Bản */
+.basic-grid {
+  grid-template-columns: 200px 100px 200px; /* 3 cột với kích thước cố định */
+}
+
+/* 2. Đơn vị fr */
+.fr-grid {
+  grid-template-columns: 1fr 2fr 1fr; /* Cột giữa rộng gấp đôi 2 cột bên */
+}
+
+/* 3. Spanning */
+.spanning-grid {
+  grid-template-columns: repeat(3, 1fr); /* Tạo 3 cột bằng nhau */
+}
+.item-span-col-2 {
+  grid-column: span 2; /* Ra lệnh cho item này chiếm 2 cột */
+  background-color: #ff6347; /* Cho nó màu khác để nổi bật */
+}
+.item-span-row-2 {
+  grid-row: span 2; /* Ra lệnh cho item này chiếm 2 hàng */
+  background-color: #3cb371; /* Cho nó màu khác để nổi bật */
+}
+
+/* 4. "Tuyệt chiêu" Responsive */
+.responsive-grid {
+  /* ĐỌC LÀ: Tạo ra càng nhiều cột CÓ THỂ VỪA (auto-fit), mỗi cột có chiều rộng TỐI THIỂU là 150px, và TỐI ĐA là 1fr (chia đều không gian còn lại).  */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+/* 5. Căn chỉnh */
+.alignment-grid {
+  grid-template-columns: repeat(3, 1fr);
+  /* Căn tất cả các item trong ô theo chiều dọc */
+  align-items: start;
+  height: 200px; /* Cần chiều cao để thấy rõ sự căn chỉnh */
+}
+.item-align-center {
+  align-self: center; /* Tự căn giữa chính nó theo chiều dọc */
+  background-color: #6a5acd;
+}
+.item-align-end {
+  align-self: end; /* Tự dồn xuống dưới cùng của ô theo chiều dọc */
+  background-color: #deb887;
+}
+
+/* ——————————————————————————————————————— 
   PSEUDO-CLASSES 
 ———————————————————————————————————————————————————  
 Some common use for pseudo-classes:
