@@ -1319,7 +1319,100 @@
     </div>
 
   </section>
+    <!---------------------Position---------------------->
 
+  <section class="demo-position">
+    <h2>Position (Định Vị)</h2>
+    <p><strong>Công dụng:</strong> Dùng để kiểm soát cách một phần tử được định vị trên trang, cho phép nó "thoát ra" khỏi dòng chảy thông thường của tài liệu.</p>
+
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <!-- GIẢI THÍCH VỀ "CONTAINING BLOCK" (KHỐI CHỨA) -->
+    <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <div class="example-container">
+        <h3>Điểm Tựa (Containing Block) - Khái Niệm Quan Trọng Nhất</h3>
+        <p>Hành vi của <code>position: absolute</code> phụ thuộc hoàn toàn vào "điểm tựa" của nó. Nó sẽ tìm phần tử cha gần nhất có <code>position</code> khác <code>static</code> (thường là <code>relative</code>) để làm gốc tọa độ.</p>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- 1. STATIC (Mặc định) -->
+    <!-- ============================================= -->
+    <div class="example-container">
+        <h3>1. position: static; (Mặc định)</h3>
+        <p>Đây là giá trị mặc định. Phần tử nằm trong dòng chảy bình thường của trang. Các thuộc tính <code>top, right, bottom, left, z-index</code> không có tác dụng.</p>
+        <div class="box static-box">Tôi là static.</div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- 2. RELATIVE -->
+    <!-- ============================================= -->
+    <div class="example-container">
+        <h3>2. position: relative;</h3>
+        <p><strong>Công dụng 1:</strong> Dịch chuyển phần tử so với vị trí GỐC của chính nó. Khoảng trống ban đầu của nó vẫn được giữ lại.</p>
+        <p><strong>Công dụng 2 (QUAN TRỌNG NHẤT):</strong> Tạo ra một "điểm tựa" (containing block) cho các phần tử con có <code>position: absolute</code>.</p>
+        <div class="box relative-box-parent">
+            Tôi là cha (relative).
+            <div class="box relative-box-child">
+                Tôi là con (cũng relative) và bị dịch chuyển 20px xuống dưới, 30px sang phải so với vị trí gốc của tôi.
+            </div>
+            Tôi vẫn giữ lại khoảng trống cho con tôi.
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- 3. ABSOLUTE -->
+    <!-- ============================================= -->
+    <div class="example-container">
+        <h3>3. position: absolute;</h3>
+        <p>Phần tử bị "nhấc" ra khỏi dòng chảy của trang (không còn chiếm không gian). Nó được định vị dựa trên "điểm tựa" gần nhất.</p>
+        <div class="box absolute-parent-container">
+            <p>Tôi là một container cha có <code>position: relative</code> để làm "điểm tựa".</p>
+            <div class="box absolute-box">
+                Tôi là absolute. Tôi định vị 10px so với góc trên bên phải của CHA TÔI.
+            </div>
+            <p>Bây giờ tôi không còn thấy thằng con 'absolute' đâu nữa, nó đã bị nhấc ra khỏi dòng chảy rồi.</p>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- 4. FIXED -->
+    <!-- ============================================= -->
+    <div class="example-container">
+        <h3>4. position: fixed;</h3>
+        <p>Giống như <code>absolute</code>, nhưng "điểm tựa" của nó LUÔN LUÔN là <strong>cửa sổ trình duyệt (viewport)</strong>. Nó sẽ đứng yên một chỗ kể cả khi bạn cuộn trang.</p>
+        <div class="box fixed-box">
+            Tôi là FIXED. Hãy thử cuộn trang, tôi sẽ không di chuyển.
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- 5. STICKY -->
+    <!-- ============================================= -->
+    <div class="example-container">
+        <h3>5. position: sticky;</h3>
+        <p>Là sự kết hợp thông minh giữa <code>relative</code> và <code>fixed</code>. Nó hoạt động như <code>relative</code> cho đến khi bạn cuộn trang đến một vị trí nhất định (ví dụ: <code>top: 0</code>), sau đó nó sẽ "dính" lại và hoạt động như <code>fixed</code>.</p>
+        <div class="sticky-parent-container">
+            <div class="box sticky-box">
+                Tôi là STICKY (top: 0). Hãy cuộn xuống...
+            </div>
+            <p style="margin-top: 20px;">Nội dung dài để bạn có thể cuộn trang.</p>
+            <p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p><p>...</p>
+            <p>Bạn thấy tôi dính lại ở trên cùng chưa?</p>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- 6. Z-INDEX -->
+    <!-- ============================================= -->
+    <div class="example-container">
+        <h3>6. z-index</h3>
+        <p>Khi các phần tử có <code>position</code> (khác <code>static</code>) đè lên nhau, <code>z-index</code> sẽ quyết định thứ tự xếp chồng. Số lớn hơn sẽ nằm trên.</p>
+        <div class="z-index-container">
+            <div class="box z-index-box box-1">Box 1 (z-index: 1)</div>
+            <div class="box z-index-box box-2">Box 2 (z-index: 2 - Nằm trên Box 1)</div>
+            <div class="box z-index-box box-3">Box 3 (z-index: 0)</div>
+        </div>
+    </div>
+  </section>
 
     <!-----------------Pseudo-selector------------------->
   <div class="pseudo-classes">
