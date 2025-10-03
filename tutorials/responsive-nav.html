@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 2: Responsive Navigation Bar</title>
+    <link rel="stylesheet" href="tutorial-style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a href="#" class="site-logo">LOGO</a>
+
+        <!-- Nút Hamburger - Chỉ hiển thị trên mobile -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label">
+          <span></span>
+          <!-- 3 cái gạch của hamburger -->
+        </label>
+
+        <!-- Menu chính -->
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#">Trang Chủ</a></li>
+            <li><a href="#">Giới Thiệu</a></li>
+            <li><a href="#">Sản Phẩm</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Liên Hệ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="container">
+        <h1>Bài Thực Hành 2: Responsive Navigation Bar</h1>
+        <p>
+          <strong>Thử thách:</strong> Xây dựng một thanh điều hướng (navigation
+          bar) hiển thị đầy đủ menu trên màn hình lớn (desktop) và tự động thu
+          gọn vào một nút "hamburger" trên màn hình nhỏ (mobile).
+        </p>
+        <p><strong>Gợi ý kỹ thuật:</strong></p>
+        <ul>
+          <li>Sử dụng Flexbox để sắp xếp Logo và Menu trên cùng một hàng.</li>
+          <li>
+            Sử dụng một thẻ <code>&lt;input type="checkbox"&gt;</code> ẩn và
+            pseudo-class <code>:checked</code> để điều khiển việc hiện/ẩn menu
+            trên mobile mà không cần JavaScript.
+          </li>
+          <li>
+            Sử dụng Media Query để thay đổi layout khi chiều rộng màn hình nhỏ
+            hơn một ngưỡng nhất định (ví dụ: 768px).
+          </li>
+        </ul>
+        <p>
+          Hãy thử thay đổi kích thước cửa sổ trình duyệt để xem menu thay đổi
+          như thế nào.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

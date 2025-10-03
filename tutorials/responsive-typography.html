@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 4: Responsive Typography</title>
+    <link rel="stylesheet" href="tutorial-style.css" />
+  </head>
+  <body>
+    <main class="content">
+      <div class="container">
+        <h1>Bài Thực Hành 4: Responsive Typography (Chữ Viết Đáp Ứng)</h1>
+        <p>
+          <strong>Thử thách:</strong> Làm cho kích thước của các tiêu đề và văn
+          bản có thể tự động co giãn một cách mượt mà theo kích thước của màn
+          hình, giúp dễ đọc hơn trên mọi thiết bị.
+        </p>
+
+        <div class="example-container">
+          <h3>Giải pháp 1: Dùng đơn vị <code>rem</code> và Media Queries</h3>
+          <p>
+            Chúng ta có thể thay đổi <code>font-size</code> gốc trên thẻ
+            <code>&lt;html&gt;</code> ở các điểm ngắt (breakpoints) khác nhau.
+            Vì các thẻ khác dùng đơn vị <code>rem</code>, chúng sẽ tự động co
+            giãn theo.
+          </p>
+
+          <div class="typography-example-rem">
+            <h1>Đây là Tiêu Đề H1</h1>
+            <p>
+              Đây là một đoạn văn bản. Kích thước của chúng tôi được định nghĩa
+              bằng đơn vị <code>rem</code>, vì vậy chúng tôi sẽ thay đổi kích
+              thước khi bạn vượt qua các điểm ngắt 768px và 1024px.
+            </p>
+          </div>
+        </div>
+
+        <div class="example-container">
+          <h3>Giải pháp 2 (Nâng cao): Dùng hàm <code>clamp()</code></h3>
+          <p>
+            <strong>"Tuyệt chiêu" hiện đại:</strong> Hàm
+            <code>clamp()</code> cho phép chúng ta đặt một kích thước tối thiểu,
+            một kích thước "ưa thích" (thường dùng đơn vị <code>vw</code>), và
+            một kích thước tối đa. Cỡ chữ sẽ co giãn mượt mà giữa hai cực đó mà
+            không cần Media Query.
+          </p>
+
+          <div class="typography-example-clamp">
+            <h1>Đây là Tiêu Đề H1</h1>
+            <p>
+              Kích thước của chúng tôi được định nghĩa bằng hàm
+              <code>clamp()</code>. Hãy thử kéo thả từ từ cửa sổ trình duyệt,
+              bạn sẽ thấy chúng tôi co giãn một cách "lỏng" và mượt mà.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

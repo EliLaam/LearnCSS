@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 3: Responsive Images</title>
+    <link rel="stylesheet" href="tutorial-style.css" />
+  </head>
+  <body>
+    <main class="content">
+      <div class="container">
+        <h1>Bài Thực Hành 3: Responsive Images</h1>
+        <p>
+          <strong>Thử thách:</strong> Đảm bảo hình ảnh luôn co giãn theo kích
+          thước của phần tử chứa nó và không bao giờ bị tràn ra ngoài, gây ra
+          thanh cuộn ngang không mong muốn.
+        </p>
+
+        <div class="example-container">
+          <h3>Vấn đề: Hình ảnh có kích thước cố định</h3>
+          <p>
+            Bên dưới là một hình ảnh có <code>width</code> và
+            <code>height</code> cố định. Khi bạn thu nhỏ cửa sổ trình duyệt, nó
+            sẽ tràn ra khỏi khung chứa.
+          </p>
+          <div class="image-wrapper">
+            <img
+              src="https://via.placeholder.com/800x400"
+              alt="Placeholder Image"
+              class="fixed-image"
+            />
+          </div>
+        </div>
+
+        <div class="example-container">
+          <h3>Giải pháp: Hình ảnh linh hoạt</h3>
+          <p>
+            <strong>"Thần chú" CSS:</strong> Chỉ cần áp dụng
+            <code>max-width: 100%;</code> và <code>height: auto;</code> cho tất
+            cả các thẻ <code>&lt;img&gt;</code>. Điều này ra lệnh cho hình ảnh
+            không bao giờ được rộng hơn phần tử cha của nó.
+          </p>
+          <div class="image-wrapper">
+            <img
+              src="https://via.placeholder.com/800x400"
+              alt="Placeholder Image"
+              class="responsive-image"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

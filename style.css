@@ -939,6 +939,10 @@ Kích thước của hộp cha (nếu không được set cứng) sẽ được 
 .sizing-border-box {
   box-sizing: border-box;
 }
+/* Hầu hết các dự án ngày nay đều bắt đầu bằng đoạn code này để mọi thứ trở nên dễ đoán hơn. 
+* {
+  box-sizing: border-box;
+}  */
 
 /* ——————————————————————————————————————— 
   FLEX-BOX
@@ -1273,9 +1277,11 @@ Horizontally aligns the flex items when the items do not use all available space
   top: 10px;
   right: 10px;
 }
+/* thử xóa position: relative ở thẻ cha của absolute-box xem điều gì sẽ xảy ra */
 
 /* 4. Fixed */
 .fixed-box {
+  height: 40px;
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -1550,3 +1556,64 @@ label[for="check"] {
   background-color: #ffc107; /* Màu vàng */
   color: #333; /* Chữ đen */
 }
+
+/* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+  RESPONSIVE
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+
+/* --- Style cho phần demo Responsive --- */
+.demo-responsive pre {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-radius: 5px;
+  white-space: pre-wrap; /* Cho phép code xuống dòng */
+  text-align: left;
+}
+.demo-responsive code {
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Style cho danh sách các bài thực hành */
+.tutorial-nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+.tutorial-nav li {
+  margin-bottom: 1rem;
+}
+.tutorial-nav a {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+.tutorial-nav a:hover {
+  border-color: #4682b4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+.tutorial-nav a strong {
+  display: block;
+  font-size: 1.2rem;
+  color: #4682b4;
+  margin-bottom: 0.5rem;
+}
+.tutorial-nav a small {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* 
+**Tóm lại, bộ "bí kíp" của bạn sẽ là:**
+
+1. **Luôn có <meta name="viewport">**.
+2. **Dùng đơn vị tương đối**, đặc biệt là rem cho font-size.
+3. **Dùng flexbox** thay cho inline-block để sắp xếp các phần tử.
+4. **Luôn có max-width: 100%** cho hình ảnh.
+5. **Suy nghĩ "Mobile First"** và dùng @media (min-width: ...) để mở rộng layout.  */
